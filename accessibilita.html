@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibilità – arrivaTO</title>
+  <meta name="description" content="Come arrivaTO supporta VoiceOver, Controllo vocale, testo grande, riduzione del movimento e contrasto elevato.">
+  <link rel="icon" href="icon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="./"><img src="icon.png" alt="">arrivaTO</a>
+      <div class="links">
+        <a href="./">Home</a>
+        <a href="supporto.html">Assistenza</a>
+        <a href="accessibilita.html" aria-current="page">Accessibilità</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </nav>
+
+    <p class="lang-switch"><a href="#en">English version ↓</a></p>
+
+    <article class="card">
+      <h1>Accessibilità</h1>
+      <p class="meta">Ultimo aggiornamento: 12 novembre 2026</p>
+      <p class="lede">arrivaTO deve essere utile a chiunque aspetti un mezzo, anche a chi usa le funzioni di accessibilità di iOS.</p>
+
+      <h2>Cosa supporta l'app</h2>
+      <ul class="features">
+        <li><strong>VoiceOver</strong>: fermate, arrivi e preferiti vengono letti come frasi complete, con linea, destinazione, minuti e stato (live o da orario). Pulsanti con icona, intestazioni e filtri selezionati hanno etichette e tratti corretti, e le conferme vengono annunciate. C'è un'azione «Aggiorna orari».</li>
+        <li><strong>Controllo vocale</strong>: tutti i pulsanti, anche quelli con sola icona, hanno un nome da pronunciare.</li>
+        <li><strong>Testo più grande</strong>: il testo segue le dimensioni impostate in iOS, fino alle taglie di accessibilità più grandi. I contenuti vanno a capo o si impilano invece di essere tagliati.</li>
+        <li><strong>Contrasto</strong>: il testo ha un contrasto di almeno 4,5:1 sullo sfondo, misurato sulle schermate reali.</li>
+        <li><strong>Differenzia senza colore</strong>: i filtri selezionati mostrano anche un segno di spunta, non solo un colore diverso.</li>
+        <li><strong>Riduci movimento</strong>: con l'opzione attiva, le animazioni di comparsa e i rimbalzi sono disattivati.</li>
+        <li><strong>Aree di tocco</strong> di almeno 44 × 44 punti.</li>
+      </ul>
+
+      <h2>Come lo verifichiamo</h2>
+      <p>Ogni versione viene controllata con l'audit di accessibilità automatico di Xcode sulle schermate principali (Home, Cerca, Dettaglio fermata) e provata a mano con VoiceOver e con il testo alla dimensione massima.</p>
+
+      <h2>Limiti noti</h2>
+      <p>Gli orari dipendono dai dati pubblici di GTT e Muoversi a Torino. Con l'app chiusa, iOS non garantisce che l'avviso «5 minuti prima» venga inviato.</p>
+
+      <h2>Segnala un problema</h2>
+      <p>Se qualcosa non funziona con VoiceOver o con altre tecnologie assistive, scrivici a <a href="mailto:hello@flbanca.it?subject=arrivaTO%20accessibilit%C3%A0">hello@flbanca.it</a>: le segnalazioni sull'accessibilità hanno la precedenza.</p>
+    </article>
+
+    <hr id="en">
+
+    <article class="card" lang="en">
+      <h1>Accessibility</h1>
+      <ul class="features">
+        <li><strong>VoiceOver</strong>: stops, arrivals and favourites are read as full sentences; icon buttons, headers and selected filters have proper labels and traits; confirmations are announced; “Aggiorna orari” (refresh) action.</li>
+        <li><strong>Voice Control</strong>: every button, including icon-only ones, has a spoken name.</li>
+        <li><strong>Larger Text</strong>: follows iOS text size up to the largest accessibility sizes; layouts wrap instead of truncating.</li>
+        <li><strong>Sufficient contrast</strong>: text contrast of at least 4.5:1, measured on rendered screens.</li>
+        <li><strong>Differentiate Without Color</strong>: selected filters also show a checkmark.</li>
+        <li><strong>Reduce Motion</strong>: appear and bounce animations are turned off.</li>
+        <li><strong>Touch targets</strong> of at least 44 × 44 points.</li>
+      </ul>
+      <p>Found an accessibility issue? Email <a href="mailto:hello@flbanca.it?subject=arrivaTO%20accessibility">hello@flbanca.it</a>.</p>
+    </article>
+
+    <footer>
+      <p>© 2026 Francesca La Banca · <a href="mailto:hello@flbanca.it">hello@flbanca.it</a></p>
+      <p><a href="./">Home</a> · <a href="supporto.html">Assistenza</a> · <a href="privacy.html">Privacy</a></p>
+    </footer>
+  </div>
+</body>
+</html>

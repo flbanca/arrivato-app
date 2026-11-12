@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="arrivaTO: fermate preferite e arrivi in tempo reale per bus e tram di Torino. App non ufficiale, gratuita, senza pubblicità." />
+  <title>arrivaTO</title>
+  <link rel="icon" href="icon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <style>
+    @font-face {
+      font-family: "Manrope";
+      src: url("fonts/manrope-400.woff2") format("woff2");
+      font-weight: 400;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Manrope";
+      src: url("fonts/manrope-500.woff2") format("woff2");
+      font-weight: 500;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Manrope";
+      src: url("fonts/manrope-600.woff2") format("woff2");
+      font-weight: 600;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Manrope";
+      src: url("fonts/manrope-700.woff2") format("woff2");
+      font-weight: 700;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Manrope";
+      src: url("fonts/manrope-800.woff2") format("woff2");
+      font-weight: 800;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Sora";
+      src: url("fonts/sora-600.woff2") format("woff2");
+      font-weight: 600;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Sora";
+      src: url("fonts/sora-700.woff2") format("woff2");
+      font-weight: 700;
+      font-display: swap;
+    }
+
+    :root {
+      --ink: #0c1220;
+      --muted: rgba(12, 18, 32, 0.68);
+      --faint: rgba(12, 18, 32, 0.62);
+      --accent: #1a6cff;
+      --accent-deep: #0f4fd0;
+      --font: "Manrope", "Segoe UI", sans-serif;
+      --display: "Sora", "Manrope", "Segoe UI", sans-serif;
+      --max: 1040px;
+      --phone-w: 250px;
+      --phone-r: 34px;
+      --bezel: 9px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      background:
+        radial-gradient(900px 480px at 8% -5%, #f7f9ff 0%, transparent 55%),
+        radial-gradient(760px 420px at 100% 0%, #c9daf4 0%, transparent 52%),
+        linear-gradient(180deg, #e9eef8 0%, #c8d6ea 100%);
+      min-height: 100vh;
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+
+    .wrap {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    /* Real iPhone shots in matching frames (1206×2622) */
+    .phone {
+      width: var(--phone-w);
+      padding: var(--bezel);
+      border-radius: calc(var(--phone-r) + 6px);
+      background: #111827;
+      box-shadow: 0 22px 48px rgba(16, 32, 64, 0.22);
+    }
+
+    .phone .screen {
+      aspect-ratio: 1206 / 2622;
+      border-radius: var(--phone-r);
+      overflow: hidden;
+      background: #d7e3f3;
+    }
+
+    .phone .screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .hero {
+      padding: 36px 0 44px;
+      display: grid;
+      grid-template-columns: 1.15fr auto;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .brand img {
+      width: 52px;
+      height: 52px;
+      border-radius: 13px;
+    }
+
+    .brand span {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(2.1rem, 4.5vw, 3rem);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .hero h1 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      max-width: 16ch;
+    }
+
+    .hero .lead {
+      font-size: 1.02rem;
+      line-height: 1.55;
+      color: var(--muted);
+      font-weight: 500;
+      max-width: 34ch;
+      margin-bottom: 22px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #2b78ff, var(--accent-deep));
+      color: #fff;
+      font-family: var(--font);
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(26, 108, 255, 0.28);
+    }
+
+    .cta-note {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--faint);
+      font-weight: 500;
+    }
+
+    .hero .phone { --phone-w: 240px; }
+
+    section { padding: 48px 0; }
+
+    .kicker {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 8px;
+    }
+
+    .pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .pair h2,
+    .shots-head h2,
+    .features-head {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .pair p,
+    .shots-head p {
+      font-size: 1rem;
+      line-height: 1.55;
+      color: var(--muted);
+      font-weight: 500;
+      max-width: 40ch;
+    }
+
+    .shots-head {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .shots-head p:last-of-type { margin: 0 auto; }
+
+    .shots {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: clamp(14px, 3vw, 28px);
+      flex-wrap: wrap;
+    }
+
+    .shots figure {
+      margin: 0;
+      width: var(--phone-w);
+    }
+
+    .shots figcaption {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .features h3 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .features p {
+      font-size: 0.96rem;
+      line-height: 1.5;
+      color: var(--muted);
+      font-weight: 500;
+      max-width: 28ch;
+    }
+
+    .mark {
+      width: 28px;
+      height: 3px;
+      border-radius: 99px;
+      background: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    footer {
+      padding: 32px 0 44px;
+      text-align: center;
+      border-top: 1px solid rgba(12, 18, 32, 0.08);
+    }
+
+    footer .name {
+      font-family: var(--display);
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      color: var(--faint);
+      font-weight: 500;
+    }
+
+    .js .fade {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .js .fade.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .js .fade { opacity: 1; transform: none; transition: none; }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+      .hero .copy { width: 100%; }
+      .pair,
+      .features { grid-template-columns: 1fr; }
+      :root { --phone-w: 210px; }
+      .hero .phone { --phone-w: 220px; }
+    }
+    footer p + p { margin-top: 6px; }
+    footer a { color: var(--muted); }
+    footer .footlinks a { font-weight: 600; color: var(--accent-deep); }
+  </style>
+</head>
+<body>
+  <header class="wrap hero">
+    <div class="copy">
+      <div class="brand fade">
+        <img src="icon.png" width="52" height="52" alt="" />
+        <span>arrivaTO</span>
+      </div>
+      <h1 class="fade">Sai quando passa il bus.</h1>
+      <p class="lead fade">
+        Alla fermata senza LED, o con solo il QR, spesso non sai quando arriva.
+      </p>
+      <div class="fade">
+        <a
+          class="cta"
+          href="https://testflight.apple.com/join/tJv2m7fG"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-testflight-url="https://testflight.apple.com/join/tJv2m7fG"
+        >Prova l’app</a>
+        <span class="cta-note">Apri il link TestFlight sul tuo iPhone.</span>
+      </div>
+    </div>
+    <div class="phone fade">
+      <div class="screen">
+        <img src="shot-hero.png" width="780" height="1695" alt="Home di arrivaTO su iPhone" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap pair">
+        <article class="fade">
+          <p class="kicker">Il problema</p>
+          <h2>Alla fermata spesso non sai se il bus è vicino.</h2>
+          <p>
+            Il tabellone manca. Il QR apre una pagina poco chiara. Aspetti senza sapere se conviene restare.
+          </p>
+        </article>
+        <article class="fade">
+          <p class="kicker">La soluzione</p>
+          <h2>arrivaTO mette gli arrivi sul telefono.</h2>
+          <p>
+            Tieni le fermate che usi. Vedi se il prossimo passa tra poco, se è in orario o in ritardo, e ricevi un avviso a 5 minuti.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="shots-head fade">
+          <p class="kicker">L’app</p>
+          <h2>Home, fermata e ricerca.</h2>
+          <p>Schermate reali dall’iPhone, stessa misura.</p>
+        </div>
+        <div class="shots">
+          <figure class="fade">
+            <div class="phone">
+              <div class="screen">
+                <img src="shot-home.png" width="780" height="1695" alt="Home con preferiti" />
+              </div>
+            </div>
+            <figcaption>Home</figcaption>
+          </figure>
+          <figure class="fade">
+            <div class="phone">
+              <div class="screen">
+                <img src="shot-stop.png" width="780" height="1695" alt="Fermata con avviso 5 minuti" />
+              </div>
+            </div>
+            <figcaption>Fermata</figcaption>
+          </figure>
+          <figure class="fade">
+            <div class="phone">
+              <div class="screen">
+                <img src="shot-search.png" width="780" height="1695" alt="Ricerca fermata" />
+              </div>
+            </div>
+            <figcaption>Ricerca</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <p class="kicker fade">Cosa fa</p>
+        <h2 class="features-head fade">Tre cose, ogni giorno.</h2>
+        <div class="features">
+          <div class="fade">
+            <div class="mark" aria-hidden="true"></div>
+            <h3>Preferiti</h3>
+            <p>Salva le fermate che usi davvero e le trovi subito in Home.</p>
+          </div>
+          <div class="fade">
+            <div class="mark" aria-hidden="true"></div>
+            <h3>Arrivi e ritardi</h3>
+            <p>Minuti al prossimo passaggio, con live o orario, e ritardo quando c’è.</p>
+          </div>
+          <div class="fade">
+            <div class="mark" aria-hidden="true"></div>
+            <h3>Avviso 5′</h3>
+            <p>Attiva l’avviso sulla fermata quando mancano circa cinque minuti.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="name">arrivaTO</p>
+      <p>App non ufficiale, non affiliata né approvata da GTT S.p.A. o 5T S.r.l.</p>
+      <p>Dati: open data GTFS di <a href="https://www.gtt.to.it" rel="noopener">GTT S.p.A.</a> · tempo reale <a href="https://www.muoversiatorino.it" rel="noopener">Muoversi a Torino</a> (5T)</p>
+      <p class="footlinks"><a href="supporto.html">Assistenza</a> · <a href="accessibilita.html">Accessibilità</a> · <a href="privacy.html">Privacy</a></p>
+      <p>© 2026 Francesca La Banca · <a href="mailto:hello@flbanca.it">hello@flbanca.it</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      document.documentElement.classList.add("js");
+      var nodes = document.querySelectorAll(".fade");
+      if (!("IntersectionObserver" in window)) {
+        nodes.forEach(function (el) { el.classList.add("in"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      nodes.forEach(function (el) { io.observe(el); });
+      requestAnimationFrame(function () {
+        document.querySelectorAll(".hero .fade").forEach(function (el) {
+          el.classList.add("in");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
