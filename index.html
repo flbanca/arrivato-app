@@ -111,8 +111,8 @@
     .hero {
       padding: 36px 0 44px;
       display: grid;
-      grid-template-columns: 1.15fr auto;
-      gap: 40px;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
       align-items: center;
     }
 
@@ -180,7 +180,38 @@
       font-weight: 500;
     }
 
-    .hero .phone { --phone-w: 240px; }
+    /* Hero: two overlapping phones, cropped with a soft fade at the bottom */
+    .stage {
+      position: relative;
+      width: 520px;
+      height: 600px;
+      -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+      mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+    }
+    .stage::before {
+      content: "";
+      position: absolute;
+      inset: 40px 10px 0 30px;
+      border-radius: 50%;
+      background: radial-gradient(closest-side, rgba(43, 120, 255, 0.28), transparent);
+      filter: blur(10px);
+    }
+    .stage .phone { position: absolute; }
+    .stage .phone.front {
+      --phone-w: 300px;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      box-shadow: 0 30px 70px rgba(16, 32, 64, 0.32);
+    }
+    .stage .phone.back {
+      --phone-w: 260px;
+      right: 28px;
+      top: 70px;
+      transform: rotate(7deg);
+      z-index: 1;
+      opacity: 0.96;
+    }
 
     section { padding: 48px 0; }
 
@@ -315,7 +346,14 @@
       .pair,
       .features { grid-template-columns: 1fr; }
       :root { --phone-w: 210px; }
-      .hero .phone { --phone-w: 220px; }
+      .stage { width: min(400px, 100%); height: 480px; }
+      .stage .phone.front { --phone-w: 230px; }
+      .stage .phone.back { --phone-w: 200px; top: 56px; }
+    }
+    @media (max-width: 420px) {
+      .stage { height: 420px; }
+      .stage .phone.front { --phone-w: 200px; }
+      .stage .phone.back { --phone-w: 170px; top: 48px; }
     }
     footer p + p { margin-top: 6px; }
     footer a { color: var(--muted); }
@@ -344,9 +382,12 @@
         <span class="cta-note">Apri il link TestFlight sul tuo iPhone.</span>
       </div>
     </div>
-    <div class="phone fade">
-      <div class="screen">
-        <img src="shot-hero.png" width="780" height="1695" alt="Home di arrivaTO su iPhone" />
+    <div class="stage fade" role="img" aria-label="arrivaTO su iPhone: la fermata Santa Giulia con il prossimo passaggio tra 1 minuto, e dietro la Home con la fermata preferita">
+      <div class="phone back" aria-hidden="true">
+        <div class="screen"><img src="shot-hero.png" width="780" height="1696" alt="" /></div>
+      </div>
+      <div class="phone front" aria-hidden="true">
+        <div class="screen"><img src="shot-stop.png" width="780" height="1696" alt="" /></div>
       </div>
     </div>
   </header>
@@ -382,7 +423,7 @@
           <figure class="fade">
             <div class="phone">
               <div class="screen">
-                <img src="shot-home.png" width="780" height="1695" alt="Home con preferiti" />
+                <img src="shot-home.png" width="780" height="1696" alt="Home con la fermata preferita Santa Giulia e il prossimo passaggio della linea 55" />
               </div>
             </div>
             <figcaption>Home</figcaption>
