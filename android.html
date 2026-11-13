@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>arrivaTO per Android – Prova l'app</title>
+  <meta name="description" content="Prova arrivaTO su Android: scarica l'app di test o entra nel test su Google Play. Gratis, senza pubblicità, senza account.">
+  <link rel="canonical" href="https://flbanca.github.io/arrivato-app/android.html">
+  <link rel="icon" href="icon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .intro { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+    .intro .phone {
+      width: 168px; padding: 7px; border-radius: 30px; background: #111827;
+      box-shadow: 0 18px 40px rgba(16, 32, 64, 0.22);
+    }
+    .intro .phone img { width: 100%; height: auto; border-radius: 24px; display: block; }
+    .steps { margin: 0; padding-left: 1.3em; }
+    .steps li { margin: 0 0 10px; }
+    .steps li:last-child { margin-bottom: 0; }
+    .download { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin: 4px 0 18px; }
+    .download .meta { margin: 0; }
+    code.hash {
+      display: block; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px; line-height: 1.5;
+      background: rgba(255, 255, 255, 0.6); border: 1px solid var(--rule); border-radius: 12px;
+      padding: 10px 12px; margin: 6px 0 14px; overflow-wrap: anywhere; color: var(--ink);
+    }
+    .tag {
+      display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--accent-deep); background: rgba(26, 108, 255, 0.1); border-radius: 999px; padding: 3px 10px; margin-bottom: 10px;
+    }
+    @media (max-width: 560px) {
+      .intro { grid-template-columns: 1fr; }
+      .intro .phone { width: 150px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="./"><img src="icon.png" alt="">arrivaTO</a>
+      <div class="links">
+        <a href="./">Home</a>
+        <a href="android.html" aria-current="page">Android</a>
+        <a href="supporto.html">Assistenza</a>
+        <a href="accessibilita.html">Accessibilità</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </nav>
+
+    <section class="card intro">
+      <div>
+        <h1>arrivaTO per Android</h1>
+        <p class="lede">Arrivi in tempo reale di bus e tram a Torino, fermate preferite e avviso 5 minuti prima. Stessa app dell'iPhone, ora anche su Android.</p>
+        <p class="meta">Gratis · senza pubblicità · senza account · Android 8 o successivo</p>
+      </div>
+      <div class="phone"><img src="shot-android-stop.png" width="540" height="1080" alt="arrivaTO su Android: fermata Giuria, prossimo passaggio linea 9 tra 5 minuti, in tempo reale"></div>
+    </section>
+
+    <section class="card" id="play">
+      <span class="tag">Consigliato</span>
+      <h2 style="margin-top:0">Entra nel test su Google Play</h2>
+      <p>Stiamo per pubblicare arrivaTO su Google Play. Prima della pubblicazione Google chiede un periodo di test con un gruppo di persone reali: se usi Android, ci dai una mano?</p>
+      <ol class="steps">
+        <li>Scrivi a <a href="mailto:hello@flbanca.it?subject=Tester%20Android%20arrivaTO&amp;body=Ciao%2C%20vorrei%20provare%20arrivaTO%20su%20Android.%20La%20mia%20email%20Google%20%28Gmail%29%20%C3%A8%3A%20">hello@flbanca.it</a> con l'indirizzo Gmail che usi sul telefono.</li>
+        <li>Ti mandiamo il link per installare l'app dal Play Store, come qualsiasi altra app.</li>
+        <li>Tienila installata per almeno <strong>14 giorni</strong> e usala quando prendi il bus o il tram. Se qualcosa non va, scrivici.</li>
+      </ol>
+      <p class="meta">Usiamo la tua email solo per aggiungerti all'elenco dei tester su Google Play. Puoi chiedere di essere rimosso quando vuoi.</p>
+    </section>
+
+    <section class="card" id="apk">
+      <h2 style="margin-top:0">Oppure scarica subito l'app</h2>
+      <p>Se vuoi provarla adesso, puoi installare direttamente il file dell'app (APK), firmato da noi.</p>
+      <div class="download">
+        <a class="button" href="download/arrivaTO-1.0.apk" download>Scarica arrivaTO 1.0 (APK)</a>
+        <p class="meta">1,6 MB · versione 1.0</p>
+      </div>
+
+      <h3>Come si installa</h3>
+      <ol class="steps">
+        <li>Apri questa pagina <strong>dal telefono Android</strong> e tocca «Scarica».</li>
+        <li>Chrome mostra <em>«Potrebbe essere dannoso»</em>: è l'avviso standard per qualsiasi app scaricata fuori dal Play Store. Tocca <em>Scarica comunque</em> e poi <em>Apri</em>.</li>
+        <li>La prima volta Android dice che il telefono non può installare app sconosciute da questa origine: tocca <em>Impostazioni</em>, attiva <em>Consenti da questa origine</em> e torna indietro.</li>
+        <li>Se non compare subito la richiesta di installazione, riapri il file: lo trovi nell'app <em>File</em> o <em>Download</em>, con il nome <code>arrivaTO-1.0.apk</code>.</li>
+        <li>Tocca <em>Installa</em>. Se compare Google Play Protect, scegli di installare comunque: l'app non è ancora sul Play Store, per questo non la conosce.</li>
+        <li>Quando attivi un avviso, l'app ti chiede il permesso per le notifiche. Per avvisi puntuali consenti anche <em>Sveglie e promemoria</em>: l'app ti porta direttamente all'impostazione giusta.</li>
+      </ol>
+
+      <div class="note" style="margin-top:18px">Quando arrivaTO sarà su Google Play potrai aggiornarla da lì senza disinstallarla: la firma è la stessa.</div>
+
+      <details>
+        <summary>Verifica il file (per i più esperti)</summary>
+        <p>Impronta SHA-256 del file <code>arrivaTO-1.0.apk</code>:</p>
+        <code class="hash">24da3e2caa05b9e2c454d702673f928193c22002a527de8c1f0a4adb46be6626</code>
+        <p>Impronta SHA-256 del certificato di firma (uguale per tutte le versioni):</p>
+        <code class="hash">84:20:82:B4:8A:0C:9A:47:06:91:17:91:FB:68:69:CB:63:3D:3E:37:2E:1E:EF:11:65:3E:83:8F:0D:26:F1:71</code>
+        <p>Con gli strumenti Android: <code>apksigner verify --print-certs arrivaTO-1.0.apk</code></p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0">Hai un iPhone?</h2>
+      <p>arrivaTO è anche per iPhone: trovi il link di prova nella <a href="./">pagina principale</a>.</p>
+    </section>
+
+    <footer>
+      <p>App non ufficiale, non affiliata né approvata da GTT S.p.A. o 5T S.r.l.</p>
+      <p>© 2026 Francesca La Banca · <a href="mailto:hello@flbanca.it">hello@flbanca.it</a></p>
+    </footer>
+  </div>
+</body>
+</html>
