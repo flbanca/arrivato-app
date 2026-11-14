@@ -281,6 +281,7 @@
     }
 
     .shots-head p:last-of-type { margin: 0 auto; }
+    .shots-head .kicker { max-width: none; }
 
     .shots {
       display: flex;
@@ -359,6 +360,172 @@
       transition: opacity 0.5s ease, transform 0.5s ease;
     }
     .js .fade.in { opacity: 1; transform: none; }
+
+    /* Trust chips under the CTA */
+    .trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 0;
+      list-style: none;
+    }
+    .trust li {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .trust li::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #1f9d55;
+    }
+    .section-head { max-width: 46ch; margin-bottom: 26px; }
+    .section-head h2 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .section-head p { font-size: 1rem; line-height: 1.55; color: var(--muted); font-weight: 500; }
+    /* How it works */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 14px 34px rgba(16, 32, 64, 0.08);
+    }
+    .steps li { counter-increment: step; }
+    .steps li::before {
+      content: counter(step);
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 14px;
+      border-radius: 11px;
+      background: linear-gradient(180deg, #2b78ff, var(--accent-deep));
+      color: #fff;
+      font-family: var(--display);
+      font-weight: 700;
+    }
+    .steps h3, .features h3 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .steps p { font-size: 0.96rem; line-height: 1.5; color: var(--muted); font-weight: 500; }
+    /* Promise panel */
+    .promise {
+      border-radius: 28px;
+      padding: clamp(26px, 5vw, 44px);
+      background: linear-gradient(160deg, #13203a 0%, #0f2f6b 100%);
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 32px;
+      align-items: center;
+      box-shadow: 0 24px 60px rgba(16, 32, 64, 0.25);
+    }
+    .promise .kicker { color: rgba(255, 255, 255, 0.7); }
+    .promise h2 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(1.35rem, 2.8vw, 1.8rem);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .promise p { color: rgba(255, 255, 255, 0.8); line-height: 1.55; font-weight: 500; }
+    .promise a { color: #fff; font-weight: 700; }
+    .promise ul { list-style: none; padding: 0; display: grid; gap: 12px; }
+    .promise li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .promise li::before {
+      content: "✓";
+      flex: none;
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.14);
+      font-size: 0.8rem;
+    }
+    /* FAQ */
+    .faq { display: grid; gap: 10px; max-width: 760px; }
+    .faq details {
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      padding: 0 18px;
+    }
+    .faq summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 16px 28px 16px 0;
+      font-weight: 700;
+      position: relative;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 13px;
+      font-size: 1.3rem;
+      color: var(--accent-deep);
+    }
+    .faq details[open] summary::after { content: "–"; }
+    .faq details p { padding-bottom: 16px; line-height: 1.55; color: var(--muted); font-weight: 500; }
+    .faq a, .features a { color: var(--accent-deep); font-weight: 700; }
+    /* Final call to action */
+    .final {
+      text-align: center;
+      padding: 56px 0 64px;
+    }
+    .final h2 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(1.5rem, 3.4vw, 2.2rem);
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+      margin: 0 auto 12px;
+      max-width: 20ch;
+    }
+    .final p { color: var(--muted); font-weight: 500; margin-bottom: 22px; }
+    .final .cta-row { justify-content: center; }
+    @media (max-width: 900px) {
+      .steps { grid-template-columns: 1fr; }
+      .promise { grid-template-columns: 1fr; }
+    }
     @media (prefers-reduced-motion: reduce) {
       .js .fade { opacity: 1; transform: none; transition: none; }
     }
@@ -395,7 +562,7 @@
       </div>
       <h1 class="fade">Sai quando passa il bus.</h1>
       <p class="lead fade">
-        Alla fermata senza LED, o con solo il QR, spesso non sai quando arriva il bus o il tram.
+        Gli arrivi delle tue fermate GTT, in tempo reale e in un colpo d’occhio. Bus e tram di Torino, senza pubblicità e senza account.
       </p>
       <div class="fade">
         <div class="cta-row">
@@ -408,7 +575,12 @@
           >Prova su iPhone</a>
           <a class="cta cta-alt" href="android.html">Prova su Android</a>
         </div>
-        <span class="cta-note">Gratis · senza pubblicità · senza account</span>
+        <ul class="trust" aria-label="In breve">
+          <li>Gratis</li>
+          <li>Senza pubblicità</li>
+          <li>Senza account</li>
+          <li>Nessun tracciamento</li>
+        </ul>
         <span class="cta-note">iPhone (iOS 17+): apri il link TestFlight dal telefono. Android (8+): scarica l’app o entra nel test su Google Play.</span>
       </div>
     </div>
@@ -429,14 +601,14 @@
           <p class="kicker">Il problema</p>
           <h2>Alla fermata spesso non sai se il bus è vicino.</h2>
           <p>
-            Il tabellone manca. Il QR apre una pagina poco chiara. Aspetti senza sapere se conviene restare.
+            Il tabellone manca o è spento. Il QR apre una pagina lenta e poco chiara. Così aspetti senza sapere se conviene restare o andare a piedi.
           </p>
         </article>
         <article class="fade">
           <p class="kicker">La soluzione</p>
           <h2>arrivaTO mette gli arrivi sul telefono.</h2>
           <p>
-            Tieni le fermate che usi. Vedi se il prossimo passa tra poco, se è in orario o in ritardo, e ricevi un avviso a 5 minuti.
+            Apri l’app e vedi subito tra quanti minuti passa il prossimo mezzo alle tue fermate, se è in orario o in ritardo. Se vuoi, ti avvisa 5 minuti prima.
           </p>
         </article>
       </div>
@@ -444,16 +616,40 @@
 
     <section>
       <div class="wrap">
+        <div class="section-head fade">
+          <p class="kicker">Come funziona</p>
+          <h2>Pronta in meno di un minuto.</h2>
+          <p>Niente registrazione e niente configurazioni lunghe. Bastano tre passi.</p>
+        </div>
+        <ol class="steps">
+          <li class="card fade">
+            <h3>Cerca la fermata</h3>
+            <p>Per nome o con il codice palina scritto sul cartello della fermata.</p>
+          </li>
+          <li class="card fade">
+            <h3>Salvala con le tue linee</h3>
+            <p>Scegli quali linee seguire: in Home vedi solo quelle che prendi davvero.</p>
+          </li>
+          <li class="card fade">
+            <h3>Guarda e parti</h3>
+            <p>Minuti al prossimo passaggio, ritardo o anticipo e, se vuoi, un avviso 5 minuti prima.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
         <div class="shots-head fade">
           <p class="kicker">L’app</p>
-          <h2>Home, fermata e ricerca.</h2>
-          <p>Schermate reali dall’iPhone, stessa misura.</p>
+          <h2>Tutto in tre schermate.</h2>
+          <p>Schermate reali dall’iPhone: la Home con i preferiti, la fermata con gli arrivi, la ricerca.</p>
         </div>
         <div class="shots">
           <figure class="fade">
             <div class="phone">
               <div class="screen">
-                <img src="shot-home.png" width="780" height="1696" alt="Home con la fermata preferita Santa Giulia e il prossimo passaggio della linea 55" />
+                <img src="shot-home.png" width="780" height="1696" alt="Home con le fermate preferite Giuria e Porta Nuova e i minuti al prossimo passaggio" />
               </div>
             </div>
             <figcaption>Home</figcaption>
@@ -469,7 +665,7 @@
           <figure class="fade">
             <div class="phone">
               <div class="screen">
-                <img src="shot-search.png" width="780" height="1695" alt="Ricerca fermata" />
+                <img src="shot-search.png" width="780" height="1695" alt="Ricerca fermata per nome o codice palina" />
               </div>
             </div>
             <figcaption>Ricerca</figcaption>
@@ -480,24 +676,106 @@
 
     <section>
       <div class="wrap">
-        <p class="kicker fade">Cosa fa</p>
-        <h2 class="features-head fade">Tre cose, ogni giorno.</h2>
+        <div class="section-head fade">
+          <p class="kicker">Cosa fa</p>
+          <h2>Poche cose, fatte bene.</h2>
+          <p>Niente mappe e menu da esplorare: solo quello che serve quando sei alla fermata.</p>
+        </div>
         <div class="features">
           <div class="fade">
             <div class="mark" aria-hidden="true"></div>
-            <h3>Preferiti</h3>
-            <p>Salva le fermate che usi davvero e le trovi subito in Home.</p>
+            <h3>Preferiti con le tue linee</h3>
+            <p>Salva le fermate che usi e scegli le linee da seguire. In Home trovi subito il prossimo mezzo.</p>
           </div>
           <div class="fade">
             <div class="mark" aria-hidden="true"></div>
-            <h3>Arrivi e ritardi</h3>
-            <p>Minuti al prossimo passaggio, con live o orario, e ritardo quando c’è.</p>
+            <h3>Live o orario, sempre chiaro</h3>
+            <p>«Live» quando il mezzo è seguito in tempo reale, «Orario» quando il dato è quello programmato.</p>
           </div>
           <div class="fade">
             <div class="mark" aria-hidden="true"></div>
-            <h3>Avviso 5′</h3>
-            <p>Attiva l’avviso sulla fermata quando mancano circa cinque minuti.</p>
+            <h3>Ritardi e anticipi</h3>
+            <p>Se il mezzo è in ritardo o in anticipo, te lo dice in minuti, senza dover fare conti.</p>
           </div>
+          <div class="fade">
+            <div class="mark" aria-hidden="true"></div>
+            <h3>Avviso 5′ prima</h3>
+            <p>Solo per la prossima corsa, oppure ogni giorno in una fascia oraria: per esempio quando esci di casa.</p>
+          </div>
+          <div class="fade">
+            <div class="mark" aria-hidden="true"></div>
+            <h3>Ricerca per codice palina</h3>
+            <p>Il numero è sul cartello della fermata: lo scrivi e la apri al volo.</p>
+          </div>
+          <div class="fade">
+            <div class="mark" aria-hidden="true"></div>
+            <h3>Accessibile</h3>
+            <p>Funziona con VoiceOver e con il testo grande di iOS, con un contrasto verificato. <a href="accessibilita.html">Dettagli</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="promise fade">
+          <div>
+            <p class="kicker">Le nostre promesse</p>
+            <h2>Un’app che ti aiuta ad aspettare, non che ti vende qualcosa.</h2>
+            <p>arrivaTO è un progetto indipendente. Non guadagna sui tuoi dati e non ti riempie di banner. <a href="privacy.html">Leggi l’informativa privacy</a></p>
+          </div>
+          <ul>
+            <li>Niente pubblicità, mai.</li>
+            <li>Niente account né registrazione.</li>
+            <li>Nessun tracciamento e nessuna raccolta della posizione.</li>
+            <li>Preferiti e impostazioni restano solo sul tuo telefono.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head fade">
+          <p class="kicker">Domande frequenti</p>
+          <h2>Prima di provarla.</h2>
+        </div>
+        <div class="faq fade">
+          <details>
+            <summary>È l’app ufficiale di GTT?</summary>
+            <p>No. arrivaTO è un progetto indipendente, non affiliato né approvato da GTT S.p.A. o 5T S.r.l. Usa i dati pubblici di GTT e il servizio in tempo reale di Muoversi a Torino.</p>
+          </details>
+          <details>
+            <summary>Quanto costa?</summary>
+            <p>Niente. È gratis, senza pubblicità e senza acquisti in-app.</p>
+          </details>
+          <details>
+            <summary>Quanto sono affidabili i tempi?</summary>
+            <p>Arrivano dal servizio pubblico Muoversi a Torino. Con l’etichetta «Live» il dato viene dalla posizione del mezzo; con «Orario» è quello programmato. Se il servizio non risponde, l’app mostra gli ultimi dati scaricati, segnandoli come non aggiornati.</p>
+          </details>
+          <details>
+            <summary>C’è anche per Android?</summary>
+            <p>Sì, è in fase di test. Trovi le istruzioni nella <a href="android.html">pagina Android</a>.</p>
+          </details>
+          <details>
+            <summary>Posso comprare i biglietti?</summary>
+            <p>No, arrivaTO non vende biglietti. Per quelli usa i canali ufficiali GTT.</p>
+          </details>
+          <details>
+            <summary>Ho trovato un problema, a chi scrivo?</summary>
+            <p>Scrivi a <a href="mailto:hello@flbanca.it">hello@flbanca.it</a>, indicando se puoi fermata, linea e ora. Altre risposte nella pagina <a href="supporto.html">Assistenza</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap fade">
+        <h2>La prossima volta, alla fermata lo sai già.</h2>
+        <p>Gratis, per iPhone e Android.</p>
+        <div class="cta-row">
+          <a class="cta" href="https://testflight.apple.com/join/tJv2m7fG" target="_blank" rel="noopener noreferrer" data-testflight-url="https://testflight.apple.com/join/tJv2m7fG">Prova su iPhone</a>
+          <a class="cta cta-alt" href="android.html">Prova su Android</a>
         </div>
       </div>
     </section>
