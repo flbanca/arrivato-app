@@ -201,6 +201,7 @@
     .follow-sticky { position: sticky; top: 0; min-height: 100vh; display: grid; align-items: center; padding: 88px 0 40px; }
     .ldemo {
       --step: 62px;
+      --rail-x: 23px; /* shared axis: vertical rail, stop dots, bus */
       width: min(380px, 100%); margin: 0 auto; padding: 18px; border-radius: 34px;
       background: rgba(255, 255, 255, 0.72); border: 1px solid var(--card-line);
       box-shadow: 0 30px 70px rgba(16, 32, 64, 0.18);
@@ -215,31 +216,32 @@
     .ldemo-status span { display: block; margin-top: 4px; font-size: 0.95rem; font-weight: 800; color: var(--accent-text); }
     .ldemo-track { position: relative; margin-top: 8px; }
     .ldemo-line { position: relative; list-style: none; }
-    .ldemo-line::before { /* rail ahead of the vehicle */
-      content: ""; position: absolute; left: 21px; top: calc(var(--step) / 2); bottom: calc(var(--step) / 2); width: 4px; border-radius: 4px; background: var(--accent);
+    .ldemo-line::before { /* rail ahead of the vehicle — centered on --rail-x */
+      content: ""; position: absolute; left: var(--rail-x); top: calc(var(--step) / 2); bottom: calc(var(--step) / 2); width: 4px; margin-left: -2px; border-radius: 4px; background: var(--accent);
     }
     .ldemo-track .past { /* grey rail behind the vehicle, grows with progress */
-      position: absolute; left: 21px; top: calc(var(--step) / 2); width: 4px; border-radius: 4px; height: 0; background: #c3ccda; z-index: 1;
+      position: absolute; left: var(--rail-x); top: calc(var(--step) / 2); width: 4px; margin-left: -2px; border-radius: 4px; height: 0; background: #c3ccda; z-index: 1;
     }
     .ldemo-line li {
       position: relative; height: var(--step); display: flex; align-items: center; gap: 14px; padding: 0 12px 0 52px;
       font-weight: 700; border-radius: 16px; transition: color 0.3s, background 0.4s;
     }
     .ldemo-line li::before {
-      content: ""; position: absolute; left: 15px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%;
+      content: ""; position: absolute; left: var(--rail-x); top: 50%; width: 16px; height: 16px;
+      transform: translate(-50%, -50%); border-radius: 50%;
       background: #fff; border: 3px solid var(--accent); z-index: 2; transition: border-color 0.3s;
     }
     .ldemo-line li .t { margin-left: auto; font-size: 0.9rem; color: var(--muted); font-variant-numeric: tabular-nums; }
     .ldemo-line li.passed { color: var(--faint); }
     .ldemo-line li.passed::before { border-color: rgba(12, 18, 32, 0.3); }
     .ldemo-line li.mine { background: rgba(26, 108, 255, 0.1); height: calc(var(--step) + 10px); }
-    .ldemo-line li.mine::before { width: 22px; height: 22px; margin-top: -11px; left: 12px; background: var(--accent); border-color: var(--accent); }
+    .ldemo-line li.mine::before { width: 22px; height: 22px; background: var(--accent); border-color: var(--accent); }
     .ldemo-line li.mine .who { display: block; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-text); font-weight: 800; }
     .ldemo-line li.mine .t { color: var(--accent-text); font-weight: 800; font-size: 1rem; }
     .ldemo-line li.mine.glow { animation: glow 1.1s ease-in-out infinite; }
     @keyframes glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(26, 108, 255, 0); background: rgba(26, 108, 255, 0.1); } 50% { box-shadow: 0 0 28px 2px rgba(26, 108, 255, 0.35); background: rgba(26, 108, 255, 0.2); } }
     .bus {
-      position: absolute; left: 7px; top: 0; width: 32px; height: 32px; border-radius: 50%; z-index: 3;
+      position: absolute; left: var(--rail-x); top: 0; width: 32px; height: 32px; margin-left: -16px; border-radius: 50%; z-index: 3;
       background: linear-gradient(180deg, #2b78ff, var(--accent-deep)); border: 3px solid #fff;
       box-shadow: 0 8px 20px rgba(26, 108, 255, 0.45); display: grid; place-items: center; will-change: transform;
     }
@@ -412,6 +414,7 @@
       <div>
         <h1 class="big rise">Il prossimo<br />passa <span class="grad" style="white-space: nowrap">tra poco.</span></h1>
         <p class="lead rise" style="--d: 0.08s">Gli arrivi di bus e tram a Torino, in tempo reale. Segui il mezzo fermata dopo fermata e scopri le fermate intorno a te. Gratis, senza pubblicità, senza account.</p>
+        <p class="rise" style="--d: 0.12s; margin: -6px 0 18px; font-weight: 700; color: var(--faint); font-size: 0.95rem">Interfaccia aggiornata nella 1.2.</p>
         <div class="rise" style="--d: 0.16s">
           <div class="cta-row">
             <a class="cta" href="https://testflight.apple.com/join/tJv2m7fG" target="_blank" rel="noopener noreferrer" data-testflight-url="https://testflight.apple.com/join/tJv2m7fG">Prova su iPhone</a>
@@ -425,7 +428,7 @@
           </ul>
         </div>
       </div>
-      <div class="hero-stage rise" style="--d: 0.1s" role="img" aria-label="arrivaTO su iPhone: la Home con le fermate preferite e un avviso. Sopra, una notifica: tra 5 minuti a Porta Nuova, linea 9.">
+      <div class="hero-stage rise" style="--d: 0.1s" role="img" aria-label="arrivaTO su iPhone: la Home con le fermate preferite Giuria e Porta Nuova. Sopra, una notifica: tra 5 minuti a Porta Nuova, linea 9.">
         <div class="phone" aria-hidden="true">
           <div class="screen"><img src="shot11-home.jpg" width="780" height="1696" alt="" fetchpriority="high" /></div>
         </div>
@@ -473,7 +476,6 @@
         <div class="follow-sticky">
           <div class="wrap split">
             <div>
-              <span class="new">Con l’aggiornamento 1.1</span>
               <h2 class="h2" id="follow-title">Guarda il bus<br />che arriva.</h2>
               <p class="lead">Tocca un passaggio e vedi la linea: le fermate già fatte, dove si trova il mezzo adesso e quante fermate mancano alla tua. Quando sta per arrivare, la tua fermata si illumina.</p>
             </div>
@@ -510,7 +512,6 @@
     <section aria-labelledby="near-title">
       <div class="wrap">
         <div class="center rise">
-          <span class="new">Con l’aggiornamento 1.1</span>
           <h2 class="h2" id="near-title">Vicino a te.<br />Dal lato giusto.</h2>
           <p class="lead">«Vicino a me» trova le fermate entro un chilometro e ti dice dove va ogni linea. Due paline con lo stesso nome? Capisci subito su quale marciapiede aspettare.</p>
         </div>
@@ -542,7 +543,6 @@
     <section aria-labelledby="notice-title">
       <div class="wrap split flip">
         <div class="rise">
-          <span class="new">Con l’aggiornamento 1.1</span>
           <h2 class="h2" id="notice-title">Deviato?<br />Lo sai prima.</h2>
           <p class="lead">Manifestazioni, lavori, deviazioni: gli avvisi ufficiali di GTT compaiono sulle linee che segui, in Home e alla fermata. Quando la linea torna normale, l’avviso sparisce da solo.</p>
         </div>
@@ -563,23 +563,23 @@
       </div>
       <div class="rail" tabindex="0" aria-label="Schermate dell’app, scorrevoli">
         <figure class="rise">
-          <div class="phone"><div class="screen"><img src="shot11-home.jpg" width="780" height="1696" loading="lazy" alt="Home: le fermate preferite Giuria e Porta Nuova con i minuti al prossimo passaggio e un avviso GTT" /></div></div>
+          <div class="phone"><div class="screen"><img src="shot11-home.jpg" width="780" height="1696" loading="lazy" alt="Home 1.2: le fermate preferite Giuria e Porta Nuova con i minuti al prossimo passaggio" /></div></div>
           <figcaption>Home<small>Le tue fermate, a colpo d’occhio</small></figcaption>
         </figure>
         <figure class="rise" style="--d: 0.06s">
-          <div class="phone"><div class="screen"><img src="shot11-stop.jpg" width="780" height="1696" loading="lazy" alt="Fermata Porta Nuova: il 9 per Barriera Lanzo tra 2 minuti, live, con il pulsante Segui il 9 dal vivo" /></div></div>
+          <div class="phone"><div class="screen"><img src="shot11-stop.jpg" width="780" height="1696" loading="lazy" alt="Fermata Giuria: il 16 CD Circolare Destra tra 2 minuti, live, con Segui dal vivo e avviso 5′ prima" /></div></div>
           <figcaption>Fermata<small>Live, ritardi e avviso 5′ prima</small></figcaption>
         </figure>
         <figure class="rise" style="--d: 0.12s">
-          <div class="phone"><div class="screen"><img src="shot11-timeline.jpg" width="780" height="1696" loading="lazy" alt="Linea dal vivo: il 68 per Cenisia tra Carlo Alberto e Porta Nuova, alla tua fermata tra 2 minuti" /></div></div>
-          <figcaption>Linea dal vivo<small>Novità 1.1</small></figcaption>
+          <div class="phone"><div class="screen"><img src="shot11-timeline.jpg" width="780" height="1696" loading="lazy" alt="Linea dal vivo: il 16 CD tra Valentino e Giuria, alla tua fermata tra 1 minuto" /></div></div>
+          <figcaption>Linea dal vivo<small>Fermata dopo fermata</small></figcaption>
         </figure>
         <figure class="rise" style="--d: 0.18s">
           <div class="phone"><div class="screen"><img src="shot11-nearby.jpg" width="780" height="1696" loading="lazy" alt="Vicino a me: fermate entro un chilometro con distanza, minuti a piedi e direzione di ogni linea" /></div></div>
-          <figcaption>Vicino a me<small>Novità 1.1</small></figcaption>
+          <figcaption>Vicino a me<small>Fermate intorno a te</small></figcaption>
         </figure>
         <figure class="rise" style="--d: 0.24s">
-          <div class="phone"><div class="screen"><img src="shot11-search.jpg" width="780" height="1696" loading="lazy" alt="Ricerca Porta Nuova: tutte le paline con la direzione di ogni linea" /></div></div>
+          <div class="phone"><div class="screen"><img src="shot11-search.jpg" width="780" height="1696" loading="lazy" alt="Cerca fermata: elenco completo con codice palina e direzione di ogni linea" /></div></div>
           <figcaption>Ricerca<small>Tutte le fermate, anche offline</small></figcaption>
         </figure>
       </div>
@@ -609,13 +609,13 @@
             <p>Sai sempre se il dato è in tempo reale o da tabella, con ritardi e anticipi in minuti.</p>
           </div>
           <div class="tile rise" style="--d: 0.06s">
-            <div class="ic-row"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="13" height="13" rx="3"/><path d="M3.5 9.5h13M7.5 3v3.5M12.5 3v3.5"/><circle cx="17" cy="17" r="4.2" fill="#fff"/><path d="M17 15v2.2l1.4 1"/></svg></div><span class="new">1.1</span></div>
+            <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="13" height="13" rx="3"/><path d="M3.5 9.5h13M7.5 3v3.5M12.5 3v3.5"/><circle cx="17" cy="17" r="4.2" fill="#fff"/><path d="M17 15v2.2l1.4 1"/></svg></div>
             <h3>Quando passa, davvero</h3>
             <p>Linee che passano solo in certi giorni? Te lo dice.</p>
             <div class="demo">Prossimo 17/: lunedì alle 19:46<small>invece di un vago «nessuna corsa»</small></div>
           </div>
           <div class="tile rise" style="--d: 0.12s">
-            <div class="ic-row"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="4.5" r="1.7"/><path d="M11 7.5v6h5l2.5 5"/><path d="M11 10.5h4.5"/><path d="M8.5 11.2a5 5 0 1 0 6.9 6.3"/></svg></div><span class="new">1.1</span></div>
+            <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="4.5" r="1.7"/><path d="M11 7.5v6h5l2.5 5"/><path d="M11 10.5h4.5"/><path d="M8.5 11.2a5 5 0 1 0 6.9 6.3"/></svg></div>
             <h3>Il mezzo è accessibile?</h3>
             <p>Per ogni corsa, se il mezzo accoglie la carrozzina.</p>
             <p class="warnline"><svg class="mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17.2v.1"/></svg>Mezzo non accessibile in carrozzina</p>
@@ -675,11 +675,11 @@
           </details>
           <details>
             <summary>«Vicino a me» usa la mia posizione?</summary>
-            <p>Solo mentre l’app è aperta e solo sul telefono: le fermate vicine sono calcolate lì, con l’elenco GTT incluso nell’app. La posizione non viene salvata né inviata. Arriva con l’aggiornamento 1.1.</p>
+            <p>Solo mentre l’app è aperta e solo sul telefono: le fermate vicine sono calcolate lì, con l’elenco GTT incluso nell’app. La posizione non viene salvata né inviata.</p>
           </details>
           <details>
             <summary>Da dove arrivano gli avvisi su deviazioni e manifestazioni?</summary>
-            <p>Dal canale pubblico di avvisi di GTT. arrivaTO li mostra così come sono pubblicati, sulle linee che segui, e indica sempre la fonte. Arrivano con l’aggiornamento 1.1.</p>
+            <p>Dal canale pubblico di avvisi di GTT. arrivaTO li mostra così come sono pubblicati, sulle linee che segui, e indica sempre la fonte.</p>
           </details>
           <details>
             <summary>C’è anche per Android?</summary>
