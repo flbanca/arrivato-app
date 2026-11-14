@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="arrivaTO: fermate preferite e arrivi in tempo reale per bus e tram di Torino. App non ufficiale, gratuita, senza pubblicità." />
+  <meta name="description" content="arrivaTO: quando passa il bus o il tram a Torino, in tempo reale. Segui il mezzo fermata dopo fermata, trova le fermate vicine e ricevi gli avvisi GTT. Gratis, senza pubblicità." />
   <title>arrivaTO – arrivi di bus e tram a Torino</title>
   <link rel="canonical" href="https://flbanca.github.io/arrivato-app/" />
   <meta name="theme-color" content="#e9eef8" />
@@ -12,7 +12,7 @@
   <meta property="og:site_name" content="arrivaTO" />
   <meta property="og:url" content="https://flbanca.github.io/arrivato-app/" />
   <meta property="og:title" content="arrivaTO – sai quando passa il bus o il tram" />
-  <meta property="og:description" content="Fermate preferite, arrivi in tempo reale e avviso 5 minuti prima per bus e tram di Torino. Per iPhone e Android, gratis, senza pubblicità." />
+  <meta property="og:description" content="Arrivi in tempo reale, il mezzo che si avvicina fermata dopo fermata, le fermate vicine e gli avvisi GTT. Bus e tram di Torino, gratis e senza pubblicità." />
   <meta property="og:image" content="https://flbanca.github.io/arrivato-app/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -21,746 +21,637 @@
   <link rel="icon" href="icon.png" type="image/png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <style>
-    @font-face {
-      font-family: "Manrope";
-      src: url("fonts/manrope-400.woff2") format("woff2");
-      font-weight: 400;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Manrope";
-      src: url("fonts/manrope-500.woff2") format("woff2");
-      font-weight: 500;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Manrope";
-      src: url("fonts/manrope-600.woff2") format("woff2");
-      font-weight: 600;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Manrope";
-      src: url("fonts/manrope-700.woff2") format("woff2");
-      font-weight: 700;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Manrope";
-      src: url("fonts/manrope-800.woff2") format("woff2");
-      font-weight: 800;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Sora";
-      src: url("fonts/sora-600.woff2") format("woff2");
-      font-weight: 600;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Sora";
-      src: url("fonts/sora-700.woff2") format("woff2");
-      font-weight: 700;
-      font-display: swap;
-    }
+    @font-face { font-family: "Manrope"; src: url("fonts/manrope-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("fonts/manrope-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("fonts/manrope-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("fonts/manrope-800.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+    @font-face { font-family: "Sora"; src: url("fonts/sora-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+    @font-face { font-family: "Sora"; src: url("fonts/sora-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
 
     :root {
       --ink: #0c1220;
-      --muted: rgba(12, 18, 32, 0.68);
+      --muted: rgba(12, 18, 32, 0.7);
       --faint: rgba(12, 18, 32, 0.62);
       --accent: #1a6cff;
       --accent-deep: #0f4fd0;
-      --font: "Manrope", "Segoe UI", sans-serif;
-      --display: "Sora", "Manrope", "Segoe UI", sans-serif;
-      --max: 1040px;
-      --phone-w: 250px;
-      --phone-r: 34px;
-      --bezel: 9px;
+      --accent-text: #003aa0;
+      --good: #00553a;
+      --warn: #6e3700;
+      --card: rgba(255, 255, 255, 0.66);
+      --card-line: rgba(255, 255, 255, 0.95);
+      --font: "Manrope", "Segoe UI", system-ui, sans-serif;
+      --display: "Sora", "Manrope", "Segoe UI", system-ui, sans-serif;
+      --max: 1120px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
+    html { scroll-behavior: smooth; }
+    [id] { scroll-margin-top: 84px; }
     body {
       font-family: var(--font);
       color: var(--ink);
       -webkit-font-smoothing: antialiased;
       background:
-        radial-gradient(900px 480px at 8% -5%, #f7f9ff 0%, transparent 55%),
-        radial-gradient(760px 420px at 100% 0%, #c9daf4 0%, transparent 52%),
-        linear-gradient(180deg, #e9eef8 0%, #c8d6ea 100%);
+        radial-gradient(1100px 600px at 10% -10%, #f8faff 0%, transparent 55%),
+        radial-gradient(900px 520px at 100% 0%, #cddcf5 0%, transparent 55%),
+        linear-gradient(180deg, #edf2fb 0%, #d4e0f1 45%, #e6edf8 100%);
       min-height: 100vh;
+      overflow-x: hidden;
     }
-
     img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; }
+    .wrap { width: min(100% - 32px, var(--max)); margin: 0 auto; }
+    .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-    .wrap {
-      width: min(100% - 32px, var(--max));
-      margin: 0 auto;
+    /* ---------- Nav ---------- */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(1.6) blur(16px);
+      -webkit-backdrop-filter: saturate(1.6) blur(16px);
+      background: rgba(237, 242, 251, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
     }
-
-    /* Real iPhone shots in matching frames (1206×2622) */
-    .phone {
-      width: var(--phone-w);
-      padding: var(--bezel);
-      border-radius: calc(var(--phone-r) + 6px);
-      background: #111827;
-      box-shadow: 0 22px 48px rgba(16, 32, 64, 0.22);
+    .nav .wrap { display: flex; align-items: center; gap: 16px; height: 64px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo img { width: 34px; height: 34px; border-radius: 9px; }
+    .logo span { font-family: var(--display); font-weight: 700; font-size: 1.25rem; letter-spacing: -0.04em; }
+    .nav nav { margin-left: auto; display: flex; gap: 22px; align-items: center; }
+    .nav nav a { text-decoration: none; font-weight: 700; font-size: 0.95rem; color: var(--muted); }
+    .nav nav a:hover { color: var(--ink); }
+    .nav .cta-sm {
+      padding: 9px 16px; border-radius: 999px; color: #fff;
+      background: linear-gradient(180deg, #2b78ff, var(--accent-deep));
+      box-shadow: 0 6px 16px rgba(26, 108, 255, 0.3);
     }
+    .nav .cta-sm:hover { color: #fff; }
+    @media (max-width: 720px) { .nav nav a:not(.cta-sm) { display: none; } }
 
-    .phone .screen {
-      aspect-ratio: 1206 / 2622;
-      border-radius: var(--phone-r);
-      overflow: hidden;
-      background: #d7e3f3;
-    }
-
-    .phone .screen img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-    }
-
-    .hero {
-      padding: 36px 0 44px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .brand img {
-      width: 52px;
-      height: 52px;
-      border-radius: 13px;
-    }
-
-    .brand span {
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: clamp(2.1rem, 4.5vw, 3rem);
-      letter-spacing: -0.04em;
-      line-height: 1;
-    }
-
-    .hero h1 {
-      font-family: var(--display);
-      font-weight: 600;
-      font-size: clamp(1.35rem, 2.4vw, 1.75rem);
-      letter-spacing: -0.03em;
-      line-height: 1.25;
-      margin-bottom: 12px;
-      max-width: 16ch;
-    }
-
-    .hero .lead {
-      font-size: 1.02rem;
-      line-height: 1.55;
-      color: var(--muted);
-      font-weight: 500;
-      max-width: 34ch;
-      margin-bottom: 22px;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .cta.cta-alt {
-      background: rgba(255, 255, 255, 0.8);
-      color: var(--accent-deep);
-      border: 1px solid rgba(15, 79, 208, 0.2);
-      box-shadow: 0 6px 18px rgba(16, 32, 64, 0.1);
-    }
-
+    /* ---------- Buttons & chips ---------- */
+    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; }
     .cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 22px;
-      border-radius: 14px;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 52px; padding: 0 24px; border-radius: 16px;
       background: linear-gradient(180deg, #2b78ff, var(--accent-deep));
-      color: #fff;
-      font-family: var(--font);
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
-      box-shadow: 0 10px 24px rgba(26, 108, 255, 0.28);
+      color: #fff; font-weight: 800; font-size: 1.02rem; text-decoration: none;
+      box-shadow: 0 12px 28px rgba(26, 108, 255, 0.3);
+      transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
     }
-
-    .cta-note {
-      display: block;
-      margin-top: 10px;
-      font-size: 0.85rem;
-      color: var(--faint);
-      font-weight: 500;
+    .cta:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(26, 108, 255, 0.36); }
+    .cta.alt {
+      background: rgba(255, 255, 255, 0.85); color: var(--accent-deep);
+      border: 1px solid rgba(15, 79, 208, 0.18); box-shadow: 0 8px 20px rgba(16, 32, 64, 0.1);
     }
-
-    /* Hero: two overlapping phones, cropped with a soft fade at the bottom */
-    .stage {
-      position: relative;
-      width: 520px;
-      height: 600px;
-      -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
-      mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
-    }
-    .stage::before {
-      content: "";
-      position: absolute;
-      inset: 40px 10px 0 30px;
-      border-radius: 50%;
-      background: radial-gradient(closest-side, rgba(43, 120, 255, 0.28), transparent);
-      filter: blur(10px);
-    }
-    .stage .phone { position: absolute; }
-    .stage .phone.front {
-      --phone-w: 300px;
-      left: 0;
-      top: 0;
-      z-index: 2;
-      box-shadow: 0 30px 70px rgba(16, 32, 64, 0.32);
-    }
-    .stage .phone.back {
-      --phone-w: 260px;
-      right: 28px;
-      top: 70px;
-      transform: rotate(7deg);
-      z-index: 1;
-      opacity: 0.96;
-    }
-
-    section { padding: 48px 0; }
-
-    .kicker {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--faint);
-      margin-bottom: 8px;
-    }
-
-    .pair {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-    }
-
-    .pair h2,
-    .shots-head h2,
-    .features-head {
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: 1.3rem;
-      letter-spacing: -0.03em;
-      margin-bottom: 10px;
-    }
-
-    .pair p,
-    .shots-head p {
-      font-size: 1rem;
-      line-height: 1.55;
-      color: var(--muted);
-      font-weight: 500;
-      max-width: 40ch;
-    }
-
-    .shots-head {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .shots-head p:last-of-type { margin: 0 auto; }
-    .shots-head .kicker { max-width: none; }
-
-    .shots {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: clamp(14px, 3vw, 28px);
-      flex-wrap: wrap;
-    }
-
-    .shots figure {
-      margin: 0;
-      width: var(--phone-w);
-    }
-
-    .shots figcaption {
-      margin-top: 12px;
-      text-align: center;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--muted);
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 24px;
-    }
-
-    .features h3 {
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: 1.08rem;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-
-    .features p {
-      font-size: 0.96rem;
-      line-height: 1.5;
-      color: var(--muted);
-      font-weight: 500;
-      max-width: 28ch;
-    }
-
-    .mark {
-      width: 28px;
-      height: 3px;
-      border-radius: 99px;
-      background: var(--accent);
-      margin-bottom: 12px;
-    }
-
-    footer {
-      padding: 32px 0 44px;
-      text-align: center;
-      border-top: 1px solid rgba(12, 18, 32, 0.08);
-    }
-
-    footer .name {
-      font-family: var(--display);
-      font-weight: 700;
-      margin-bottom: 6px;
-      letter-spacing: -0.02em;
-    }
-
-    footer p {
-      font-size: 0.9rem;
-      color: var(--faint);
-      font-weight: 500;
-    }
-
-    .js .fade {
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .js .fade.in { opacity: 1; transform: none; }
-
-    /* Trust chips under the CTA */
-    .trust {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-      padding: 0;
-      list-style: none;
-    }
+    .cta-note { display: block; margin-top: 12px; font-size: 0.86rem; color: var(--faint); font-weight: 600; }
+    .trust { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; list-style: none; }
     .trust li {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--ink);
+      display: inline-flex; align-items: center; gap: 7px; padding: 7px 13px; border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72); border: 1px solid var(--card-line);
+      font-size: 0.86rem; font-weight: 800;
     }
-    .trust li::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #1f9d55;
+    .trust li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #1f9d55; }
+    .new {
+      display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 999px;
+      background: rgba(26, 108, 255, 0.12); color: var(--accent-text);
+      font-size: 0.78rem; font-weight: 800; letter-spacing: 0.01em; margin-bottom: 14px;
     }
-    .section-head { max-width: 46ch; margin-bottom: 26px; }
-    .section-head h2 {
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: clamp(1.3rem, 2.6vw, 1.7rem);
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      margin-bottom: 10px;
+    .new::before { content: "✦"; font-size: 0.75rem; }
+    .kicker { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 10px; }
+
+    h1, h2, h3 { font-family: var(--display); letter-spacing: -0.035em; }
+    .big { font-weight: 700; font-size: clamp(2.6rem, 7.2vw, 5.6rem); line-height: 0.98; letter-spacing: -0.055em; }
+    .h2 { font-weight: 700; font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.04; letter-spacing: -0.045em; margin-bottom: 16px; }
+    .lead { font-size: clamp(1.05rem, 1.6vw, 1.2rem); line-height: 1.55; color: var(--muted); font-weight: 600; max-width: 38ch; }
+    .grad { background: linear-gradient(100deg, #1a6cff 0%, #5b8dff 50%, #1a6cff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+    /* ---------- Phone frame (real 1206×2622 shots) ---------- */
+    .phone {
+      width: var(--w, 280px); padding: 9px; border-radius: 46px; background: #10172a;
+      box-shadow: 0 30px 70px rgba(16, 32, 64, 0.28), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
     }
-    .section-head p { font-size: 1rem; line-height: 1.55; color: var(--muted); font-weight: 500; }
-    /* How it works */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      padding: 0;
-      list-style: none;
-      counter-reset: step;
+    .phone .screen { aspect-ratio: 1206 / 2622; border-radius: 38px; overflow: hidden; background: #dbe6f6; position: relative; }
+    .phone .screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: clamp(40px, 7vw, 88px) 0 40px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+    .hero .big { margin-bottom: 22px; }
+    .hero .lead { margin-bottom: 28px; }
+    .hero-stage { position: relative; display: grid; place-items: center; min-height: 600px; }
+    .hero-stage::before {
+      content: ""; position: absolute; width: 420px; height: 420px; border-radius: 50%;
+      background: radial-gradient(closest-side, rgba(43, 120, 255, 0.35), transparent); filter: blur(20px);
     }
-    .card {
-      background: rgba(255, 255, 255, 0.62);
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      border-radius: 22px;
-      padding: 22px;
-      box-shadow: 0 14px 34px rgba(16, 32, 64, 0.08);
+    .hero-stage .phone { --w: 290px; position: relative; animation: bob 7s ease-in-out infinite; }
+    @keyframes bob { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(12px) rotate(-2deg); } }
+
+    /* Notification that drops onto the phone, on loop */
+    .notif {
+      position: absolute; left: 50%; top: 42px; width: 300px; transform: translate(-50%, -24px); opacity: 0;
+      display: flex; gap: 11px; align-items: flex-start; padding: 12px 14px; border-radius: 20px;
+      background: rgba(250, 252, 255, 0.92); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 18px 40px rgba(16, 32, 64, 0.22); z-index: 3;
+      animation: notif 9s var(--ease) 1.2s infinite;
     }
-    .steps li { counter-increment: step; }
-    .steps li::before {
-      content: counter(step);
-      display: grid;
-      place-items: center;
-      width: 34px;
-      height: 34px;
-      margin-bottom: 14px;
-      border-radius: 11px;
-      background: linear-gradient(180deg, #2b78ff, var(--accent-deep));
-      color: #fff;
-      font-family: var(--display);
-      font-weight: 700;
+    .notif img { width: 34px; height: 34px; border-radius: 9px; flex: none; }
+    .notif b { display: block; font-size: 0.86rem; margin-bottom: 2px; }
+    .notif span { display: block; font-size: 0.8rem; line-height: 1.35; color: var(--muted); font-weight: 600; }
+    .notif small { position: absolute; right: 14px; top: 12px; font-size: 0.72rem; color: var(--faint); font-weight: 700; }
+    @keyframes notif {
+      0%, 4% { opacity: 0; transform: translate(-50%, -24px) scale(0.96); }
+      10%, 58% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+      66%, 100% { opacity: 0; transform: translate(-50%, -18px) scale(0.97); }
     }
-    .steps h3, .features h3 {
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: 1.08rem;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
+    /* Floating "2′ live" chip */
+    .eta-chip {
+      position: absolute; right: max(0px, calc(50% - 250px)); bottom: 120px; z-index: 3;
+      padding: 14px 18px; border-radius: 22px; background: #fff; box-shadow: 0 18px 40px rgba(16, 32, 64, 0.18);
+      text-align: center; animation: bob2 6s ease-in-out -1s infinite;
     }
-    .steps p { font-size: 0.96rem; line-height: 1.5; color: var(--muted); font-weight: 500; }
-    /* Promise panel */
+    .eta-chip .n { font-family: var(--display); font-weight: 700; font-size: 2.4rem; letter-spacing: -0.06em; line-height: 1; }
+    .eta-chip .l { display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 0.78rem; font-weight: 800; color: var(--good); }
+    .eta-chip .l::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #1f9d55; animation: pulse 1.6s ease-in-out infinite; }
+    @keyframes bob2 { 0%, 100% { transform: translateY(0) rotate(3deg); } 50% { transform: translateY(-14px) rotate(3deg); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.5); } }
+
+    /* ---------- Marquee of lines ---------- */
+    .marquee { padding: 26px 0 10px; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+    .marquee ul { display: flex; gap: 12px; width: max-content; list-style: none; animation: marquee 48s linear infinite; }
+    .marquee:hover ul { animation-play-state: paused; }
+    .marquee li {
+      display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px 9px 9px; border-radius: 999px;
+      background: var(--card); border: 1px solid var(--card-line); font-weight: 800; white-space: nowrap;
+    }
+    .badge {
+      display: inline-grid; place-items: center; min-width: 38px; height: 38px; padding: 0 8px; border-radius: 12px;
+      background: linear-gradient(180deg, #2b78ff, var(--accent-deep)); color: #fff;
+      font-family: var(--display); font-weight: 700; font-size: 0.92rem; letter-spacing: -0.02em;
+    }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    /* ---------- Sections ---------- */
+    section { padding: clamp(64px, 10vw, 120px) 0; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+    .split.flip > :first-child { order: 2; }
+    .center { text-align: center; }
+    .center .lead { margin: 0 auto; }
+
+    /* ---------- Scroll story: the vehicle moves as you scroll ---------- */
+    .follow { padding: 0; }
+    .follow-track { height: 260vh; position: relative; }
+    .follow-sticky { position: sticky; top: 0; min-height: 100vh; display: grid; align-items: center; padding: 88px 0 40px; }
+    .ldemo {
+      --step: 62px;
+      width: min(380px, 100%); margin: 0 auto; padding: 18px; border-radius: 34px;
+      background: rgba(255, 255, 255, 0.72); border: 1px solid var(--card-line);
+      box-shadow: 0 30px 70px rgba(16, 32, 64, 0.18);
+    }
+    .ldemo-head { display: flex; align-items: center; gap: 12px; padding: 4px 6px 14px; border-bottom: 1px solid rgba(12, 18, 32, 0.07); }
+    .ldemo-head .badge { min-width: 46px; height: 46px; border-radius: 14px; font-size: 1.05rem; }
+    .ldemo-head b { font-family: var(--display); font-size: 1.15rem; letter-spacing: -0.03em; display: block; }
+    .ldemo-head small { font-size: 0.8rem; font-weight: 700; color: var(--faint); display: inline-flex; align-items: center; gap: 6px; }
+    .ldemo-head small::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #1f9d55; }
+    .ldemo-status { padding: 14px 6px 6px; min-height: 76px; }
+    .ldemo-status b { display: block; font-size: 1.02rem; font-weight: 800; line-height: 1.3; }
+    .ldemo-status span { display: block; margin-top: 4px; font-size: 0.95rem; font-weight: 800; color: var(--accent-text); }
+    .ldemo-track { position: relative; margin-top: 8px; }
+    .ldemo-line { position: relative; list-style: none; }
+    .ldemo-line::before { /* rail ahead of the vehicle */
+      content: ""; position: absolute; left: 21px; top: calc(var(--step) / 2); bottom: calc(var(--step) / 2); width: 4px; border-radius: 4px; background: var(--accent);
+    }
+    .ldemo-track .past { /* grey rail behind the vehicle, grows with progress */
+      position: absolute; left: 21px; top: calc(var(--step) / 2); width: 4px; border-radius: 4px; height: 0; background: #c3ccda; z-index: 1;
+    }
+    .ldemo-line li {
+      position: relative; height: var(--step); display: flex; align-items: center; gap: 14px; padding: 0 12px 0 52px;
+      font-weight: 700; border-radius: 16px; transition: color 0.3s, background 0.4s;
+    }
+    .ldemo-line li::before {
+      content: ""; position: absolute; left: 15px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%;
+      background: #fff; border: 3px solid var(--accent); z-index: 2; transition: border-color 0.3s;
+    }
+    .ldemo-line li .t { margin-left: auto; font-size: 0.9rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .ldemo-line li.passed { color: var(--faint); }
+    .ldemo-line li.passed::before { border-color: rgba(12, 18, 32, 0.3); }
+    .ldemo-line li.mine { background: rgba(26, 108, 255, 0.1); height: calc(var(--step) + 10px); }
+    .ldemo-line li.mine::before { width: 22px; height: 22px; margin-top: -11px; left: 12px; background: var(--accent); border-color: var(--accent); }
+    .ldemo-line li.mine .who { display: block; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-text); font-weight: 800; }
+    .ldemo-line li.mine .t { color: var(--accent-text); font-weight: 800; font-size: 1rem; }
+    .ldemo-line li.mine.glow { animation: glow 1.1s ease-in-out infinite; }
+    @keyframes glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(26, 108, 255, 0); background: rgba(26, 108, 255, 0.1); } 50% { box-shadow: 0 0 28px 2px rgba(26, 108, 255, 0.35); background: rgba(26, 108, 255, 0.2); } }
+    .bus {
+      position: absolute; left: 7px; top: 0; width: 32px; height: 32px; border-radius: 50%; z-index: 3;
+      background: linear-gradient(180deg, #2b78ff, var(--accent-deep)); border: 3px solid #fff;
+      box-shadow: 0 8px 20px rgba(26, 108, 255, 0.45); display: grid; place-items: center; will-change: transform;
+    }
+    .bus svg { width: 15px; height: 15px; fill: #fff; }
+
+    /* ---------- Right side of the street ---------- */
+    .street { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding: 24px 0; }
+    .street::before { /* the road */
+      content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 44px; margin-left: -22px; border-radius: 14px;
+      background: repeating-linear-gradient(180deg, transparent 0 18px, rgba(255, 255, 255, 0.9) 18px 34px) center / 4px 100% no-repeat, rgba(12, 18, 32, 0.12);
+    }
+    .palina { padding: 18px; border-radius: 24px; background: var(--card); border: 1px solid var(--card-line); box-shadow: 0 18px 40px rgba(16, 32, 64, 0.1); }
+    .palina .top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .palina .top b { font-family: var(--display); font-size: 1.05rem; display: block; letter-spacing: -0.02em; }
+    .palina .top small { font-weight: 700; color: var(--faint); }
+    .palina ul { list-style: none; display: grid; gap: 7px; }
+    .palina li { font-weight: 700; font-size: 0.95rem; }
+    .palina li b { color: var(--ink); }
+    .palina li.hl { color: var(--accent-text); }
+    .palina .where { margin-top: 12px; font-size: 0.82rem; font-weight: 800; color: var(--accent-text); }
+    .js .slide-l { opacity: 0; transform: translateX(-36px); }
+    .js .slide-r { opacity: 0; transform: translateX(36px); }
+    .js .slide-l, .js .slide-r { transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+    .js .in.slide-l, .js .in.slide-r { opacity: 1; transform: none; }
+
+    /* ---------- Notices ---------- */
+    .notices { display: grid; gap: 12px; max-width: 440px; margin: 0 auto; }
+    .notice {
+      display: flex; gap: 12px; align-items: flex-start; padding: 16px 18px; border-radius: 20px;
+      background: rgba(255, 244, 220, 0.92); border: 1px solid rgba(110, 55, 0, 0.18); box-shadow: 0 14px 30px rgba(110, 55, 0, 0.08);
+    }
+    .notice .i { flex: none; font-size: 1.1rem; color: var(--warn); }
+    .notice b { display: block; font-weight: 800; }
+    .notice small { display: block; margin-top: 3px; font-weight: 700; color: var(--faint); }
+    .notice.ok { background: rgba(225, 245, 233, 0.92); border-color: rgba(0, 85, 58, 0.18); }
+    .notice.ok .i { color: var(--good); }
+    .js .pop { opacity: 0; transform: translateY(18px) scale(0.98); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+    .js .pop.in { opacity: 1; transform: none; }
+
+    /* ---------- Screenshots rail ---------- */
+    .rail { display: flex; gap: 28px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 12px max(16px, calc((100vw - var(--max)) / 2)) 28px; scrollbar-width: none; }
+    .rail::-webkit-scrollbar { display: none; }
+    .rail figure { flex: none; scroll-snap-align: center; }
+    .rail .phone { --w: 250px; }
+    .rail figcaption { margin-top: 14px; text-align: center; font-weight: 800; }
+    .rail figcaption small { display: block; font-weight: 600; color: var(--faint); margin-top: 2px; }
+
+    /* ---------- Bento ---------- */
+    .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-top: 36px; }
+    .tile {
+      grid-column: span 2; padding: 24px; border-radius: 28px; background: var(--card); border: 1px solid var(--card-line);
+      box-shadow: 0 16px 36px rgba(16, 32, 64, 0.07); transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+    }
+    .tile:hover { transform: translateY(-4px); box-shadow: 0 24px 48px rgba(16, 32, 64, 0.12); }
+    .tile.w3 { grid-column: span 3; }
+    .tile .ic { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; font-size: 1.3rem; margin-bottom: 16px; background: rgba(26, 108, 255, 0.12); }
+    .tile h3 { font-size: 1.2rem; margin-bottom: 8px; letter-spacing: -0.03em; }
+    .tile p { color: var(--muted); font-weight: 600; line-height: 1.5; }
+    .tile .new { margin: 0 0 12px; }
+    .tile .demo { margin-top: 16px; padding: 12px 14px; border-radius: 16px; background: rgba(255, 255, 255, 0.85); font-weight: 800; font-size: 0.95rem; }
+    .tile .demo small { display: block; font-weight: 700; color: var(--faint); font-size: 0.8rem; margin-top: 2px; }
+    .tile .warnline { color: var(--warn); font-weight: 800; font-size: 0.9rem; margin-top: 6px; }
+
+    /* ---------- Promise ---------- */
     .promise {
-      border-radius: 28px;
-      padding: clamp(26px, 5vw, 44px);
-      background: linear-gradient(160deg, #13203a 0%, #0f2f6b 100%);
-      color: #fff;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 32px;
-      align-items: center;
-      box-shadow: 0 24px 60px rgba(16, 32, 64, 0.25);
+      border-radius: 36px; padding: clamp(28px, 6vw, 64px);
+      background: linear-gradient(150deg, #1a6cff 0%, #0f4fd0 55%, #0b3aa3 100%); color: #fff;
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center;
+      box-shadow: 0 30px 70px rgba(15, 79, 208, 0.35); position: relative; overflow: hidden;
     }
-    .promise .kicker { color: rgba(255, 255, 255, 0.7); }
-    .promise h2 {
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: clamp(1.35rem, 2.8vw, 1.8rem);
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
-    .promise p { color: rgba(255, 255, 255, 0.8); line-height: 1.55; font-weight: 500; }
-    .promise a { color: #fff; font-weight: 700; }
-    .promise ul { list-style: none; padding: 0; display: grid; gap: 12px; }
-    .promise li {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      font-weight: 600;
-      line-height: 1.4;
-    }
-    .promise li::before {
-      content: "✓";
-      flex: none;
-      display: grid;
-      place-items: center;
-      width: 24px;
-      height: 24px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.14);
-      font-size: 0.8rem;
-    }
-    /* FAQ */
-    .faq { display: grid; gap: 10px; }
-    .faq details {
-      background: rgba(255, 255, 255, 0.62);
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      border-radius: 16px;
-      padding: 0 18px;
-    }
-    .faq summary {
-      cursor: pointer;
-      list-style: none;
-      padding: 16px 28px 16px 0;
-      font-weight: 700;
-      position: relative;
-    }
+    .promise::after { content: ""; position: absolute; right: -120px; top: -120px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(closest-side, rgba(255, 255, 255, 0.22), transparent); }
+    .promise .kicker { color: rgba(255, 255, 255, 0.75); }
+    .promise .h2 { color: #fff; }
+    .promise p { color: rgba(255, 255, 255, 0.86); font-weight: 600; line-height: 1.55; }
+    .promise a { color: #fff; font-weight: 800; }
+    .promise ul { list-style: none; display: grid; gap: 14px; position: relative; z-index: 1; }
+    .promise li { display: flex; gap: 12px; align-items: flex-start; font-weight: 700; line-height: 1.4; font-size: 1.05rem; }
+    .promise li::before { content: "✓"; flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 9px; background: rgba(255, 255, 255, 0.18); font-size: 0.85rem; }
+
+    /* ---------- FAQ ---------- */
+    .faq { display: grid; gap: 10px; margin-top: 32px; }
+    .faq details { background: var(--card); border: 1px solid var(--card-line); border-radius: 20px; padding: 0 22px; }
+    .faq summary { cursor: pointer; list-style: none; padding: 20px 32px 20px 0; font-weight: 800; font-size: 1.05rem; position: relative; }
     .faq summary::-webkit-details-marker { display: none; }
-    .faq summary::after {
-      content: "+";
-      position: absolute;
-      right: 0;
-      top: 13px;
-      font-size: 1.3rem;
-      color: var(--accent-deep);
-    }
-    .faq details[open] summary::after { content: "–"; }
-    .faq details p { padding-bottom: 16px; line-height: 1.55; color: var(--muted); font-weight: 500; }
-    .faq a, .features a { color: var(--accent-deep); font-weight: 700; }
-    /* Final call to action */
-    .final {
-      text-align: center;
-      padding: 56px 0 64px;
-    }
-    .final h2 {
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: clamp(1.5rem, 3.4vw, 2.2rem);
-      letter-spacing: -0.035em;
-      line-height: 1.15;
-      margin: 0 auto 12px;
-      max-width: 20ch;
-    }
-    .final p { color: var(--muted); font-weight: 500; margin-bottom: 22px; }
-    .final .cta-row { justify-content: center; }
+    .faq summary::after { content: "+"; position: absolute; right: 0; top: 15px; font-size: 1.5rem; color: var(--accent-deep); transition: transform 0.3s var(--ease); }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { padding-bottom: 20px; line-height: 1.6; color: var(--muted); font-weight: 600; max-width: 70ch; animation: faqIn 0.4s var(--ease); }
+    .faq a { color: var(--accent-deep); font-weight: 800; }
+    @keyframes faqIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+    /* ---------- Final ---------- */
+    .final { text-align: center; }
+    .final .big { max-width: 14ch; margin: 0 auto 18px; }
+    .final .lead { margin: 0 auto; }
+    .final .cta-row { justify-content: center; margin-top: 28px; }
+
+    footer { padding: 36px 0 48px; text-align: center; border-top: 1px solid rgba(12, 18, 32, 0.08); }
+    footer p { font-size: 0.9rem; color: var(--faint); font-weight: 600; }
+    footer p + p { margin-top: 6px; }
+    footer .name { font-family: var(--display); font-weight: 700; color: var(--ink); font-size: 1rem; }
+    footer .footlinks a { font-weight: 800; color: var(--accent-deep); text-decoration: none; }
+
+    /* ---------- Reveal ---------- */
+    .js .rise { opacity: 0; transform: translateY(26px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); transition-delay: var(--d, 0s); }
+    .js .rise.in { opacity: 1; transform: none; }
+
+    /* ---------- Responsive ---------- */
     @media (max-width: 900px) {
-      .steps { grid-template-columns: 1fr; }
-      .promise { grid-template-columns: 1fr; }
+      .hero, .split, .promise { grid-template-columns: 1fr; }
+      .split.flip > :first-child { order: 0; }
+      .hero-stage { min-height: 560px; }
+      .bento { grid-template-columns: 1fr 1fr; }
+      .tile, .tile.w3 { grid-column: span 2; }
+      .follow-track { height: 220vh; }
+      .follow-sticky { padding-top: 76px; }
+      .follow .split > div:first-child { text-align: left; }
     }
-    /* Motion: floating hero phones + soft FAQ reveal */
-    @keyframes floatFront {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(10px); }
-    }
-    @keyframes floatBack {
-      0%, 100% { transform: rotate(7deg) translateY(0); }
-      50% { transform: rotate(7deg) translateY(-14px); }
-    }
-    .stage .phone.front { animation: floatFront 6s ease-in-out infinite; }
-    .stage .phone.back { animation: floatBack 7s ease-in-out -2s infinite; }
-    @keyframes faqIn {
-      from { opacity: 0; transform: translateY(-6px); }
-      to { opacity: 1; transform: none; }
-    }
-    .faq details[open] p { animation: faqIn 0.35s ease; }
-    .faq summary::after { transition: transform 0.25s ease; }
-    @media (prefers-reduced-motion: reduce) {
-      .stage .phone.front, .stage .phone.back, .faq details[open] p { animation: none; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .js .fade { opacity: 1; transform: none; transition: none; }
+    @media (max-width: 640px) {
+      .street { grid-template-columns: 1fr; gap: 20px; }
+      .street::before { left: 0; right: 0; top: 50%; bottom: auto; width: auto; height: 36px; margin: -18px 0 0; background: repeating-linear-gradient(90deg, transparent 0 18px, rgba(255, 255, 255, 0.9) 18px 34px) center / 100% 4px no-repeat, rgba(12, 18, 32, 0.12); }
+      .hero-stage .phone { --w: 250px; }
+      .notif { width: 270px; }
+      .eta-chip { right: 4px; bottom: 90px; }
+      .follow-sticky .split { gap: 18px; }
+      .follow-sticky .lead { display: none; }
+      .ldemo { --step: 52px; padding: 14px; }
     }
 
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        justify-items: center;
-      }
-      .hero .copy { width: 100%; }
-      .pair,
-      .features { grid-template-columns: 1fr; }
-      :root { --phone-w: 210px; }
-      .stage { width: min(400px, 100%); height: 480px; }
-      .stage .phone.front { --phone-w: 230px; }
-      .stage .phone.back { --phone-w: 200px; top: 56px; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero-stage .phone, .eta-chip, .eta-chip .l::before, .ldemo-line li.mine.glow { animation: none; }
+      .notif { animation: none; opacity: 1; transform: translate(-50%, 0); }
+      .marquee ul { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
+      .marquee { -webkit-mask-image: none; mask-image: none; }
+      .follow-track { height: auto; }
+      .follow-sticky { position: static; min-height: 0; padding: 64px 0; }
+      .js .rise, .js .slide-l, .js .slide-r, .js .pop { opacity: 1; transform: none; transition: none; }
+      .tile:hover, .cta:hover { transform: none; }
     }
-    @media (max-width: 420px) {
-      .stage { height: 420px; }
-      .stage .phone.front { --phone-w: 200px; }
-      .stage .phone.back { --phone-w: 170px; top: 48px; }
-    }
-    footer p + p { margin-top: 6px; }
-    footer a { color: var(--muted); }
-    footer .footlinks a { font-weight: 600; color: var(--accent-deep); }
   </style>
 </head>
 <body>
-  <header class="wrap hero">
-    <div class="copy">
-      <div class="brand fade">
-        <img src="icon.png" width="52" height="52" alt="" />
+  <header class="nav">
+    <div class="wrap">
+      <a class="logo" href="#top" aria-label="arrivaTO, torna su">
+        <img src="icon.png" width="34" height="34" alt="" />
         <span>arrivaTO</span>
-      </div>
-      <h1 class="fade">Sai quando passa il bus.</h1>
-      <p class="lead fade">
-        Gli arrivi delle tue fermate GTT, in tempo reale e in un colpo d’occhio. Bus e tram di Torino, senza pubblicità e senza account.
-      </p>
-      <div class="fade">
-        <div class="cta-row">
-          <a
-            class="cta"
-            href="https://testflight.apple.com/join/tJv2m7fG"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-testflight-url="https://testflight.apple.com/join/tJv2m7fG"
-          >Prova su iPhone</a>
-          <a class="cta cta-alt" href="android.html">Prova su Android</a>
-        </div>
-        <ul class="trust" aria-label="In breve">
-          <li>Gratis</li>
-          <li>Senza pubblicità</li>
-          <li>Senza account</li>
-          <li>Nessun tracciamento</li>
-        </ul>
-        <span class="cta-note">iPhone (iOS 17+): apri il link TestFlight dal telefono. Android (8+): scarica l’app o entra nel test su Google Play.</span>
-      </div>
-    </div>
-    <div class="stage fade" role="img" aria-label="arrivaTO su iPhone: la fermata Santa Giulia con il prossimo passaggio tra 1 minuto, e dietro la Home con la fermata preferita">
-      <div class="phone back" aria-hidden="true">
-        <div class="screen"><img src="shot-hero.png" width="780" height="1696" alt="" /></div>
-      </div>
-      <div class="phone front" aria-hidden="true">
-        <div class="screen"><img src="shot-stop.png" width="780" height="1696" alt="" /></div>
-      </div>
+      </a>
+      <nav aria-label="Sezioni">
+        <a href="#funzioni">Funzioni</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">Domande</a>
+        <a class="cta-sm" href="#scarica">Provala gratis</a>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <section>
-      <div class="wrap pair">
-        <article class="fade">
-          <p class="kicker">Il problema</p>
-          <h2>Alla fermata spesso non sai se il bus è vicino.</h2>
-          <p>
-            Il tabellone manca o è spento. Il QR apre una pagina lenta e poco chiara. Così aspetti senza sapere se conviene restare o andare a piedi.
-          </p>
-        </article>
-        <article class="fade">
-          <p class="kicker">La soluzione</p>
-          <h2>arrivaTO mette gli arrivi sul telefono.</h2>
-          <p>
-            Apri l’app e vedi subito tra quanti minuti passa il prossimo mezzo alle tue fermate, se è in orario o in ritardo. Se vuoi, ti avvisa 5 minuti prima.
-          </p>
-        </article>
+  <main id="top">
+    <!-- Hero -->
+    <div class="wrap hero">
+      <div>
+        <h1 class="big rise">Il prossimo<br />passa <span class="grad" style="white-space: nowrap">tra poco.</span></h1>
+        <p class="lead rise" style="--d: 0.08s">Gli arrivi di bus e tram a Torino, in tempo reale. Segui il mezzo fermata dopo fermata e scopri le fermate intorno a te. Gratis, senza pubblicità, senza account.</p>
+        <div class="rise" style="--d: 0.16s">
+          <div class="cta-row">
+            <a class="cta" href="https://testflight.apple.com/join/tJv2m7fG" target="_blank" rel="noopener noreferrer" data-testflight-url="https://testflight.apple.com/join/tJv2m7fG">Prova su iPhone</a>
+            <a class="cta alt" href="android.html">Prova su Android</a>
+          </div>
+          <ul class="trust" aria-label="In breve">
+            <li>Gratis</li>
+            <li>Senza pubblicità</li>
+            <li>Senza account</li>
+            <li>Nessun tracciamento</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero-stage rise" style="--d: 0.1s" role="img" aria-label="arrivaTO su iPhone: la Home con le fermate preferite e un avviso. Sopra, una notifica: tra 5 minuti a Porta Nuova, linea 9.">
+        <div class="phone" aria-hidden="true">
+          <div class="screen"><img src="shot11-home.jpg" width="780" height="1696" alt="" fetchpriority="high" /></div>
+        </div>
+        <div class="notif" aria-hidden="true">
+          <img src="icon.png" width="34" height="34" alt="" />
+          <div><b>Tra 5′ a Porta Nuova</b><span>9 · Barriera Lanzo · Tocca per seguirlo dal vivo</span></div>
+          <small>ora</small>
+        </div>
+        <div class="eta-chip" aria-hidden="true">
+          <div class="n">2′</div>
+          <div class="l">Live</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lines marquee -->
+    <div class="marquee" aria-hidden="true">
+      <ul>
+        <li><span class="badge">4</span>Falchera</li>
+        <li><span class="badge">9</span>San Salvario</li>
+        <li><span class="badge">16CD</span>Circolare Destra</li>
+        <li><span class="badge">68</span>Cenisia</li>
+        <li><span class="badge">15</span>Sassi</li>
+        <li><span class="badge">33</span>Collegno</li>
+        <li><span class="badge">55</span>Vanchiglia</li>
+        <li><span class="badge">M1</span>Bengasi</li>
+        <li><span class="badge">10</span>Venaria Reale</li>
+        <li><span class="badge">52</span>Val Salice</li>
+        <li><span class="badge">4</span>Falchera</li>
+        <li><span class="badge">9</span>San Salvario</li>
+        <li><span class="badge">16CD</span>Circolare Destra</li>
+        <li><span class="badge">68</span>Cenisia</li>
+        <li><span class="badge">15</span>Sassi</li>
+        <li><span class="badge">33</span>Collegno</li>
+        <li><span class="badge">55</span>Vanchiglia</li>
+        <li><span class="badge">M1</span>Bengasi</li>
+        <li><span class="badge">10</span>Venaria Reale</li>
+        <li><span class="badge">52</span>Val Salice</li>
+      </ul>
+    </div>
+
+    <!-- Scroll story: follow the vehicle -->
+    <section class="follow" id="funzioni" aria-labelledby="follow-title">
+      <div class="follow-track" id="followTrack">
+        <div class="follow-sticky">
+          <div class="wrap split">
+            <div>
+              <span class="new">Con l’aggiornamento 1.1</span>
+              <h2 class="h2" id="follow-title">Guarda il bus<br />che arriva.</h2>
+              <p class="lead">Tocca un passaggio e vedi la linea: le fermate già fatte, dove si trova il mezzo adesso e quante fermate mancano alla tua. Quando sta per arrivare, la tua fermata si illumina.</p>
+            </div>
+            <div>
+              <div class="ldemo" role="img" aria-label="Esempio: il 68 per Cenisia è tra Carlo Alberto e Porta Nuova, la tua fermata, e arriva tra 2 minuti.">
+                <div class="ldemo-head" aria-hidden="true">
+                  <span class="badge">68</span>
+                  <div><b>→ Cenisia</b><small>Live · si aggiorna da solo</small></div>
+                </div>
+                <div class="ldemo-status" aria-hidden="true">
+                  <b id="ldWhere">Il 68 è tra Cavour e Vittorio Emanuele II</b>
+                  <span id="ldMine">Alla tua fermata tra 6 minuti · 2 fermate prima</span>
+                </div>
+                <div class="ldemo-track" aria-hidden="true">
+                  <div class="past" id="ldPast"></div>
+                  <div class="bus" id="ldBus"><svg viewBox="0 0 24 24"><path d="M4 16c0 .9.4 1.7 1 2.2V20a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h8v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1.8c.6-.5 1-1.3 1-2.2V6c0-3.5-3.6-4-8-4S4 2.5 4 6v10zm3.5 1a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm9 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM18 11H6V6h12v5z"/></svg></div>
+                  <ol class="ldemo-line" id="ldLine">
+                  <li><span>Cavour</span><span class="t">passato</span></li>
+                  <li><span>Vittorio Emanuele II</span><span class="t">2 min</span></li>
+                  <li><span>Carlo Alberto</span><span class="t">4 min</span></li>
+                  <li class="mine"><span><span class="who">La tua fermata</span>Porta Nuova</span><span class="t">6 min</span></li>
+                  <li><span>Re Umberto</span><span class="t">8 min</span></li>
+                  <li><span>Galileo Ferraris</span><span class="t">10 min</span></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
+    <!-- Right side of the street -->
+    <section aria-labelledby="near-title">
       <div class="wrap">
-        <div class="section-head fade">
-          <p class="kicker">Come funziona</p>
-          <h2>Pronta in meno di un minuto.</h2>
-          <p>Niente registrazione e niente configurazioni lunghe. Bastano tre passi.</p>
+        <div class="center rise">
+          <span class="new">Con l’aggiornamento 1.1</span>
+          <h2 class="h2" id="near-title">Vicino a te.<br />Dal lato giusto.</h2>
+          <p class="lead">«Vicino a me» trova le fermate entro un chilometro e ti dice dove va ogni linea. Due paline con lo stesso nome? Capisci subito su quale marciapiede aspettare.</p>
         </div>
-        <ol class="steps">
-          <li class="card fade">
-            <h3>Cerca la fermata</h3>
-            <p>Per nome o con il codice palina scritto sul cartello della fermata.</p>
-          </li>
-          <li class="card fade">
-            <h3>Salvala con le tue linee</h3>
-            <p>Scegli quali linee seguire: in Home vedi solo quelle che prendi davvero.</p>
-          </li>
-          <li class="card fade">
-            <h3>Guarda e parti</h3>
-            <p>Minuti al prossimo passaggio, ritardo o anticipo e, se vuoi, un avviso 5 minuti prima.</p>
-          </li>
-        </ol>
+        <div class="street" style="margin-top: 44px">
+          <div class="palina slide-l">
+            <div class="top"><span class="badge">40</span><div><b>Porta Nuova</b><small>80 m · 1 min a piedi</small></div></div>
+            <ul>
+              <li class="hl"><b>9</b> → Barriera Lanzo</li>
+              <li><b>33</b> → Collegno</li>
+              <li><b>68</b> → Cenisia</li>
+            </ul>
+            <p class="where">← Verso nord</p>
+          </div>
+          <div class="palina slide-r">
+            <div class="top"><span class="badge">39</span><div><b>Porta Nuova</b><small>120 m · 2 min a piedi</small></div></div>
+            <ul>
+              <li class="hl"><b>9</b> → San Salvario</li>
+              <li><b>33</b> → Val Salice</li>
+              <li><b>6</b> → Val San Martino</li>
+            </ul>
+            <p class="where">Verso sud →</p>
+          </div>
+        </div>
+        <p class="center rise" style="margin-top: 26px; font-weight: 700; color: var(--faint)">La posizione resta sul telefono: non viene salvata né inviata.</p>
       </div>
     </section>
 
-    <section>
-      <div class="wrap">
-        <div class="shots-head fade">
-          <p class="kicker">L’app</p>
-          <h2>Tutto in tre schermate.</h2>
-          <p>Schermate reali dall’iPhone: la Home con i preferiti, la fermata con gli arrivi, la ricerca.</p>
+    <!-- GTT notices -->
+    <section aria-labelledby="notice-title">
+      <div class="wrap split flip">
+        <div class="rise">
+          <span class="new">Con l’aggiornamento 1.1</span>
+          <h2 class="h2" id="notice-title">Deviato?<br />Lo sai prima.</h2>
+          <p class="lead">Manifestazioni, lavori, deviazioni: gli avvisi ufficiali di GTT compaiono sulle linee che segui, in Home e alla fermata. Quando la linea torna normale, l’avviso sparisce da solo.</p>
         </div>
-        <div class="shots">
-          <figure class="fade">
-            <div class="phone">
-              <div class="screen">
-                <img src="shot-home.png" width="780" height="1696" alt="Home con le fermate preferite Giuria e Porta Nuova e i minuti al prossimo passaggio" />
-              </div>
-            </div>
-            <figcaption>Home</figcaption>
-          </figure>
-          <figure class="fade">
-            <div class="phone">
-              <div class="screen">
-                <img src="shot-stop.png" width="780" height="1695" alt="Fermata Santa Giulia: prossimo passaggio linea 30 tra 1 minuto, scelta dell’avviso 5 minuti prima ed elenco dei passaggi" />
-              </div>
-            </div>
-            <figcaption>Fermata</figcaption>
-          </figure>
-          <figure class="fade">
-            <div class="phone">
-              <div class="screen">
-                <img src="shot-search.png" width="780" height="1695" alt="Ricerca fermata per nome o codice palina" />
-              </div>
-            </div>
-            <figcaption>Ricerca</figcaption>
-          </figure>
+        <div class="notices">
+          <div class="notice pop" style="--d: 0s"><span class="i" aria-hidden="true">▲</span><div><b>Manifestazione in centro città</b><small>Avviso GTT · 09:05</small></div></div>
+          <div class="notice pop"><span class="i" aria-hidden="true">▲</span><div><b>Linee 13, 56, 65, 73 deviate</b><small>Avviso GTT · 12:05</small></div></div>
+          <div class="notice ok pop"><span class="i" aria-hidden="true">●</span><div><b>Linea 9 ripristinata sul suo percorso</b><small>Avviso GTT · l’avviso della 9 scompare</small></div></div>
         </div>
       </div>
     </section>
 
-    <section>
+    <!-- Screenshots -->
+    <section aria-labelledby="shots-title" style="padding-bottom: 40px">
+      <div class="wrap center rise">
+        <p class="kicker">L’app</p>
+        <h2 class="h2" id="shots-title">Schermate vere,<br />dati veri.</h2>
+        <p class="lead">Catturate dall’iPhone con gli arrivi reali di Torino. Scorri di lato.</p>
+      </div>
+      <div class="rail" tabindex="0" aria-label="Schermate dell’app, scorrevoli">
+        <figure class="rise">
+          <div class="phone"><div class="screen"><img src="shot11-home.jpg" width="780" height="1696" loading="lazy" alt="Home: le fermate preferite Giuria e Porta Nuova con i minuti al prossimo passaggio e un avviso GTT" /></div></div>
+          <figcaption>Home<small>Le tue fermate, a colpo d’occhio</small></figcaption>
+        </figure>
+        <figure class="rise" style="--d: 0.06s">
+          <div class="phone"><div class="screen"><img src="shot11-stop.jpg" width="780" height="1696" loading="lazy" alt="Fermata Porta Nuova: il 9 per Barriera Lanzo tra 2 minuti, live, con il pulsante Segui il 9 dal vivo" /></div></div>
+          <figcaption>Fermata<small>Live, ritardi e avviso 5′ prima</small></figcaption>
+        </figure>
+        <figure class="rise" style="--d: 0.12s">
+          <div class="phone"><div class="screen"><img src="shot11-timeline.jpg" width="780" height="1696" loading="lazy" alt="Linea dal vivo: il 68 per Cenisia tra Carlo Alberto e Porta Nuova, alla tua fermata tra 2 minuti" /></div></div>
+          <figcaption>Linea dal vivo<small>Novità 1.1</small></figcaption>
+        </figure>
+        <figure class="rise" style="--d: 0.18s">
+          <div class="phone"><div class="screen"><img src="shot11-nearby.jpg" width="780" height="1696" loading="lazy" alt="Vicino a me: fermate entro un chilometro con distanza, minuti a piedi e direzione di ogni linea" /></div></div>
+          <figcaption>Vicino a me<small>Novità 1.1</small></figcaption>
+        </figure>
+        <figure class="rise" style="--d: 0.24s">
+          <div class="phone"><div class="screen"><img src="shot11-search.jpg" width="780" height="1696" loading="lazy" alt="Ricerca Porta Nuova: tutte le paline con la direzione di ogni linea" /></div></div>
+          <figcaption>Ricerca<small>Tutte le fermate, anche offline</small></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Bento -->
+    <section aria-labelledby="more-title">
       <div class="wrap">
-        <div class="section-head fade">
-          <p class="kicker">Cosa fa</p>
-          <h2>Poche cose, fatte bene.</h2>
-          <p>Niente mappe e menu da esplorare: solo quello che serve quando sei alla fermata.</p>
+        <div class="rise">
+          <p class="kicker">E poi</p>
+          <h2 class="h2" id="more-title">Piccole cose<br />che fanno la differenza.</h2>
         </div>
-        <div class="features">
-          <div class="fade">
-            <div class="mark" aria-hidden="true"></div>
+        <div class="bento">
+          <div class="tile w3 rise">
+            <div class="ic" aria-hidden="true">⭐</div>
             <h3>Preferiti con le tue linee</h3>
-            <p>Salva le fermate che usi e scegli le linee da seguire. In Home trovi subito il prossimo mezzo.</p>
+            <p>Salvi le fermate che usi e scegli le linee da seguire. In Home trovi subito il prossimo mezzo.</p>
           </div>
-          <div class="fade">
-            <div class="mark" aria-hidden="true"></div>
-            <h3>Live o orario, sempre chiaro</h3>
-            <p>«Live» quando il mezzo è seguito in tempo reale, «Orario» quando il dato è quello programmato.</p>
+          <div class="tile w3 rise" style="--d: 0.06s">
+            <div class="ic" aria-hidden="true">🔔</div>
+            <h3>Avviso 5 minuti prima</h3>
+            <p>Per la prossima corsa, o ogni giorno in una fascia oraria. Tocchi la notifica e segui il bus dal vivo.</p>
           </div>
-          <div class="fade">
-            <div class="mark" aria-hidden="true"></div>
-            <h3>Ritardi e anticipi</h3>
-            <p>Se il mezzo è in ritardo o in anticipo, te lo dice in minuti, senza dover fare conti.</p>
+          <div class="tile rise">
+            <div class="ic" aria-hidden="true">📡</div>
+            <h3>Live o Orario</h3>
+            <p>Sai sempre se il dato è in tempo reale o da tabella, con ritardi e anticipi in minuti.</p>
           </div>
-          <div class="fade">
-            <div class="mark" aria-hidden="true"></div>
-            <h3>Avviso 5′ prima</h3>
-            <p>Solo per la prossima corsa, oppure ogni giorno in una fascia oraria: per esempio quando esci di casa.</p>
+          <div class="tile rise" style="--d: 0.06s">
+            <span class="new">1.1</span>
+            <h3>Quando passa, davvero</h3>
+            <p>Linee che passano solo in certi giorni? Te lo dice.</p>
+            <div class="demo">Prossimo 17/: lunedì alle 19:46<small>invece di un vago «nessuna corsa»</small></div>
           </div>
-          <div class="fade">
-            <div class="mark" aria-hidden="true"></div>
-            <h3>Ricerca per codice palina</h3>
-            <p>Il numero è sul cartello della fermata: lo scrivi e la apri al volo.</p>
+          <div class="tile rise" style="--d: 0.12s">
+            <span class="new">1.1</span>
+            <h3>Il mezzo è accessibile?</h3>
+            <p>Per ogni corsa, se il mezzo accoglie la carrozzina.</p>
+            <p class="warnline">▲ Mezzo non accessibile in carrozzina</p>
           </div>
-          <div class="fade">
-            <div class="mark" aria-hidden="true"></div>
-            <h3>Accessibile</h3>
-            <p>Funziona con VoiceOver e con il testo grande di iOS, con un contrasto verificato. <a href="accessibilita.html">Dettagli</a></p>
+          <div class="tile w3 rise">
+            <div class="ic" aria-hidden="true">🔎</div>
+            <h3>Tutte le fermate, anche senza rete</h3>
+            <p>Oltre 7.000 fermate GTT nell’app: per nome, per via o con il codice palina scritto sul cartello.</p>
+          </div>
+          <div class="tile w3 rise" style="--d: 0.06s">
+            <div class="ic" aria-hidden="true">♿</div>
+            <h3>Accessibile per davvero</h3>
+            <p>VoiceOver legge frasi complete, il testo segue le dimensioni di iOS e le animazioni si fermano con «Riduci movimento». <a href="accessibilita.html" style="color: var(--accent-deep); font-weight: 800">Dettagli</a></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <!-- Promise -->
+    <section id="privacy" aria-labelledby="promise-title">
       <div class="wrap">
-        <div class="promise fade">
+        <div class="promise rise">
           <div>
             <p class="kicker">Le nostre promesse</p>
-            <h2>Un’app che ti aiuta ad aspettare, non che ti vende qualcosa.</h2>
+            <h2 class="h2" id="promise-title">Ti aiuta ad aspettare. Non ti vende niente.</h2>
             <p>arrivaTO è un progetto indipendente. Non guadagna sui tuoi dati e non ti riempie di banner. <a href="privacy.html">Leggi l’informativa privacy</a></p>
           </div>
           <ul>
             <li>Niente pubblicità, mai.</li>
             <li>Niente account né registrazione.</li>
-            <li>Nessun tracciamento e nessuna raccolta della posizione.</li>
+            <li>Nessun tracciamento: la posizione resta sul telefono.</li>
             <li>Preferiti e impostazioni restano solo sul tuo telefono.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section>
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-title">
       <div class="wrap">
-        <div class="section-head fade">
+        <div class="rise">
           <p class="kicker">Domande frequenti</p>
-          <h2>Prima di provarla.</h2>
+          <h2 class="h2" id="faq-title">Prima di provarla.</h2>
         </div>
-        <div class="faq fade">
+        <div class="faq rise">
           <details>
             <summary>È l’app ufficiale di GTT?</summary>
             <p>No. arrivaTO è un progetto indipendente, non affiliato né approvato da GTT S.p.A. o 5T S.r.l. Usa i dati pubblici di GTT e il servizio in tempo reale di Muoversi a Torino.</p>
@@ -771,7 +662,15 @@
           </details>
           <details>
             <summary>Quanto sono affidabili i tempi?</summary>
-            <p>Arrivano dal servizio pubblico Muoversi a Torino. Con l’etichetta «Live» il dato viene dalla posizione del mezzo; con «Orario» è quello programmato. Se il servizio non risponde, l’app mostra gli ultimi dati scaricati, segnandoli come non aggiornati.</p>
+            <p>Arrivano dal servizio pubblico Muoversi a Torino. Con «Live» il dato viene dal mezzo in tempo reale; con «Orario» è quello programmato. Se il servizio non risponde, l’app riprova da sola e, se serve, mostra gli ultimi dati scaricati segnandoli come non aggiornati.</p>
+          </details>
+          <details>
+            <summary>«Vicino a me» usa la mia posizione?</summary>
+            <p>Solo mentre l’app è aperta e solo sul telefono: le fermate vicine sono calcolate lì, con l’elenco GTT incluso nell’app. La posizione non viene salvata né inviata. Arriva con l’aggiornamento 1.1.</p>
+          </details>
+          <details>
+            <summary>Da dove arrivano gli avvisi su deviazioni e manifestazioni?</summary>
+            <p>Dal canale pubblico di avvisi di GTT. arrivaTO li mostra così come sono pubblicati, sulle linee che segui, e indica sempre la fonte. Arrivano con l’aggiornamento 1.1.</p>
           </details>
           <details>
             <summary>C’è anche per Android?</summary>
@@ -789,14 +688,16 @@
       </div>
     </section>
 
-    <section class="final">
-      <div class="wrap fade">
-        <h2>La prossima volta, alla fermata lo sai già.</h2>
-        <p>Gratis, per iPhone e Android.</p>
+    <!-- Final -->
+    <section class="final" id="scarica" aria-labelledby="final-title">
+      <div class="wrap rise">
+        <h2 class="big" id="final-title">Alla fermata, <span class="grad" style="white-space: nowrap">lo sai già.</span></h2>
+        <p class="lead">Gratis, per iPhone e Android.</p>
         <div class="cta-row">
           <a class="cta" href="https://testflight.apple.com/join/tJv2m7fG" target="_blank" rel="noopener noreferrer" data-testflight-url="https://testflight.apple.com/join/tJv2m7fG">Prova su iPhone</a>
-          <a class="cta cta-alt" href="android.html">Prova su Android</a>
+          <a class="cta alt" href="android.html">Prova su Android</a>
         </div>
+        <span class="cta-note">iPhone (iOS 17+): apri il link TestFlight dal telefono. Android (8+): scarica l’app o entra nel test su Google Play.</span>
       </div>
     </section>
   </main>
@@ -805,7 +706,7 @@
     <div class="wrap">
       <p class="name">arrivaTO</p>
       <p>App non ufficiale, non affiliata né approvata da GTT S.p.A. o 5T S.r.l.</p>
-      <p>Dati: open data GTFS di <a href="https://www.gtt.to.it" rel="noopener">GTT S.p.A.</a> · tempo reale <a href="https://www.muoversiatorino.it" rel="noopener">Muoversi a Torino</a> (5T)</p>
+      <p>Dati: open data GTFS di <a href="https://www.gtt.to.it" rel="noopener">GTT S.p.A.</a> · tempo reale <a href="https://www.muoversiatorino.it" rel="noopener">Muoversi a Torino</a> (5T) · avvisi <a href="https://t.me/gttavvisi" rel="noopener">GTT</a></p>
       <p class="footlinks"><a href="android.html">Android</a> · <a href="supporto.html">Assistenza</a> · <a href="accessibilita.html">Accessibilità</a> · <a href="privacy.html">Privacy</a></p>
       <p>© 2026 Francesca La Banca · <a href="mailto:hello@flbanca.it">hello@flbanca.it</a></p>
     </div>
@@ -813,26 +714,97 @@
 
   <script>
     (function () {
-      document.documentElement.classList.add("js");
-      var nodes = document.querySelectorAll(".fade");
-      if (!("IntersectionObserver" in window)) {
-        nodes.forEach(function (el) { el.classList.add("in"); });
-        return;
+      var root = document.documentElement;
+      root.classList.add("js");
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // Reveal on scroll (with per-item delay via --d).
+      var reveal = document.querySelectorAll(".rise, .slide-l, .slide-r, .pop");
+      if (reduce || !("IntersectionObserver" in window)) {
+        reveal.forEach(function (el) { el.classList.add("in"); });
+      } else {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            var el = e.target;
+            if (el.classList.contains("pop")) {
+              var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+              el.style.transitionDelay = (i * 0.18) + "s";
+            }
+            el.classList.add("in");
+            io.unobserve(el);
+          });
+        }, { threshold: 0.15, rootMargin: "0px 0px -6% 0px" });
+        reveal.forEach(function (el) { io.observe(el); });
       }
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            io.unobserve(entry.target);
-          }
+
+      // Scroll story: the 68 travels from Cavour to Porta Nuova as you scroll.
+      var track = document.getElementById("followTrack");
+      var line = document.getElementById("ldLine");
+      var bus = document.getElementById("ldBus");
+      var past = document.getElementById("ldPast");
+      var where = document.getElementById("ldWhere");
+      var mineText = document.getElementById("ldMine");
+      var items = line.querySelectorAll("li");
+      var names = ["Cavour", "Vittorio Emanuele II", "Carlo Alberto", "Porta Nuova", "Re Umberto", "Galileo Ferraris"];
+      var MINE = 3, MIN_PER_STOP = 2;
+
+      function render(p) {
+        // p: 0…1 → position along stops 0…MINE (the bus stops at your stop).
+        var pos = Math.max(0, Math.min(MINE, p * MINE * 1.08));
+        var step = items[0].offsetHeight;
+        var mineExtra = items[MINE].offsetHeight - step;
+        var y = pos * step + (pos >= MINE ? mineExtra / 2 : 0) + step / 2 - 16;
+        bus.style.transform = "translateY(" + y + "px)";
+        past.style.height = Math.max(0, pos * step) + "px";
+        var from = Math.floor(pos), frac = pos - from;
+        items.forEach(function (li, i) {
+          li.classList.toggle("passed", i < pos - 0.08 && i !== MINE);
+          var t = li.querySelector(".t");
+          if (i === MINE) return;
+          if (i < pos - 0.08) t.textContent = "passato";
+          else t.textContent = Math.max(1, Math.round((i - pos) * MIN_PER_STOP)) + " min";
         });
-      }, { threshold: 0.12 });
-      nodes.forEach(function (el) { io.observe(el); });
-      requestAnimationFrame(function () {
-        document.querySelectorAll(".hero .fade").forEach(function (el) {
-          el.classList.add("in");
-        });
-      });
+        var left = (MINE - pos) * MIN_PER_STOP;
+        var mineLi = items[MINE];
+        var mt = mineLi.querySelector(".t");
+        var arrived = pos >= MINE - 0.04;
+        mineLi.classList.toggle("glow", !reduce && left <= 2.2);
+        if (arrived) {
+          where.textContent = "Il 68 è alla fermata Porta Nuova";
+          mineText.textContent = "È alla tua fermata adesso";
+          mt.textContent = "ora qui";
+        } else {
+          where.textContent = frac < 0.12
+            ? "Il 68 è alla fermata " + names[from]
+            : "Il 68 è tra " + names[from] + " e " + names[from + 1];
+          var m = Math.max(1, Math.round(left));
+          var away = MINE - from - 1;
+          mineText.textContent = "Alla tua fermata tra " + m + (m === 1 ? " minuto" : " minuti") + " · " +
+            (away <= 0 ? "prossima fermata" : away === 1 ? "1 fermata prima" : away + " fermate prima");
+          mt.textContent = m + " min";
+        }
+      }
+
+      if (reduce) {
+        render(0.72);
+      } else {
+        var ticking = false;
+        function onScroll() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function () {
+            var r = track.getBoundingClientRect();
+            var total = r.height - window.innerHeight;
+            var p = total > 0 ? Math.min(1, Math.max(0, -r.top / total)) : 0;
+            render(p);
+            ticking = false;
+          });
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll);
+        onScroll();
+      }
     })();
   </script>
 </body>
