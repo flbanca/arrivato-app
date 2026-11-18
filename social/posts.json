@@ -73,7 +73,7 @@
       "alt_text": "Grafica blu con il titolo «Hai Android? Provala prima di tutti.», una linea con cinque fermate e il testo: ci servono almeno 12 persone che la tengano installata per 14 giorni, come partecipare nel link in bio.",
       "location": null,
       "check_before": [],
-      "publish": "manuale",
+      "publish": "automatica",
       "status": "scheduled"
     },
     {
@@ -81,10 +81,10 @@
       "n": 4,
       "type": "story",
       "publish_at": "2026-11-18T18:25:00+01:00",
-      "image": "img/storia-04-tester-android.jpg",
-      "link_sticker": "https://flbanca.github.io/arrivato-app/android.html",
-      "publish": "manuale",
-      "note": "Adesivo Link sotto la scritta in basso: va aggiunto a mano, l'API non lo supporta.",
+      "image": "img/storia-04-tester-android-bio.jpg",
+      "link_sticker": null,
+      "publish": "automatica",
+      "note": "Versione automatica: invito «link in bio» al posto dell'adesivo Link (non supportato dall'API).",
       "status": "scheduled"
     },
     {
@@ -97,7 +97,7 @@
       "alt_text": "Grafica blu notte con la data 21 e 22 novembre, il titolo «Semifinali e finali delle ATP Finals.», l'indirizzo Inalpi Arena, corso Sebastopoli 123, e una notifica di arrivaTO: prima di uscire, cerca la fermata più vicina e controlla gli avvisi GTT per il ritorno.\n\nARRIVATO SU INSTAGRAM · POST 6–21\nOgni post: incolla la didascalia, poi «Impostazioni avanzate» > «Accessibilità» > testo alternativo.\nI post sugli eventi (7, 11, 14, 15, 21): il giorno prima ricontrolla date e orari sul sito ufficiale del luogo.",
       "location": "Inalpi Arena",
       "check_before": [],
-      "publish": "manuale",
+      "publish": "automatica",
       "status": "scheduled"
     },
     {
@@ -107,7 +107,7 @@
       "publish_at": "2026-11-21T12:40:00+01:00",
       "image": "img/storia-05-atp.jpg",
       "link_sticker": null,
-      "publish": "manuale",
+      "publish": "automatica",
       "note": null,
       "status": "scheduled"
     },
@@ -121,7 +121,7 @@
       "alt_text": "iPhone con la schermata «Vicino a me»: l'elenco delle fermate entro un chilometro con distanza e linee. Accanto, due cartellini: Porta Nuova 40 verso nord con il 9 per Barriera Lanzo e il 68 per Cenisia; Porta Nuova 39 verso sud con il 9 per San Salvario e il 6 per Val San Martino.",
       "location": null,
       "check_before": [],
-      "publish": "manuale",
+      "publish": "automatica",
       "status": "scheduled"
     },
     {
@@ -134,7 +134,7 @@
       "alt_text": "Grafica blu notte con la data 24 novembre, il titolo «Torino Film Festival, fino al 2 dicembre.», la scritta Teatro Regio e sale in tutta la città, e una notifica di arrivaTO: tra un film e l'altro, cerca la fermata più vicina alla sala.",
       "location": null,
       "check_before": [],
-      "publish": "manuale",
+      "publish": "automatica",
       "status": "scheduled"
     },
     {
@@ -144,7 +144,7 @@
       "publish_at": "2026-11-25T12:40:00+01:00",
       "image": "img/storia-07-filmfestival.jpg",
       "link_sticker": null,
-      "publish": "manuale",
+      "publish": "automatica",
       "note": null,
       "status": "scheduled"
     },
@@ -158,7 +158,7 @@
       "alt_text": "iPhone con la Home di arrivaTO e le fermate preferite. Sopra, una notifica: tra 5 minuti a Giuria, 16 CD, tocca per seguirlo dal vivo. Sotto, un riquadro con «5′ Live».",
       "location": null,
       "check_before": [],
-      "publish": "manuale",
+      "publish": "automatica",
       "status": "scheduled"
     },
     {
@@ -303,10 +303,10 @@
       "n": 17,
       "type": "story",
       "publish_at": "2026-12-18T18:25:00+01:00",
-      "image": "img/storia-17-android-test.jpg",
-      "link_sticker": "https://flbanca.github.io/arrivato-app/android.html",
-      "publish": "manuale",
-      "note": "Adesivo Link sotto la scritta in basso: va aggiunto a mano, l'API non lo supporta.",
+      "image": "img/storia-17-android-test-bio.jpg",
+      "link_sticker": null,
+      "publish": "automatica",
+      "note": "Versione automatica: invito «link in bio» al posto dell'adesivo Link (non supportato dall'API).",
       "status": "scheduled"
     },
     {
