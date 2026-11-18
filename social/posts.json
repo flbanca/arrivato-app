@@ -96,7 +96,14 @@
       "link_sticker": null,
       "publish": "automatica",
       "note": "Versione automatica: invito «link in bio» al posto dell'adesivo Link (non supportato dall'API).",
-      "status": "scheduled"
+      "status": "published",
+      "result": {
+        "ig": {
+          "id": "18120821429005792",
+          "url": "https://www.instagram.com/stories/arrivato.app/4033265386288285892"
+        }
+      },
+      "published_at": "2026-11-18T17:25:36.488Z"
     },
     {
       "id": "2026-11-21-atp",
