@@ -1,0 +1,60 @@
+name: Pubblica social
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "publish = pubblica i post in scadenza · dry = prova senza pubblicare · check = verifica token e account"
+        type: choice
+        options: [dry, check, publish]
+        default: dry
+      only:
+        description: "Pubblica subito solo questo id (facoltativo, con mode = publish)"
+        required: false
+      now:
+        description: "Data/ora simulata per la prova (ISO, es. 2026-11-30T18:20:00+01:00)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      META_SYSTEM_TOKEN: ${{ secrets.META_SYSTEM_TOKEN }}
+      META_PAGE_ID: "1441718615691796"
+      META_IG_USER_ID: "17841453280752624"
+      IMAGE_BASE: https://flbanca.github.io/arrivato-app/social/
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Pubblica
+        env:
+          MODE: ${{ github.event_name == 'schedule' && 'publish' || inputs.mode }}
+          ONLY: ${{ inputs.only }}
+          NOW: ${{ inputs.now }}
+        run: |
+          ARGS=()
+          [ "$MODE" = "dry" ] && ARGS+=(--dry)
+          [ "$MODE" = "check" ] && ARGS+=(--check)
+          [ -n "$ONLY" ] && ARGS+=("--only=$ONLY")
+          [ -n "$NOW" ] && ARGS+=("--now=$NOW")
+          node .github/scripts/social-publish.mjs "${ARGS[@]}"
+      - name: Salva lo stato
+        if: always()
+        run: |
+          git diff --quiet social/posts.json && exit 0
+          git config user.name "arrivato-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "social: aggiorna stato pubblicazioni" social/posts.json
+          git pull --rebase -q && git push
