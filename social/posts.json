@@ -217,12 +217,12 @@
       "location": "Torino",
       "check_before": [
         "profili IG di SCA!, Pescheria Moderna, Le Strade, GuidaTorino (sostituire i {{…}})",
-        "@qilin.torino @smelt.torino @sanmassimopizza esistono",
         "i 5 locali sono già aperti"
       ],
       "approved": false,
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "note": "Confermati il 18/11: @qilin.torino @smelt.torino @sanmassimopizza"
     },
     {
       "id": "2026-11-27-avviso",
