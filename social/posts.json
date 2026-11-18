@@ -191,6 +191,40 @@
       "status": "scheduled"
     },
     {
+      "id": "2026-11-26-nuovo-in-citta",
+      "n": "extra",
+      "type": "carousel",
+      "publish_at": "2026-11-26T18:15:00+01:00",
+      "images": [
+        "img/nuovo-novembre-01.jpg",
+        "img/nuovo-novembre-02.jpg",
+        "img/nuovo-novembre-03.jpg",
+        "img/nuovo-novembre-04.jpg",
+        "img/nuovo-novembre-05.jpg",
+        "img/nuovo-novembre-06.jpg",
+        "img/nuovo-novembre-07.jpg"
+      ],
+      "caption": "Nuovo in città: 5 posti appena aperti a Torino, e la fermata per arrivarci senza macchina.\n\n1. Qi Lin @qilin.torino, via Bellezia 22/C: cucina cinese oltre i soliti piatti. Fermata Porta Palazzo Sud, linee 4, 8, 11, 19, 27, 51, 92.\n2. SCA! {{SCA}}, via Principi d'Acaja 47: i panini di Luca Scarcella. Fermata Drovetti, linee 56 e 94.\n3. La Pescheria Moderna {{PESCHERIA}}, via San Francesco da Paola 4: pescheria con cucina. Fermata Accademia Albertina, linee 13, 15, 55, 56.\n4. Smelt @smelt.torino, via Mazzini 54/D: meze mediterranei da dividere. Fermata Mazzini, linea 16.\n5. San Massimo Pizza @sanmassimopizza, via San Massimo 5/D: pizza al trancio in stile New York. Fermata Sant'Ottavio, linee 13, 15, 24, 55, 56, 61.\n\nLe segnalazioni arrivano da {{LESTRADE}} e {{GUIDATORINO}}: sui loro profili trovate le schede complete.\n\nPrima di uscire, cerca la fermata in arrivaTO e guarda quando passa il prossimo. Salva il post: Nuovo in città torna ogni mese.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #nuoveaperture #mangiareatorino #torinofood #bustorino",
+      "alt_texts": [
+        "Copertina blu notte: «Nuovo in città, novembre. 5 posti nuovi a Torino. E la fermata per arrivarci.» Sotto, una linea con cinque fermate: Porta Palazzo Sud per Qi Lin, Drovetti per SCA!, Accademia Albertina per La Pescheria Moderna, Mazzini per Smelt, Sant'Ottavio per San Massimo Pizza.",
+        "Slide 2: grafica blu notte con il nome Qi Lin, cucina cinese oltre i soliti piatti, indirizzo via Bellezia 22/C. Sotto, il riquadro della fermata più vicina: Porta Palazzo Sud, linee 4, 8, 11, 19, 27, 51 e 92, 2 minuti a piedi.",
+        "Slide 3: grafica blu notte con il nome SCA!, la panineria di Luca Scarcella, indirizzo via Principi d'Acaja 47. Sotto, il riquadro della fermata più vicina: Drovetti, linee 56 e 94, 2 minuti a piedi.",
+        "Slide 4: grafica blu notte con il nome La Pescheria Moderna, pescheria con cucina, indirizzo via San Francesco da Paola 4. Sotto, il riquadro della fermata più vicina: Accademia Albertina, linee 13, 15, 55 e 56, 1 minuto a piedi.",
+        "Slide 5: grafica blu notte con il nome Smelt, bodega con meze mediterranei, indirizzo via Mazzini 54/D. Sotto, il riquadro della fermata più vicina: Mazzini, linee 16 CD e 16 CS, 2 minuti a piedi.",
+        "Slide 6: grafica blu notte con il nome San Massimo Pizza, pizza al trancio in stile New York, indirizzo via San Massimo 5/D. Sotto, il riquadro della fermata più vicina: Sant'Ottavio, linee 13, 15, 24, 55, 56 e 61, 1 minuto a piedi.",
+        "Ultima slide: «Cerca la fermata. Guarda quando passa.» Riquadro della fermata Porta Palazzo Sud con i prossimi passaggi: 4 per Mirafiori Sud tra 3 minuti, Live; 11 per Crocetta tra 6 minuti, Live; 19 per Porta Susa tra 9 minuti, da orario. Sotto: Salva il post, Nuovo in città torna ogni mese."
+      ],
+      "location": "Torino",
+      "check_before": [
+        "profili IG di SCA!, Pescheria Moderna, Le Strade, GuidaTorino (sostituire i {{…}})",
+        "@qilin.torino @smelt.torino @sanmassimopizza esistono",
+        "i 5 locali sono già aperti"
+      ],
+      "approved": false,
+      "publish": "automatica",
+      "status": "scheduled"
+    },
+    {
       "id": "2026-11-27-avviso",
       "n": 8,
       "type": "feed",

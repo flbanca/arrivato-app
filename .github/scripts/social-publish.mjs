@@ -5,6 +5,7 @@
 //   e publish_at già passato, ma non più di MAX_LATE_H ore fa (niente raffiche dopo un blocco);
 // - se check_before non è vuoto serve approved = true;
 // - una storia (id che finisce con "-storia") parte solo dopo che il suo post è pubblicato;
+// - type "carousel" usa images: [...] (fino a 10) e alt_texts: [...]; su Facebook diventa un post con più foto;
 // - Instagram e Facebook già riusciti non vengono ripetuti ai tentativi successivi.
 //
 // Le immagini sono servite da GitHub Pages: Meta le scarica da IMAGE_BASE.
@@ -39,37 +40,69 @@ async function graph(method, path, params = {}, token = TOKEN) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function igPublish(post, imageUrl) {
-  const params = { image_url: imageUrl };
-  if (post.type === "story") params.media_type = "STORIES";
-  else {
-    params.caption = post.caption.trim();
-    if (post.alt_text) params.alt_text = post.alt_text;
-  }
-  let c;
+// Crea un container IG; se l'API rifiuta alt_text, riprova senza.
+async function igContainer(params) {
   try {
-    c = await graph("POST", `${IG}/media`, params);
+    return await graph("POST", `${IG}/media`, params);
   } catch (e) {
-    // alt_text non accettato da questa versione dell'API: riprova senza.
     if (!params.alt_text || !/alt_text/i.test(e.message)) throw e;
     console.log("  alt_text non supportato, riprovo senza");
-    delete params.alt_text;
-    c = await graph("POST", `${IG}/media`, params);
+    const { alt_text, ...rest } = params;
+    return await graph("POST", `${IG}/media`, rest);
   }
+}
+
+async function igWait(id) {
   for (let i = 0; i < 30; i++) {
-    const s = await graph("GET", c.id, { fields: "status_code" });
-    if (s.status_code === "FINISHED") break;
+    const s = await graph("GET", id, { fields: "status_code" });
+    if (s.status_code === "FINISHED") return;
     if (s.status_code === "ERROR" || s.status_code === "EXPIRED") throw new Error(`container IG: ${s.status_code}`);
-    if (i === 29) throw new Error("container IG non pronto in tempo");
     await sleep(2000);
   }
+  throw new Error("container IG non pronto in tempo");
+}
+
+async function igPublish(post, imageUrls) {
+  let c;
+  if (post.type === "carousel") {
+    // Carosello: un container per immagine, poi il container padre con la didascalia.
+    const children = [];
+    for (const [i, url] of imageUrls.entries()) {
+      const params = { image_url: url, is_carousel_item: "true" };
+      if (post.alt_texts?.[i]) params.alt_text = post.alt_texts[i];
+      const child = await igContainer(params);
+      await igWait(child.id);
+      children.push(child.id);
+    }
+    c = await graph("POST", `${IG}/media`, { media_type: "CAROUSEL", children: children.join(","), caption: post.caption.trim() });
+  } else {
+    const params = { image_url: imageUrls[0] };
+    if (post.type === "story") params.media_type = "STORIES";
+    else {
+      params.caption = post.caption.trim();
+      if (post.alt_text) params.alt_text = post.alt_text;
+    }
+    c = await igContainer(params);
+  }
+  await igWait(c.id);
   const m = await graph("POST", `${IG}/media_publish`, { creation_id: c.id });
   const info = await graph("GET", m.id, { fields: "permalink" }).catch(() => ({}));
   return { id: m.id, url: info.permalink ?? null };
 }
 
-async function fbPublish(post, imageUrl, pageToken) {
-  const r = await graph("POST", `${PAGE}/photos`, { url: imageUrl, message: post.caption.trim() }, pageToken);
+async function fbPublish(post, imageUrls, pageToken) {
+  let r;
+  if (imageUrls.length === 1) {
+    r = await graph("POST", `${PAGE}/photos`, { url: imageUrls[0], message: post.caption.trim() }, pageToken);
+  } else {
+    // Post con più foto: carico le foto senza pubblicarle, poi un unico post che le allega.
+    const media = {};
+    for (const [i, url] of imageUrls.entries()) {
+      const ph = await graph("POST", `${PAGE}/photos`, { url, published: "false" }, pageToken);
+      media[`attached_media[${i}]`] = JSON.stringify({ media_fbid: ph.id });
+    }
+    r = await graph("POST", `${PAGE}/feed`, { message: post.caption.trim(), ...media }, pageToken);
+  }
   const id = r.post_id || r.id;
   return { id, url: `https://www.facebook.com/${id}` };
 }
@@ -110,6 +143,7 @@ function why(p) {
   if (at > now) return "non ancora";
   if (now - at > MAX_LATE_H * 3600e3) return "late";
   if (p.check_before?.length && p.approved !== true) return "da approvare";
+  if (/\{\{[^}]*\}\}/.test(p.caption ?? "")) return "segnaposto {{…}} nella didascalia";
   const parent = p.id.endsWith("-storia") && byId.get(p.id.replace(/-storia$/, ""));
   if (parent && parent.status !== "published") return "attende il post";
   return null;
@@ -132,21 +166,23 @@ console.log(`${now.toISOString()} · da pubblicare: ${due.map((p) => p.id).join(
 
 let failed = false;
 for (const p of due.slice(0, 3)) {
-  const imageUrl = IMAGE_BASE + p.image;
-  console.log(`→ ${p.id} (${p.type}) ${imageUrl}`);
+  const imageUrls = (p.images ?? [p.image]).map((f) => IMAGE_BASE + f);
+  console.log(`→ ${p.id} (${p.type}) ${imageUrls.join(" ")}`);
   if (dry) continue;
   p.result ??= {};
   try {
-    const head = await fetch(imageUrl, { method: "HEAD" });
-    if (!head.ok) throw new Error(`immagine non raggiungibile (${head.status})`);
+    for (const url of imageUrls) {
+      const head = await fetch(url, { method: "HEAD" });
+      if (!head.ok) throw new Error(`immagine non raggiungibile (${head.status}): ${url}`);
+    }
     if (!p.result.ig) {
-      p.result.ig = await igPublish(p, imageUrl);
+      p.result.ig = await igPublish(p, imageUrls);
       changed = true;
       console.log("  Instagram:", p.result.ig.url ?? p.result.ig.id);
     }
-    if (p.type === "feed" && p.facebook !== false && !p.result.fb) {
+    if (p.type !== "story" && p.facebook !== false && !p.result.fb) {
       const { access_token: pageToken } = await graph("GET", PAGE, { fields: "access_token" });
-      p.result.fb = await fbPublish(p, imageUrl, pageToken);
+      p.result.fb = await fbPublish(p, imageUrls, pageToken);
       changed = true;
       console.log("  Facebook:", p.result.fb.url);
     }
