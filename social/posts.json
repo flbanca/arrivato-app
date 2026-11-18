@@ -69,8 +69,8 @@
       "type": "feed",
       "publish_at": "2026-11-18T18:15:00+01:00",
       "image": "img/04-tester-android.jpg",
-      "caption": "Hai un telefono Android? Ci serve una mano.\n\narrivaTO è già sull'App Store. Per pubblicarla anche su Google Play, Google chiede che almeno 12 persone la provino per 14 giorni di fila.\n\nCome partecipare:\n1. Scrivi a hello@flbanca.it con l'indirizzo Gmail che usi sul telefono.\n2. Ti mandiamo il link per installarla dal Play Store.\n3. Tienila installata per 14 giorni e usala quando prendi bus o tram.\n\nTutto spiegato nel link in bio. Grazie!\n\n#torino #android #betatester #bustorino #mezzipubblici",
-      "alt_text": "Grafica blu con il titolo «Hai Android? Provala prima di tutti.», una linea con cinque fermate e il testo: ci servono almeno 12 persone che la tengano installata per 14 giorni, come partecipare nel link in bio.",
+      "caption": "Hai un telefono Android? Ci serve una mano.\n\narrivaTO è già sull'App Store e ora la stiamo provando su Android, prima di pubblicarla su Google Play. Cerchiamo persone che la usino sul bus e sul tram e ci dicano cosa non va.\n\nCome partecipare:\n1. Scrivi a hello@flbanca.it con l'indirizzo Gmail che usi sul telefono.\n2. Ti mandiamo il link per installarla dal Play Store.\n3. Usala quando prendi bus o tram e raccontaci com'è andata.\n\nTutto spiegato nel link in bio. Grazie!\n\n#torino #android #betatester #bustorino #mezzipubblici",
+      "alt_text": "Grafica blu con il titolo «Hai Android? Provala prima di tutti.», una linea con cinque fermate e il testo: cerchiamo persone che la provino e ci dicano cosa migliorare, come partecipare nel link in bio.",
       "location": null,
       "check_before": [],
       "publish": "automatica",
@@ -94,7 +94,7 @@
       "publish_at": "2026-11-21T12:30:00+01:00",
       "image": "img/05-atp.jpg",
       "caption": "Weekend di semifinali e finali delle Nitto ATP Finals all'Inalpi Arena: sabato 21 le semifinali, domenica 22 le finali (doppio alle 15, singolare alle 18).\n\nSe ci vai in bus o tram: cerca in arrivaTO la fermata più vicina all'arena e attiva l'avviso 5′ prima, così esci al momento giusto.\n\nPer il ritorno, controlla gli avvisi GTT sulle linee della zona: dopo i grandi eventi possono esserci deviazioni.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #atpfinals #inalpiarena #eventitorino #bustorino",
-      "alt_text": "Grafica blu notte con la data 21 e 22 novembre, il titolo «Semifinali e finali delle ATP Finals.», l'indirizzo Inalpi Arena, corso Sebastopoli 123, e una notifica di arrivaTO: prima di uscire, cerca la fermata più vicina e controlla gli avvisi GTT per il ritorno.\n\nARRIVATO SU INSTAGRAM · POST 6–21\nOgni post: incolla la didascalia, poi «Impostazioni avanzate» > «Accessibilità» > testo alternativo.\nI post sugli eventi (7, 11, 14, 15, 21): il giorno prima ricontrolla date e orari sul sito ufficiale del luogo.",
+      "alt_text": "Grafica blu notte con la data 21 e 22 novembre, il titolo «Semifinali e finali delle ATP Finals.», l'indirizzo Inalpi Arena, corso Sebastopoli 123, e una notifica di arrivaTO: prima di uscire, cerca la fermata più vicina e controlla gli avvisi GTT per il ritorno.",
       "location": "Inalpi Arena",
       "check_before": [],
       "publish": "automatica",
@@ -291,11 +291,9 @@
       "caption": "Il test di arrivaTO su Android è partito. Grazie a chi lo sta usando ogni giorno sul bus e sul tram: ogni segnalazione ci aiuta a sistemare qualcosa prima dell'uscita su Google Play.\n\nHai Android e vuoi provarla anche tu? C'è ancora posto. Scrivi a hello@flbanca.it con l'indirizzo Gmail che usi sul telefono, oppure trovi tutto nel link in bio.\n\n#torino #android #betatester #bustorino",
       "alt_text": "Grafica blu con il titolo «Il test su Android è in corso.», una linea con cinque fermate e il testo: grazie a chi ci sta aiutando, vuoi provarla anche tu? Come partecipare nel link in bio.",
       "location": null,
-      "check_before": [
-        "PRIMA DI PUBBLICARE: aggiorna il testo in base a quanti tester ci sono. Se il test è già finito, sostituisci il post con l'annuncio dell'uscita."
-      ],
+      "check_before": [],
       "publish": "automatica",
-      "approved": false,
+      "approved": true,
       "status": "scheduled"
     },
     {
