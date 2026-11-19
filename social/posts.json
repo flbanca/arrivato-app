@@ -246,6 +246,20 @@
       "approved": true
     },
     {
+      "id": "2026-11-22-domanda",
+      "type": "feed",
+      "publish_at": "2026-11-22T18:30:00+01:00",
+      "image": "img/domanda-linea-piu-bella.jpg",
+      "caption": "Qual è la linea più bella di Torino?\n\nIl 15 che attraversa via Po e il fiume fino a Sassi? Il 4 che taglia la città da Falchera a Mirafiori Sud? Il 16 che gira intorno al centro senza capolinea? O un’altra, magari quella che prendi ogni mattina.\n\nScrivila nei commenti, con il perché. Tra una settimana raccogliamo le più votate in un post.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #tramtorino #bustorino #mezzipubblici #torinodavivere",
+      "alt_text": "Sfondo azzurro e lilla. Domanda della settimana in un fumetto: «Qual è la linea più bella di Torino?». Per esempio: il 15 da Brissogne a Sassi, che attraversa via Po e il fiume; il 4 da Falchera a Mirafiori Sud, tutta la città da nord a sud; il 16 CD, il giro del centro in circolare. Sotto: scrivila nei commenti.",
+      "location": null,
+      "check_before": [
+        "ok al formato Domanda"
+      ],
+      "publish": "automatica",
+      "status": "scheduled"
+    },
+    {
       "id": "2026-11-23-vicino",
       "n": 6,
       "type": "feed",
