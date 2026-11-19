@@ -235,6 +235,20 @@
       "status": "scheduled"
     },
     {
+      "id": "2026-11-24-scendi-qui",
+      "type": "feed",
+      "publish_at": "2026-11-24T18:15:00+01:00",
+      "image": "img/scendi-qui-bicerin.jpg",
+      "caption": "Scendi qui: fermata Giulio, linee 52, 67 e Star 2.\n\nA un minuto a piedi c’è Al Bicerin @{{profilo Al Bicerin}}, il caffè del 1763 davanti al santuario della Consolata. È qui che è nato il bicerin: caffè, cioccolato e crema di latte, a strati nel bicchierino.\n\nChiuso il mercoledì. Prima di uscire cerca la fermata Giulio in arrivaTO e guarda quando passa il prossimo.\n\nScendi qui torna ogni martedì: un posto, la sua fermata.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #bicerin #caffetorino #quadrilatero #bustorino",
+      "alt_text": "Sfondo azzurro e lilla. Scendi qui, Consolata: Al Bicerin, il caffè del 1763 davanti alla Consolata, dove è nato il bicerin. Piazza della Consolata 5, chiuso il mercoledì. Fermata più vicina Giulio, numero 2176, linee 52, 67 e Star 2, un minuto a piedi.",
+      "location": null,
+      "check_before": [
+        "profilo Instagram di Al Bicerin (sostituire {{…}})"
+      ],
+      "publish": "automatica",
+      "status": "scheduled"
+    },
+    {
       "id": "2026-11-25-filmfestival",
       "n": 7,
       "type": "feed",
@@ -274,7 +288,7 @@
       ],
       "caption": "Nuovo in città: 5 posti appena aperti a Torino, e la fermata per arrivarci senza macchina.\n\n1. Qi Lin @qilin.torino, via Bellezia 22/C: cucina cinese oltre i soliti piatti. Fermata Porta Palazzo Sud, linee 4, 8, 11, 19, 27, 51, 92.\n2. SCA! @sca.ilpaninodi, via Principi d'Acaja 47: i panini di Luca Scarcella. Fermata Drovetti, linee 56 e 94.\n3. La Pescheria Moderna @pescheriamoderna, via San Francesco da Paola 4: pescheria con cucina. Fermata Accademia Albertina, linee 13, 15, 55, 56.\n4. Smelt @smelt.torino, via Mazzini 54/D: meze mediterranei da dividere. Fermata Mazzini, linea 16.\n5. San Massimo Pizza @sanmassimopizza, via San Massimo 5/D: pizza al trancio in stile New York. Fermata Sant'Ottavio, linee 13, 15, 24, 55, 56, 61.\n\nLe segnalazioni arrivano da @lestradeditorino e @guidatorino: sui loro profili trovate le schede complete.\n\nPrima di uscire, cerca la fermata in arrivaTO e guarda quando passa il prossimo. Salva il post: Nuovo in città torna ogni mese.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #nuoveaperture #mangiareatorino #torinofood #bustorino",
       "alt_texts": [
-        "Copertina blu notte: «Nuovo in città, novembre. 5 posti nuovi a Torino. E la fermata per arrivarci.» Sotto, una linea con cinque fermate: Porta Palazzo Sud per Qi Lin, Drovetti per SCA!, Accademia Albertina per La Pescheria Moderna, Mazzini per Smelt, Sant'Ottavio per San Massimo Pizza.",
+        "Copertina con lo sfondo azzurro e lilla dell’app: «Nuovo in città, novembre. 5 posti nuovi a Torino. E la fermata per arrivarci.» Sotto, una linea con cinque fermate: Porta Palazzo Sud per Qi Lin, Drovetti per SCA!, Accademia Albertina per La Pescheria Moderna, Mazzini per Smelt, Sant'Ottavio per San Massimo Pizza.",
         "Slide 2: grafica blu notte con il nome Qi Lin, cucina cinese oltre i soliti piatti, indirizzo via Bellezia 22/C. Sotto, il riquadro della fermata più vicina: Porta Palazzo Sud, linee 4, 8, 11, 19, 27, 51 e 92, 2 minuti a piedi.",
         "Slide 3: grafica blu notte con il nome SCA!, la panineria di Luca Scarcella, indirizzo via Principi d'Acaja 47. Sotto, il riquadro della fermata più vicina: Drovetti, linee 56 e 94, 2 minuti a piedi.",
         "Slide 4: grafica blu notte con il nome La Pescheria Moderna, pescheria con cucina, indirizzo via San Francesco da Paola 4. Sotto, il riquadro della fermata più vicina: Accademia Albertina, linee 13, 15, 55 e 56, 1 minuto a piedi.",
@@ -306,6 +320,35 @@
       "status": "scheduled"
     },
     {
+      "id": "2026-11-28-maratona",
+      "type": "feed",
+      "publish_at": "2026-11-28T11:00:00+01:00",
+      "image": "img/maratona-29-novembre.jpg",
+      "caption": "Domani, domenica 29 novembre, a Torino si corre la maratona. Partenza e arrivo in piazza Castello: al mattino il centro è chiuso e diverse linee di bus e tram sono deviate.\n\nPrima di uscire apri arrivaTO: gli avvisi GTT sono in Home e sulla fermata, e i passaggi Live ti dicono se il mezzo sta arrivando davvero.\n\nLe strade riaprono man mano che passano gli ultimi corridori.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #maratonaditorino #torinocitymarathon #bustorino #mezzipubblici",
+      "alt_text": "Grafica blu notte: avviso, domenica 29 novembre. Si corre la maratona, il centro chiude al mattino. Partenza e arrivo in piazza Castello. Sotto, una notifica di arrivaTO: prima di uscire, linee deviate, controlla gli avvisi GTT in arrivaTO.",
+      "location": null,
+      "check_before": [
+        "avviso ufficiale GTT/Comune con orari e linee deviate (di solito esce 2-3 giorni prima)"
+      ],
+      "publish": "automatica",
+      "status": "scheduled"
+    },
+    {
+      "id": "2026-11-29-panettoni",
+      "type": "feed",
+      "publish_at": "2026-11-29T13:00:00+01:00",
+      "image": "img/mole-di-panettoni.jpg",
+      "caption": "Oggi è l’ultimo giorno di Una Mole di Panettoni @{{profilo Una Mole di Panettoni}}: i panettoni artigianali di tutta Italia all’Hotel Principi di Piemonte, in via Gobetti 15.\n\nStamattina il centro era chiuso per la maratona: vacci nel pomeriggio. La fermata più vicina è Arcivescovado, linee 4, 11, 15, 55, 58 e 92, a 3 minuti a piedi. Controlla in arrivaTO gli avvisi GTT: dopo la gara qualche linea può essere ancora deviata.\n\nOrari e biglietti sul sito dell’evento.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #panettone #unamoledipanettoni #eventitorino #bustorino",
+      "alt_text": "Sfondo azzurro e lilla. Succede a Torino, 27-29 novembre: Una Mole di Panettoni, panettoni artigianali da tutta Italia. Principi di Piemonte, via Gobetti 15. Fermata più vicina Arcivescovado, numero 249, linee 4, 11, 15, 55, 58, 92, 3 minuti a piedi.",
+      "location": null,
+      "check_before": [
+        "profilo Instagram dell’evento (sostituire {{…}})",
+        "orari 2026 confermati"
+      ],
+      "publish": "automatica",
+      "status": "scheduled"
+    },
+    {
       "id": "2026-11-30-fermata",
       "n": 9,
       "type": "feed",
@@ -325,9 +368,11 @@
       "publish_at": "2026-12-02T18:15:00+01:00",
       "image": "img/10-ricerca.jpg",
       "caption": "Oltre 7.000 fermate GTT, già dentro l'app. Le trovi anche quando la rete non c'è.\n\nCerca per nome, per via, oppure scrivi il codice palina: è il numero sulla colonnina della fermata.\n\n#torino #bustorino #tramtorino #mezzipubblici",
-      "alt_text": "iPhone con la schermata «Cerca fermata»: ricerca «Porta Nuova», il campo codice palina e l'elenco dei risultati con le linee di ogni fermata. Accanto, un riquadro: codice palina, esempio 611, il numero sulla colonnina della fermata.",
+      "alt_text": "Grafica su bianco: Cerca. 7.000 fermate, anche senza rete. Un grande campo di ricerca con scritto «Porta Nuo», il campo codice palina con 611 e il pulsante Apri, e l’etichetta: l’elenco delle fermate è nel telefono.",
       "location": null,
-      "check_before": [],
+      "check_before": [
+        "ok al nuovo stile (Primo piano)"
+      ],
       "publish": "automatica",
       "status": "scheduled"
     },
@@ -378,9 +423,11 @@
       "publish_at": "2026-12-09T18:15:00+01:00",
       "image": "img/13-accessibile.jpg",
       "caption": "Il prossimo mezzo accoglie la carrozzina? arrivaTO te lo dice per ogni corsa, prima che arrivi.\n\nE l'app stessa è pensata per tutti: VoiceOver legge frasi complete, il testo segue le dimensioni impostate sul telefono e le animazioni si fermano con «Riduci movimento».\n\n#torino #accessibilità #bustorino #mezzipubblici",
-      "alt_text": "iPhone con la linea 68 dal vivo e, in alto, l'indicazione «Mezzo accessibile in carrozzina». Accanto, un riquadro: per ogni corsa, mezzo accessibile in carrozzina.",
+      "alt_text": "Piantina schematica: tu sei alla fermata Porta Nuova 40, il 68 sta arrivando con l’etichetta «accessibile in carrozzina». Sotto, la notifica: il 68 per Cenisia, accessibile in carrozzina, tra 2 minuti. Accanto, un iPhone inclinato con la linea 68 dal vivo.",
       "location": null,
-      "check_before": [],
+      "check_before": [
+        "ok al nuovo stile (Mappa)"
+      ],
       "publish": "automatica",
       "status": "scheduled"
     },
@@ -458,9 +505,11 @@
       "publish_at": "2026-12-21T18:15:00+01:00",
       "image": "img/18-preferiti.jpg",
       "caption": "Apri l'app e sai già quando passa.\n\nSalva le fermate che usi e scegli le linee da seguire: in Home trovi subito il prossimo mezzo, senza cercare niente.\n\n#torino #bustorino #pendolari #mezzipubblici",
-      "alt_text": "iPhone con la Home di arrivaTO e due fermate preferite, Giuria e Porta Nuova, con i minuti al prossimo passaggio. Accanto, un riquadro: in Home, Giuria, 16 CD, il prossimo tra 2 minuti.",
+      "alt_text": "Sfondo azzurro e lilla. Una domanda in un fumetto: «Ogni mattina la stessa fermata. Devo cercarla ogni volta?». Sotto, i preferiti in Home di arrivaTO: 16 CD a Giuria tra 2 minuti, 9 a Porta Nuova tra 4 minuti. Titolo: le tue fermate, subito.",
       "location": null,
-      "check_before": [],
+      "check_before": [
+        "ok al nuovo stile (Domanda)"
+      ],
       "publish": "automatica",
       "status": "scheduled"
     },
