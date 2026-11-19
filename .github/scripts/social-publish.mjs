@@ -6,6 +6,7 @@
 // - se check_before non è vuoto serve approved = true;
 // - una storia (id che finisce con "-storia") parte solo dopo che il suo post è pubblicato;
 // - type "carousel" usa images: [...] (fino a 10) e alt_texts: [...]; su Facebook diventa un post con più foto;
+// - type "reel" usa video: "video/x.mp4" (9:16, H.264) e facoltativi cover o thumb_offset (ms); su Facebook diventa un video;
 // - Instagram e Facebook già riusciti non vengono ripetuti ai tentativi successivi.
 //
 // Le immagini sono servite da GitHub Pages: Meta le scarica da IMAGE_BASE.
@@ -52,8 +53,8 @@ async function igContainer(params) {
   }
 }
 
-async function igWait(id) {
-  for (let i = 0; i < 30; i++) {
+async function igWait(id, tries = 30) {
+  for (let i = 0; i < tries; i++) {
     const s = await graph("GET", id, { fields: "status_code" });
     if (s.status_code === "FINISHED") return;
     if (s.status_code === "ERROR" || s.status_code === "EXPIRED") throw new Error(`container IG: ${s.status_code}`);
@@ -64,7 +65,14 @@ async function igWait(id) {
 
 async function igPublish(post, imageUrls) {
   let c;
-  if (post.type === "carousel") {
+  if (post.type === "reel") {
+    // Reel: il video viene scaricato ed elaborato da Meta, può volerci qualche minuto.
+    const params = { media_type: "REELS", video_url: imageUrls[0], caption: post.caption.trim(), share_to_feed: "true" };
+    if (post.cover) params.cover_url = IMAGE_BASE + post.cover;
+    else if (post.thumb_offset != null) params.thumb_offset = String(post.thumb_offset);
+    c = await graph("POST", `${IG}/media`, params);
+    await igWait(c.id, 150);
+  } else if (post.type === "carousel") {
     // Carosello: un container per immagine, poi il container padre con la didascalia.
     const children = [];
     for (const [i, url] of imageUrls.entries()) {
@@ -84,7 +92,7 @@ async function igPublish(post, imageUrls) {
     }
     c = await igContainer(params);
   }
-  await igWait(c.id);
+  if (post.type !== "reel") await igWait(c.id);
   const m = await graph("POST", `${IG}/media_publish`, { creation_id: c.id });
   const info = await graph("GET", m.id, { fields: "permalink" }).catch(() => ({}));
   return { id: m.id, url: info.permalink ?? null };
@@ -92,6 +100,10 @@ async function igPublish(post, imageUrls) {
 
 async function fbPublish(post, imageUrls, pageToken) {
   let r;
+  if (post.type === "reel") {
+    r = await graph("POST", `${PAGE}/videos`, { file_url: imageUrls[0], description: post.caption.trim() }, pageToken);
+    return { id: r.id, url: `https://www.facebook.com/${r.id}` };
+  }
   if (imageUrls.length === 1) {
     r = await graph("POST", `${PAGE}/photos`, { url: imageUrls[0], message: post.caption.trim() }, pageToken);
   } else {
@@ -166,7 +178,7 @@ console.log(`${now.toISOString()} · da pubblicare: ${due.map((p) => p.id).join(
 
 let failed = false;
 for (const p of due.slice(0, 3)) {
-  const imageUrls = (p.images ?? [p.image]).map((f) => IMAGE_BASE + f);
+  const imageUrls = (p.type === "reel" ? [p.video] : p.images ?? [p.image]).map((f) => IMAGE_BASE + f);
   console.log(`→ ${p.id} (${p.type}) ${imageUrls.join(" ")}`);
   if (dry) continue;
   p.result ??= {};
