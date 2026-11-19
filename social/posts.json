@@ -116,7 +116,18 @@
       "location": "Torino",
       "check_before": [],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "published",
+      "result": {
+        "ig": {
+          "id": "17874737439641733",
+          "url": "https://www.instagram.com/p/Df6j7eSF5fH/"
+        },
+        "fb": {
+          "id": "1441718615691796_122098944339556033",
+          "url": "https://www.facebook.com/1441718615691796_122098944339556033"
+        }
+      },
+      "published_at": "2026-11-19T07:38:02.996Z"
     },
     {
       "id": "2026-11-19-sciopero-storia",
