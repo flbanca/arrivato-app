@@ -34,7 +34,11 @@ jobs:
       META_IG_USER_ID: "17841453280752624"
       IMAGE_BASE: https://flbanca.github.io/arrivato-app/social/
     steps:
+      # Sempre l'ultima versione della coda: un avvio in attesa non deve leggere uno stato vecchio
+      # (altrimenti ripubblicherebbe un post appena uscito).
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: 22
