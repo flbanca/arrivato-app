@@ -141,6 +141,32 @@
       "status": "scheduled"
     },
     {
+      "id": "2026-11-20-weekend",
+      "type": "carousel",
+      "publish_at": "2026-11-20T12:30:00+01:00",
+      "images": [
+        "img/weekend-21-novembre-01.jpg",
+        "img/weekend-21-novembre-02.jpg",
+        "img/weekend-21-novembre-03.jpg",
+        "img/weekend-21-novembre-04.jpg",
+        "img/weekend-21-novembre-05.jpg"
+      ],
+      "caption": "Weekend a Torino: 3 cose da fare sabato e domenica, e la fermata per arrivarci.\n\n1. Yayoi Kusama alle OGR @ogrtorino, corso Castelfidardo 22: «The Quantum Effect», una Infinity Mirror Room da attraversare. Sabato e domenica dalle 10 alle 20. Fermata Bixio, linea 94, oppure Politecnico con il 12.\n2. Grande vendita di piante al Mercato Centrale @mercatocentraletorino, piazza della Repubblica 25: ingresso libero su prenotazione, fino a domenica dalle 10 alle 17. Fermata Porta Palazzo Sud, linee 4, 8, 11, 19, 27, 51, 92.\n3. Fan Ho a Palazzo Barolo @palazzobarolo, via delle Orfane 7/A: cento fotografie della Hong Kong di strada. Sabato e domenica dalle 10 alle 19. Fermata Garibaldi, linee 52 e 67, oppure Orfane con la Star 2.\n\nOrari presi dai siti degli organizzatori: ricontrollali prima di uscire. E in arrivaTO guarda quando passa il prossimo.\n\nSalva il post: il weekend a Torino torna ogni venerdì.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #weekendtorino #eventitorino #mostretorino #bustorino",
+      "alt_texts": [
+        "Copertina blu notte: Weekend a Torino, 21 e 22 novembre. 3 cose da fare e la fermata per arrivarci: Bixio per Yayoi Kusama alle OGR, Porta Palazzo Sud per la vendita di piante al Mercato Centrale, Garibaldi per Fan Ho a Palazzo Barolo.",
+        "Yayoi Kusama, The Quantum Effect alle OGR, corso Castelfidardo 22, sabato e domenica dalle 10 alle 20. Fermata più vicina Bixio, numero 555, linea 94, 2 minuti a piedi.",
+        "Grande vendita di piante al Mercato Centrale, piazza della Repubblica 25, ingresso libero su prenotazione fino a domenica dalle 10 alle 17. Fermata Porta Palazzo Sud, numero 200, linee 4, 8, 11, 19, 27, 51, 92, un minuto a piedi.",
+        "Fan Ho, cento fotografie della Hong Kong di strada a Palazzo Barolo, via delle Orfane 7/A, sabato e domenica dalle 10 alle 19. Fermata Garibaldi, numero 2178, linee 52 e 67, 2 minuti a piedi.",
+        "Prima di uscire: cerca la fermata e guarda quando passa. Esempio di arrivi a Porta Palazzo Sud. Salva il post, il weekend a Torino torna ogni venerdì."
+      ],
+      "location": null,
+      "check_before": [
+        "profili: @ogrtorino @mercatocentraletorino @palazzobarolo"
+      ],
+      "publish": "automatica",
+      "status": "scheduled"
+    },
+    {
       "id": "2026-11-21-atp",
       "n": 5,
       "type": "feed",
@@ -162,6 +188,35 @@
       "link_sticker": null,
       "publish": "automatica",
       "note": null,
+      "status": "scheduled"
+    },
+    {
+      "id": "2026-11-22-gita-13",
+      "type": "carousel",
+      "publish_at": "2026-11-22T10:00:00+01:00",
+      "images": [
+        "img/gita-13-cappuccini-01.jpg",
+        "img/gita-13-cappuccini-02.jpg",
+        "img/gita-13-cappuccini-03.jpg",
+        "img/gita-13-cappuccini-04.jpg",
+        "img/gita-13-cappuccini-05.jpg",
+        "img/gita-13-cappuccini-06.jpg"
+      ],
+      "caption": "Gita in tram della domenica: il 13 da piazza Castello alla Gran Madre, poi su ai Cappuccini.\n\n1. Sali sul 13 alla fermata Castello, davanti a Palazzo Madama, direzione Borgo Po.\n2. Quattro fermate per via Po e sei in piazza Vittorio: se vuoi, scendi per due passi lungo il fiume.\n3. Al capolinea Gran Madre sei sotto la chiesa, all’inizio della collina.\n4. Dieci minuti di salita a piedi e dal Monte dei Cappuccini vedi tutta Torino, con le Alpi dietro. Lassù c’è anche il Museo della Montagna @museomontagna.\n\nPer tornare in centro c’è il 53 dalla fermata Cappuccini.\n\nPrima di uscire guarda in arrivaTO quando passa il 13: la domenica le corse sono meno frequenti.\n\nSalva il post: ogni domenica una gita con una linea diversa.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #gitaintram #tramtorino #domenicaatorino #bustorino",
+      "alt_texts": [
+        "Copertina: Gita in tram della domenica. Il 13 fino alla Gran Madre, poi su ai Cappuccini. Quattro tappe su una linea: Castello, Vittorio Veneto, Gran Madre, Cappuccini.",
+        "Tappa 1, piazza Castello: sali sul 13 alla fermata Castello, numero 471, davanti a Palazzo Madama, direzione Borgo Po.",
+        "Tappa 2, piazza Vittorio: fermata Vittorio Veneto, numero 478, quattro fermate dopo Castello. Si può scendere per due passi sotto i portici e lungo il Po.",
+        "Tappa 3, Gran Madre: capolinea del 13, fermata numero 480, sotto la chiesa della Gran Madre. Da qui comincia la collina.",
+        "Tappa 4, Monte dei Cappuccini: dieci minuti di salita a piedi dalla Gran Madre. Per tornare in centro, linea 53 dalla fermata Cappuccini, numero 1424, direzione Vanchiglia.",
+        "Prima di partire: guarda quando passa il 13. Esempio di arrivi alla fermata Castello. Salva il post, ogni domenica una gita con una linea diversa."
+      ],
+      "location": null,
+      "check_before": [
+        "ok al post",
+        "profilo: @museomontagna"
+      ],
+      "publish": "automatica",
       "status": "scheduled"
     },
     {
