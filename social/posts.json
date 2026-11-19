@@ -239,14 +239,15 @@
       "type": "feed",
       "publish_at": "2026-11-24T18:15:00+01:00",
       "image": "img/scendi-qui-bicerin.jpg",
-      "caption": "Scendi qui: fermata Giulio, linee 52, 67 e Star 2.\n\nA un minuto a piedi c’è Al Bicerin @{{profilo Al Bicerin}}, il caffè del 1763 davanti al santuario della Consolata. È qui che è nato il bicerin: caffè, cioccolato e crema di latte, a strati nel bicchierino.\n\nChiuso il mercoledì. Prima di uscire cerca la fermata Giulio in arrivaTO e guarda quando passa il prossimo.\n\nScendi qui torna ogni martedì: un posto, la sua fermata.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #bicerin #caffetorino #quadrilatero #bustorino",
+      "caption": "Scendi qui: fermata Giulio, linee 52, 67 e Star 2.\n\nA un minuto a piedi c’è Al Bicerin @bicerin.1763.torino, il caffè del 1763 davanti al santuario della Consolata. È qui che è nato il bicerin: caffè, cioccolato e crema di latte, a strati nel bicchierino.\n\nChiuso il mercoledì. Prima di uscire cerca la fermata Giulio in arrivaTO e guarda quando passa il prossimo.\n\nScendi qui torna ogni martedì: un posto, la sua fermata.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #bicerin #caffetorino #quadrilatero #bustorino",
       "alt_text": "Sfondo azzurro e lilla. Scendi qui, Consolata: Al Bicerin, il caffè del 1763 davanti alla Consolata, dove è nato il bicerin. Piazza della Consolata 5, chiuso il mercoledì. Fermata più vicina Giulio, numero 2176, linee 52, 67 e Star 2, un minuto a piedi.",
       "location": null,
       "check_before": [
         "profilo Instagram di Al Bicerin (sostituire {{…}})"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-11-25-filmfestival",
@@ -338,7 +339,7 @@
       "type": "feed",
       "publish_at": "2026-11-29T13:00:00+01:00",
       "image": "img/mole-di-panettoni.jpg",
-      "caption": "Oggi è l’ultimo giorno di Una Mole di Panettoni @{{profilo Una Mole di Panettoni}}: i panettoni artigianali di tutta Italia all’Hotel Principi di Piemonte, in via Gobetti 15.\n\nStamattina il centro era chiuso per la maratona: vacci nel pomeriggio. La fermata più vicina è Arcivescovado, linee 4, 11, 15, 55, 58 e 92, a 3 minuti a piedi. Controlla in arrivaTO gli avvisi GTT: dopo la gara qualche linea può essere ancora deviata.\n\nOrari e biglietti sul sito dell’evento.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #panettone #unamoledipanettoni #eventitorino #bustorino",
+      "caption": "Oggi è l’ultimo giorno di Una Mole di Panettoni @unamoledi: i panettoni artigianali di tutta Italia all’Hotel Principi di Piemonte, in via Gobetti 15.\n\nStamattina il centro era chiuso per la maratona: vacci nel pomeriggio. La fermata più vicina è Arcivescovado, linee 4, 11, 15, 55, 58 e 92, a 3 minuti a piedi. Controlla in arrivaTO gli avvisi GTT: dopo la gara qualche linea può essere ancora deviata.\n\nOrari e biglietti sul sito dell’evento.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #panettone #unamoledipanettoni #eventitorino #bustorino",
       "alt_text": "Sfondo azzurro e lilla. Succede a Torino, 27-29 novembre: Una Mole di Panettoni, panettoni artigianali da tutta Italia. Principi di Piemonte, via Gobetti 15. Fermata più vicina Arcivescovado, numero 249, linee 4, 11, 15, 55, 58, 92, 3 minuti a piedi.",
       "location": null,
       "check_before": [
@@ -346,7 +347,8 @@
         "orari 2026 confermati"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-11-30-fermata",
