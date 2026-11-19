@@ -257,7 +257,8 @@
         "ok al formato Domanda"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-11-23-vicino",
