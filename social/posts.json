@@ -164,7 +164,8 @@
         "profili: @ogrtorino @mercatocentraletorino @palazzobarolo"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-11-21-atp",
@@ -217,7 +218,8 @@
         "profilo: @museomontagna"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-11-23-vicino",
