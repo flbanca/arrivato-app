@@ -376,7 +376,8 @@
         "ok al nuovo stile (Primo piano)"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-12-04-villaggio-natale",
@@ -431,7 +432,8 @@
         "ok al nuovo stile (Mappa)"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-12-11-babbi-natale",
@@ -513,7 +515,8 @@
         "ok al nuovo stile (Domanda)"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-12-23-avvisi",
