@@ -175,6 +175,35 @@
       "approved": true
     },
     {
+      "id": "2026-12-03-novita-13",
+      "type": "carousel",
+      "publish_at": "2026-11-20T18:15:00+01:00",
+      "images": [
+        "img/novita-13-01.jpg",
+        "img/novita-13-02.jpg",
+        "img/novita-13-03.jpg",
+        "img/novita-13-04.jpg",
+        "img/novita-13-05.jpg",
+        "img/novita-13-06.jpg"
+      ],
+      "caption": "Novità in arrivaTO: scrivi dove vai, e l’app ti ci porta.\n\n1. Calcola il percorso con bus, tram e metro GTT, partendo adesso: a piedi fino alla fermata, la linea, dove scendere e a che ora arrivi.\n2. Mentre vai in fermata sai se fai in tempo: se il mezzo arriva prima di te, la riga diventa arancione.\n3. A bordo conta le fermate che mancano, con i passaggi Live.\n4. Prima di scendere ti avvisa: «Scendi alla prossima».\n\nAggiorna arrivaTO dall’App Store.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #bustorino #tramtorino #mezzipubblici #appiphone",
+      "alt_texts": [
+        "Copertina con lo sfondo dell’app: novità in arrivaTO. Dove vai? Ti ci porta. Calcola il percorso con bus, tram e metro, poi segui il viaggio passo per passo. Accanto, un iPhone con la mappa e il pannello: a piedi, vai alla fermata Sabotino Ovest, il 15 passa tra 8 minuti, live.",
+        "Calcola il percorso. Scrivi dove vai. iPhone inclinato con la schermata del percorso: la mappa a tutto schermo con il tragitto fino a Vittorio Emanuele II, sotto il pannello con 12 minuti e arrivo alle 10:45, cammina 3 minuti fino alla fermata, sali sul 12 che passa tra 6 minuti, e il pulsante Segui il viaggio.",
+        "Mentre vai in fermata: sai se fai in tempo. Il pannello dice in arancione: il 15 passa tra 1 minuto, affrettati.",
+        "A bordo: conta le fermate per te. Il pannello mostra 7 fermate a Accademia Albertina, prossima Legnano, mentre il mezzo avanza sulla mappa.",
+        "Prima di scendere: ti avvisa al momento giusto. Il pannello arancione dice: scendi alla prossima, Accademia Albertina tra 1 minuto.",
+        "arrivaTO. Calcola il percorso. Segui il viaggio. Aggiorna dall’App Store. Gratis, senza pubblicità, app non ufficiale. Dati GTT e Muoversi a Torino – 5T."
+      ],
+      "location": null,
+      "check_before": [
+        "data di uscita della nuova versione sull’App Store (spostare publish_at a quel giorno)"
+      ],
+      "publish": "automatica",
+      "status": "scheduled",
+      "approved": true
+    },
+    {
       "id": "2026-11-21-atp",
       "n": 5,
       "type": "feed",
@@ -248,6 +277,21 @@
       "check_before": [
         "ok al post",
         "profilo: @museomontagna"
+      ],
+      "publish": "automatica",
+      "status": "scheduled",
+      "approved": true
+    },
+    {
+      "id": "2026-12-05-reel-segui-il-viaggio",
+      "type": "reel",
+      "publish_at": "2026-11-22T13:00:00+01:00",
+      "video": "video/segui-il-viaggio.mp4",
+      "cover": "img/reel-segui-cover.jpg",
+      "caption": "Segui il viaggio, la novità di arrivaTO.\n\nUn viaggio vero: il 15 da Sabotino Ovest ad Accademia Albertina, poi a piedi fino alla Mole. Mentre vai in fermata ti dice quando passa il mezzo, a bordo conta le fermate che mancano e ti avvisa quando scendere.\n\nAggiorna arrivaTO dall’App Store.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #bustorino #tramtorino #mezzipubblici #appiphone",
+      "location": null,
+      "check_before": [
+        "data di uscita della nuova versione (il reel esce 1-2 giorni dopo il carosello)"
       ],
       "publish": "automatica",
       "status": "scheduled",
@@ -415,14 +459,15 @@
       "type": "feed",
       "publish_at": "2026-12-01T18:15:00+01:00",
       "image": "img/scendi-qui-mulassano.jpg",
-      "caption": "Scendi qui: fermata Castello, linee 13, 15, 55 e 56.\n\nA due minuti a piedi c’è Mulassano @{{profilo Mulassano}}, il caffè liberty sotto i portici di piazza Castello. Qui, nel 1926, è nato il tramezzino.\n\nPrima di uscire cerca la fermata Castello in arrivaTO e guarda quando passa il prossimo.\n\nScendi qui torna ogni martedì: un posto, la sua fermata.\n\nFoto: Herbert_wie, CC BY-SA 4.0.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #tramezzino #caffetorino #piazzacastello #bustorino",
+      "caption": "Scendi qui: fermata Castello, linee 13, 15, 55 e 56.\n\nA due minuti a piedi c’è Mulassano @caffemulassano, il caffè liberty sotto i portici di piazza Castello. Qui, nel 1926, è nato il tramezzino.\n\nPrima di uscire cerca la fermata Castello in arrivaTO e guarda quando passa il prossimo.\n\nScendi qui torna ogni martedì: un posto, la sua fermata.\n\nFoto: Herbert_wie, CC BY-SA 4.0.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #tramezzino #caffetorino #piazzacastello #bustorino",
       "alt_text": "Foto della vetrina liberty di Mulassano sotto i portici di piazza Castello, scurita in basso con una luce blu e lilla. Testo: Caffè Mulassano, dove è nato il tramezzino. Scendi a Castello, due minuti a piedi. Firma arrivaTO: fermata Castello, linee 13, 15, 55 e 56.",
       "location": null,
       "check_before": [
         "profilo Instagram di Mulassano (sostituire {{…}})"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-12-02-ricerca",
@@ -439,34 +484,6 @@
       "publish": "automatica",
       "status": "scheduled",
       "approved": true
-    },
-    {
-      "id": "2026-12-03-novita-13",
-      "type": "carousel",
-      "publish_at": "2026-12-03T18:15:00+01:00",
-      "images": [
-        "img/novita-13-01.jpg",
-        "img/novita-13-02.jpg",
-        "img/novita-13-03.jpg",
-        "img/novita-13-04.jpg",
-        "img/novita-13-05.jpg",
-        "img/novita-13-06.jpg"
-      ],
-      "caption": "Novità in arrivaTO: scrivi dove vai, e l’app ti ci porta.\n\n1. Calcola il percorso con bus, tram e metro GTT, partendo adesso: a piedi fino alla fermata, la linea, dove scendere e a che ora arrivi.\n2. Mentre vai in fermata sai se fai in tempo: se il mezzo arriva prima di te, la riga diventa arancione.\n3. A bordo conta le fermate che mancano, con i passaggi Live.\n4. Prima di scendere ti avvisa: «Scendi alla prossima».\n\nAggiorna arrivaTO dall’App Store.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #bustorino #tramtorino #mezzipubblici #appiphone",
-      "alt_texts": [
-        "Copertina con lo sfondo dell’app: novità in arrivaTO. Dove vai? Ti ci porta. Calcola il percorso con bus, tram e metro, poi segui il viaggio passo per passo. Accanto, un iPhone con la mappa e il pannello: a piedi, vai alla fermata Sabotino Ovest, il 15 passa tra 8 minuti, live.",
-        "Calcola il percorso. Scrivi dove vai. iPhone inclinato con la schermata del percorso: la mappa a tutto schermo con il tragitto fino a Vittorio Emanuele II, sotto il pannello con 12 minuti e arrivo alle 10:45, cammina 3 minuti fino alla fermata, sali sul 12 che passa tra 6 minuti, e il pulsante Segui il viaggio.",
-        "Mentre vai in fermata: sai se fai in tempo. Il pannello dice in arancione: il 15 passa tra 1 minuto, affrettati.",
-        "A bordo: conta le fermate per te. Il pannello mostra 7 fermate a Accademia Albertina, prossima Legnano, mentre il mezzo avanza sulla mappa.",
-        "Prima di scendere: ti avvisa al momento giusto. Il pannello arancione dice: scendi alla prossima, Accademia Albertina tra 1 minuto.",
-        "arrivaTO. Calcola il percorso. Segui il viaggio. Aggiorna dall’App Store. Gratis, senza pubblicità, app non ufficiale. Dati GTT e Muoversi a Torino – 5T."
-      ],
-      "location": null,
-      "check_before": [
-        "data di uscita della nuova versione sull’App Store (spostare publish_at a quel giorno)"
-      ],
-      "publish": "automatica",
-      "status": "scheduled"
     },
     {
       "id": "2026-12-04-villaggio-natale",
@@ -506,7 +523,7 @@
         "img/weekend-5-dicembre-04.jpg",
         "img/weekend-5-dicembre-05.jpg"
       ],
-      "caption": "Weekend a Torino: 3 cose da fare sabato e domenica, e la fermata per arrivarci.\n\n1. Sabato il Balon, il mercato delle pulci di Borgo Dora. Fermata Borgo Dora, linee 4, 11, 51 e 92.\n2. Sabato e domenica Natale è Reale @{{profilo Natale è Reale}}, il mercatino di Natale nella Palazzina di Caccia di Stupinigi. Fermata Stupinigi, linee 41 e 48.\n3. Domenica Il Libro Ritrovato @{{profilo Il Libro Ritrovato}}: libri antichi e usati in piazza Carlo Felice. Fermata Carlo Felice, linee 6, 35 e 68+, oppure metro Porta Nuova.\n\nOrari sui siti degli organizzatori: ricontrollali prima di uscire. E in arrivaTO guarda quando passa il prossimo.\n\nSalva il post: il weekend a Torino torna ogni venerdì.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #weekendtorino #mercatinidinatale #eventitorino #bustorino",
+      "caption": "Weekend a Torino: 3 cose da fare sabato e domenica, e la fermata per arrivarci.\n\n1. Sabato il Balon, il mercato delle pulci di Borgo Dora. Fermata Borgo Dora, linee 4, 11, 51 e 92.\n2. Sabato e domenica Natale è Reale @{{profilo Natale è Reale}}, il mercatino di Natale nella Palazzina di Caccia di Stupinigi. Fermata Stupinigi, linee 41 e 48.\n3. Domenica Il Libro Ritrovato @illibroritrovatomercato: libri antichi e usati in piazza Carlo Felice. Fermata Carlo Felice, linee 6, 35 e 68+, oppure metro Porta Nuova.\n\nOrari sui siti degli organizzatori: ricontrollali prima di uscire. E in arrivaTO guarda quando passa il prossimo.\n\nSalva il post: il weekend a Torino torna ogni venerdì.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #weekendtorino #mercatinidinatale #eventitorino #bustorino",
       "alt_texts": [
         "Copertina su sfondo chiaro azzurro e lilla, in stile tipografico: «Tre cose da fare, e la fermata per arrivarci». Tre righe con le date in grande: 5.12 il Balon a Borgo Dora, sabato, fermata Borgo Dora; 5·6 Natale è Reale a Stupinigi, sabato e domenica, fermata Stupinigi; 6.12 Il Libro Ritrovato, domenica, fermata Carlo Felice.",
         "Sabato a Borgo Dora: il Balon, il mercato delle pulci di Torino. Vintage, libri, dischi e cose che non sapevi di cercare, tutto il sabato. Firma arrivaTO: fermata Borgo Dora a 2 minuti, linee 4, 11, 51 e 92.",
@@ -516,22 +533,8 @@
       ],
       "location": null,
       "check_before": [
-        "profili di Natale è Reale e Il Libro Ritrovato (sostituire {{…}})",
+        "profilo di Natale è Reale (sostituire {{…}})",
         "date 2026 confermate (Libro Ritrovato il 6/12, Natale è Reale)"
-      ],
-      "publish": "automatica",
-      "status": "scheduled"
-    },
-    {
-      "id": "2026-12-05-reel-segui-il-viaggio",
-      "type": "reel",
-      "publish_at": "2026-12-05T12:00:00+01:00",
-      "video": "video/segui-il-viaggio.mp4",
-      "cover": "img/reel-segui-cover.jpg",
-      "caption": "Segui il viaggio, la novità di arrivaTO.\n\nUn viaggio vero: il 15 da Sabotino Ovest ad Accademia Albertina, poi a piedi fino alla Mole. Mentre vai in fermata ti dice quando passa il mezzo, a bordo conta le fermate che mancano e ti avvisa quando scendere.\n\nAggiorna arrivaTO dall’App Store.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #bustorino #tramtorino #mezzipubblici #appiphone",
-      "location": null,
-      "check_before": [
-        "data di uscita della nuova versione (il reel esce 1-2 giorni dopo il carosello)"
       ],
       "publish": "automatica",
       "status": "scheduled"
@@ -541,11 +544,10 @@
       "type": "feed",
       "publish_at": "2026-12-06T10:00:00+01:00",
       "image": "img/musei-reali-6-dicembre.jpg",
-      "caption": "Oggi è la prima domenica del mese: ai Musei Reali @{{profilo Musei Reali}} si entra gratis. Palazzo Reale, Armeria e Galleria Sabauda, con i biglietti da ritirare in biglietteria.\n\nLa fermata più vicina è Duomo - Musei Reali, linee 4, 8, 11, 19, 27, 51 e 92, a 2 minuti a piedi. Con il 13, il 15, il 55 e il 56 scendi a Castello.\n\nPrima di uscire guarda in arrivaTO quando passa il prossimo.\n\nFoto: Ambra75, CC BY-SA 4.0 (Scalone d’Onore di Palazzo Reale).\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #domenicalmuseo #museirealitorino #museigratis #bustorino",
+      "caption": "Oggi è la prima domenica del mese: ai Musei Reali @museirealitorino si entra gratis. Palazzo Reale, Armeria e Galleria Sabauda, con i biglietti da ritirare in biglietteria.\n\nLa fermata più vicina è Duomo - Musei Reali, linee 4, 8, 11, 19, 27, 51 e 92, a 2 minuti a piedi. Con il 13, il 15, il 55 e il 56 scendi a Castello.\n\nPrima di uscire guarda in arrivaTO quando passa il prossimo.\n\nFoto: Ambra75, CC BY-SA 4.0 (Scalone d’Onore di Palazzo Reale).\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #domenicalmuseo #museirealitorino #museigratis #bustorino",
       "alt_text": "Foto dello Scalone d’Onore di Palazzo Reale, con stucchi, quadri e lampade accese, scurita in basso con una luce blu e lilla. Testo: domenica 6 dicembre, Musei Reali, gratis la prima domenica del mese. Palazzo Reale, Armeria e Galleria Sabauda, biglietti solo in biglietteria. Firma arrivaTO: fermata Duomo - Musei Reali a 2 minuti, linee 4, 11, 19, 27 e 51.",
       "location": null,
       "check_before": [
-        "profilo Instagram dei Musei Reali (sostituire {{…}})",
         "Domenica al museo confermata per il 6/12 a Torino"
       ],
       "publish": "automatica",
@@ -592,7 +594,8 @@
         "la nuova versione deve essere già sull’App Store (dopo il carosello di lancio)"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-12-11-babbi-natale",
