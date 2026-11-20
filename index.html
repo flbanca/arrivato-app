@@ -194,7 +194,8 @@
     .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
     .split.flip > :first-child { order: 2; }
     .duo { display: flex; justify-content: center; align-items: flex-start; gap: 18px; }
-    .duo .phone { --w: min(230px, 42vw); }
+    .split > * { min-width: 0; }
+    .duo .phone { --w: min(230px, calc(50vw - 34px)); box-sizing: border-box; flex: none; }
     .duo .phone:last-child { margin-top: 48px; }
     .center { text-align: center; }
     .center .lead { margin: 0 auto; }
