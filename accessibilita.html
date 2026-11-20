@@ -26,25 +26,27 @@
 
     <article class="card">
       <h1>Accessibilità</h1>
-      <p class="meta">Ultimo aggiornamento: 12 novembre 2026</p>
+      <p class="meta">Ultimo aggiornamento: 20 novembre 2026 (versione 1.3)</p>
       <p class="lede">arrivaTO deve essere utile a chiunque aspetti un mezzo, anche a chi usa le funzioni di accessibilità di iOS.</p>
 
       <h2>Cosa supporta l'app</h2>
       <ul class="features">
         <li><strong>VoiceOver</strong>: fermate, arrivi e preferiti vengono letti come frasi complete, con linea, destinazione, minuti e stato (live o da orario). Pulsanti con icona, intestazioni e filtri selezionati hanno etichette e tratti corretti, e le conferme vengono annunciate. C'è un'azione «Aggiorna orari».</li>
+        <li><strong>VoiceOver in Percorso e Segui il viaggio</strong>: ogni percorso è letto come una frase sola (durata, arrivo, linee, quando passa il mezzo «in tempo reale»); durante il viaggio il pannello è un unico elemento e i cambi di fase vengono annunciati («Scendi alla prossima»). I preferiti si riordinano anche con le azioni «Sposta su» e «Sposta giù».</li>
         <li><strong>Controllo vocale</strong>: tutti i pulsanti, anche quelli con sola icona, hanno un nome da pronunciare.</li>
         <li><strong>Testo più grande</strong>: il testo segue le dimensioni impostate in iOS, fino alle taglie di accessibilità più grandi. I contenuti vanno a capo o si impilano invece di essere tagliati.</li>
         <li><strong>Contrasto</strong>: il testo ha un contrasto di almeno 4,5:1 sullo sfondo, misurato sulle schermate reali.</li>
         <li><strong>Differenzia senza colore</strong>: i filtri selezionati mostrano anche un segno di spunta, non solo un colore diverso.</li>
-        <li><strong>Riduci movimento</strong>: con l'opzione attiva, le animazioni di comparsa e i rimbalzi sono disattivati.</li>
+        <li><strong>Riduci movimento</strong>: con l'opzione attiva, le animazioni di comparsa, i rimbalzi e lo sfondo in movimento sono disattivati.</li>
+        <li><strong>Aumenta contrasto e Riduci trasparenza</strong>: il vetro diventa una superficie piena con bordi visibili, e i testi più chiari si scuriscono.</li>
         <li><strong>Aree di tocco</strong> di almeno 44 × 44 punti.</li>
       </ul>
 
       <h2>Come lo verifichiamo</h2>
-      <p>Ogni versione viene controllata con l'audit di accessibilità automatico di Xcode sulle schermate principali (Home, Cerca, Dettaglio fermata) e provata a mano con VoiceOver e con il testo alla dimensione massima.</p>
+      <p>Ogni versione passa un controllo automatico di accessibilità su 9 schermate (Home, Cerca, Fermata, Vicino a me, Linea dal vivo, Percorso, Segui il viaggio e altre), sia in modalità chiara sia scura, con il contrasto misurato sui colori reali dello schermo. Poi la proviamo a mano con VoiceOver, con il testo alla dimensione massima e con «Aumenta contrasto».</p>
 
       <h2>Limiti noti</h2>
-      <p>Gli orari dipendono dai dati pubblici di GTT e Muoversi a Torino. Con l'app chiusa, iOS non garantisce che l'avviso «5 minuti prima» venga inviato.</p>
+      <p>Gli orari dipendono dai dati pubblici di GTT e Muoversi a Torino. Con l'app chiusa, iOS non garantisce che l'avviso «5 minuti prima» venga inviato. In «Segui il viaggio», con il telefono bloccato, il conto alla rovescia e l'avviso per scendere sono una stima basata sugli orari. Le mappe sono di Apple: i nomi di vie e luoghi disegnati sulla mappa non sono letti da VoiceOver, mentre i passaggi del percorso sì.</p>
 
       <h2>Segnala un problema</h2>
       <p>Se qualcosa non funziona con VoiceOver o con altre tecnologie assistive, scrivici a <a href="mailto:hello@flbanca.it?subject=arrivaTO%20accessibilit%C3%A0">hello@flbanca.it</a>: le segnalazioni sull'accessibilità hanno la precedenza.</p>
@@ -56,11 +58,13 @@
       <h1>Accessibility</h1>
       <ul class="features">
         <li><strong>VoiceOver</strong>: stops, arrivals and favourites are read as full sentences; icon buttons, headers and selected filters have proper labels and traits; confirmations are announced; “Aggiorna orari” (refresh) action.</li>
+        <li><strong>VoiceOver in Percorso and Segui il viaggio</strong>: each route is read as one sentence; during a trip the panel is a single element and phase changes are announced. Favourites can be reordered with the “Sposta su” / “Sposta giù” actions.</li>
         <li><strong>Voice Control</strong>: every button, including icon-only ones, has a spoken name.</li>
         <li><strong>Larger Text</strong>: follows iOS text size up to the largest accessibility sizes; layouts wrap instead of truncating.</li>
         <li><strong>Sufficient contrast</strong>: text contrast of at least 4.5:1, measured on rendered screens.</li>
         <li><strong>Differentiate Without Color</strong>: selected filters also show a checkmark.</li>
-        <li><strong>Reduce Motion</strong>: appear and bounce animations are turned off.</li>
+        <li><strong>Reduce Motion</strong>: appear and bounce animations and the moving background are turned off.</li>
+        <li><strong>Increase Contrast and Reduce Transparency</strong>: glass becomes a solid surface with visible borders, and lighter text gets darker.</li>
         <li><strong>Touch targets</strong> of at least 44 × 44 points.</li>
       </ul>
       <p>Found an accessibility issue? Email <a href="mailto:hello@flbanca.it?subject=arrivaTO%20accessibility">hello@flbanca.it</a>.</p>

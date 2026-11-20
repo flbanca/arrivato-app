@@ -35,7 +35,7 @@
 
       <details>
         <summary>L'orario mostrato non corrisponde a quello reale.</summary>
-        <p>I passaggi vengono dal servizio pubblico Muoversi a Torino. Quando c'è l'etichetta «Live» il dato arriva dal tempo reale del mezzo; con «Orario» è l'orario programmato. Se il servizio non risponde, l'app mostra gli ultimi dati scaricati segnandoli come non aggiornati. Possono esserci imprecisioni che non dipendono dall'app.</p>
+        <p>I passaggi vengono dal servizio pubblico Muoversi a Torino. Quando c'è l'etichetta «live» il dato arriva dal tempo reale del mezzo; con «programmato» è l'orario previsto. Se il servizio non risponde, l'app mostra gli ultimi dati scaricati segnandoli come non aggiornati. Possono esserci imprecisioni che non dipendono dall'app.</p>
       </details>
 
       <details>
@@ -50,9 +50,17 @@
 
       <details>
         <summary>Come elimino una fermata dai preferiti?</summary>
-        <p>Nella schermata principale tocca la × accanto alla fermata.</p>
+        <p>In Home scorri la fermata verso sinistra e tocca «Rimuovi», oppure tocca «Modifica». Per riordinarle tieni premuta una fermata e trascinala.</p>
       </details>
 
+      <details>
+        <summary>Percorso non trova il mio indirizzo.</summary>
+        <p>Percorso cerca solo nell'area servita da GTT, per non proporti luoghi omonimi in altre città. Prova a scrivere anche il comune («via Roma, Moncalieri») oppure cerca la fermata più vicina. Gli indirizzi e i luoghi vengono cercati con Apple Maps.</p>
+      </details>
+      <details>
+        <summary>Con «Segui il viaggio» l'avviso per scendere arriva troppo presto o troppo tardi.</summary>
+        <p>Con l'app aperta la guida usa la tua posizione. Quando blocchi il telefono, l'app non usa la posizione: il conto alla rovescia e l'avviso «scendi» sono calcolati sugli orari previsti al momento del blocco, quindi se il mezzo accumula ritardo o anticipo possono essere sfasati. Riaprendo l'app tutto si riallinea.</p>
+      </details>
       <details>
         <summary>Posso comprare i biglietti?</summary>
         <p>No, arrivaTO non vende biglietti. Usa i canali ufficiali GTT.</p>
@@ -68,7 +76,8 @@
       <h2 style="margin-top:0">Fonti dei dati</h2>
       <ul>
         <li>Fermate, linee e orari: open data GTFS di <a href="https://www.gtt.to.it" rel="noopener">GTT S.p.A. – Gruppo Torinese Trasporti</a> (<a href="https://www.gtt.to.it/gtt_gtfs_license.html" rel="noopener">licenza</a>).</li>
-        <li>Passaggi in tempo reale: <a href="https://www.muoversiatorino.it" rel="noopener">Muoversi a Torino</a> (5T S.r.l.).</li>
+        <li>Passaggi in tempo reale e calcolo dei percorsi: <a href="https://www.muoversiatorino.it" rel="noopener">Muoversi a Torino</a> (5T S.r.l.).</li>
+        <li>Ricerca di indirizzi e luoghi, mappe: Apple Maps (su iPhone).</li>
       </ul>
       <p class="note">I dati sono forniti così come sono, senza garanzia di completezza o puntualità.</p>
     </section>
@@ -82,11 +91,19 @@
       <h2>FAQ</h2>
       <details>
         <summary>The arrival time is wrong.</summary>
-        <p>Arrivals come from the public Muoversi a Torino service. “Live” means real-time vehicle data; “Orario” means the scheduled time. If the service is unavailable, the app shows the last downloaded data marked as out of date.</p>
+        <p>Arrivals come from the public Muoversi a Torino service. “live” means real-time vehicle data; “programmato” means the scheduled time. If the service is unavailable, the app shows the last downloaded data marked as out of date.</p>
       </details>
       <details>
         <summary>The “5 minutes before” alert didn't arrive.</summary>
         <p>Check that notifications are enabled for arrivaTO. When the app is closed, iOS decides when background refresh may run, so alerts are not guaranteed. On Android, also check Settings › Apps › arrivaTO: notifications on and, for on-time alerts, “Alarms &amp; reminders” allowed. With the app closed, Android refreshes arrivals about every 15 minutes.</p>
+      </details>
+      <details>
+        <summary>Percorso can't find my address.</summary>
+        <p>Percorso only searches the area GTT serves, so it doesn't suggest places with the same name in other cities. Try adding the town (“via Roma, Moncalieri”) or search for the nearest stop. Addresses and places are looked up with Apple Maps.</p>
+      </details>
+      <details>
+        <summary>With “Segui il viaggio” the get-off alert comes too early or too late.</summary>
+        <p>While the app is open, the guide uses your location. When you lock the phone the app does not use your location: the countdown and the get-off alert are based on the times expected when you locked it, so they can drift if the vehicle runs late or early. Opening the app again brings everything back in line.</p>
       </details>
       <details>
         <summary>Is this the official GTT app?</summary>
