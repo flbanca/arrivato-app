@@ -171,8 +171,19 @@
         "profili: @ogrtorino @mercatocentraletorino @palazzobarolo"
       ],
       "publish": "automatica",
-      "status": "scheduled",
-      "approved": true
+      "status": "published",
+      "approved": true,
+      "result": {
+        "ig": {
+          "id": "18349340170270623",
+          "url": "https://www.instagram.com/p/Df9jfHJl9ls/"
+        },
+        "fb": {
+          "id": "1441718615691796_122099942679556033",
+          "url": "https://www.facebook.com/1441718615691796_122099942679556033"
+        }
+      },
+      "published_at": "2026-11-20T11:32:02.921Z"
     },
     {
       "id": "2026-12-03-novita-13",
