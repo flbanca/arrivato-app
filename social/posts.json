@@ -208,7 +208,7 @@
         "img/stelle-2027-03.jpg",
         "img/stelle-2027-04.jpg"
       ],
-      "caption": "Due nuove stelle a Torino nella Guida Michelin 2027. E la fermata per arrivarci.\n\n1. Akoya @{{profilo Akoya}}, via della Consolata 11/E: omakase giapponese, dieci posti al bancone davanti allo chef, dentro una galleria d’arte. Fermata Giulio, linee 52, 67 e Star 2, a un minuto.\n2. La Limonaia @{{profilo La Limonaia}}, via Mario Ponzio 10: la cucina di Cesare Grandi tra brace e prodotti del mercato, a Pozzo Strada. Fermata Postumia con il 42, oppure Pronda con 40, 62 e 90.\n\nPrenota il tavolo, poi in arrivaTO guarda quando passa il prossimo. Salva il post per la prossima cena fuori.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #guidamichelin #ristorantitorino #mangiareatorino #bustorino",
+      "caption": "Due nuove stelle a Torino nella Guida Michelin 2027. E la fermata per arrivarci.\n\n1. Akoya @akoyatorino, via della Consolata 11/E: omakase giapponese, dieci posti al bancone davanti allo chef, dentro una galleria d’arte. Fermata Giulio, linee 52, 67 e Star 2, a un minuto.\n2. La Limonaia @la_limonaia_, via Mario Ponzio 10: la cucina di Cesare Grandi tra brace e prodotti del mercato, a Pozzo Strada. Fermata Postumia con il 42, oppure Pronda con 40, 62 e 90.\n\nPrenota il tavolo, poi in arrivaTO guarda quando passa il prossimo. Salva il post per la prossima cena fuori.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #guidamichelin #ristorantitorino #mangiareatorino #bustorino",
       "alt_texts": [
         "Copertina con lo sfondo azzurro e lilla dell’app: nuove stelle a Torino, Guida Michelin 2027. Due nuove stelle in città e la fermata per arrivarci: Giulio per Akoya nel Quadrilatero, Postumia per La Limonaia a Pozzo Strada.",
         "Akoya, omakase giapponese con dieci posti al bancone dentro una galleria d’arte, prima stella. Via della Consolata 11/E. Fermata più vicina Giulio, numero 2176, linee 52, 67 e Star 2, un minuto a piedi.",
@@ -220,7 +220,8 @@
         "profili Instagram di Akoya e La Limonaia (sostituire {{…}})"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-11-22-gita-13",
