@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>In viaggio – arrivaTO</title>
+  <meta name="description" content="Ti ha fatto sapere che è in viaggio: linea, fermata e orario di arrivo.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+  <link rel="canonical" href="https://flbanca.github.io/arrivato-app/viaggio.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="arrivaTO">
+  <meta property="og:url" content="https://flbanca.github.io/arrivato-app/viaggio.html">
+  <meta property="og:title" content="In viaggio con arrivaTO">
+  <meta property="og:description" content="Ti ha fatto sapere che è in viaggio: linea, fermata e orario di arrivo.">
+  <meta property="og:image" content="https://flbanca.github.io/arrivato-app/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="arrivaTO: Torino, fermata per fermata. Percorso, arrivi in tempo reale e l’avviso quando scendere.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="apple-itunes-app" content="app-id=6833643923, app-argument=https://apps.apple.com/it/app/arrivato/id6833643923">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --badge-bg: #0f4fd0;
+      --badge-ink: #ffffff;
+      --link: #0f4fd0;
+      --soft-bg: rgba(26, 108, 255, 0.08);
+      --soft-line: rgba(15, 79, 208, 0.16);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #e9eef8;
+        --ink-soft: rgba(233, 238, 248, 0.8);
+        --ink-mute: rgba(233, 238, 248, 0.72);
+        --card: rgba(22, 30, 48, 0.82);
+        --card-border: rgba(255, 255, 255, 0.08);
+        --rule: rgba(255, 255, 255, 0.12);
+        --bg-top: #0b1120;
+        --badge-bg: #2b6cf0;
+        --link: #9dbdff;
+        --soft-bg: rgba(91, 141, 255, 0.12);
+        --soft-line: rgba(157, 189, 255, 0.22);
+      }
+      body {
+        background:
+          radial-gradient(900px 480px at 8% -5%, #16213a 0%, transparent 55%),
+          linear-gradient(180deg, #0b1120 0%, #101a30 100%);
+        background-color: var(--bg-top);
+      }
+      .card { box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35); }
+    }
+    a { color: var(--link); }
+    .links a:hover, .links a[aria-current="page"] { color: var(--link); }
+    footer a { color: var(--ink-mute); }
+
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .trip { margin: 20px 0 0; }
+    .trip[hidden] { display: none; }
+    .lines { list-style: none; padding: 0; margin: 0 0 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+    .lines li { display: flex; align-items: center; gap: 8px; }
+    .lines li + li::before { content: "›"; content: "›" / ""; color: var(--ink-mute); font-weight: 700; }
+    .badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 48px; min-height: 40px; padding: 4px 12px; border-radius: 12px;
+      background: var(--badge-bg); color: var(--badge-ink);
+      font-family: "Sora", "Manrope", sans-serif; font-weight: 700; font-size: 20px; line-height: 1.1;
+    }
+    .trip p { margin: 6px 0; font-size: 19px; }
+    .trip strong { font-weight: 800; }
+    .reassure {
+      background: var(--soft-bg); border: 1px solid var(--soft-line);
+      border-radius: 16px; padding: 14px 16px; font-size: 15px; color: var(--ink-soft);
+    }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 24px; }
+    .button { color: #fff; }
+    footer .unofficial { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="./"><img src="icon.png" alt="">arrivaTO</a>
+      <div class="links">
+        <a href="./">Home</a>
+        <a href="supporto.html">Assistenza</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </nav>
+
+    <main>
+      <article class="card">
+        <h1>In viaggio con arrivaTO</h1>
+        <p class="lede" id="intro">Qualcuno ti ha fatto sapere che è in viaggio con arrivaTO.</p>
+
+        <section class="trip" id="trip" aria-labelledby="trip-title" hidden>
+          <h2 class="sr-only" id="trip-title">Dettagli del viaggio</h2>
+          <ol class="lines" id="lines" aria-label="Linee, in ordine"></ol>
+          <p id="stop"></p>
+          <p id="time"></p>
+        </section>
+      </article>
+
+      <p class="reassure">Questo messaggio te l'ha mandato una persona dal suo telefono. arrivaTO non conosce la sua posizione e non conserva niente.</p>
+
+      <div class="actions">
+        <a class="button" href="https://apps.apple.com/it/app/arrivato/id6833643923" target="_blank" rel="noopener noreferrer">Scarica arrivaTO</a>
+        <a href="./">Scopri arrivaTO</a>
+      </div>
+    </main>
+
+    <footer>
+      <p class="unofficial">App non ufficiale, non affiliata né approvata da GTT S.p.A. o 5T S.r.l.</p>
+      <p>Dati GTT S.p.A. · Muoversi a Torino – 5T</p>
+      <p>© 2026 Francesca La Banca · <a href="privacy.html">Privacy</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // The trip details live in the URL fragment (after "#"), which the browser
+    // never sends to the server. The fragment is untrusted input: it is
+    // validated strictly and rendered only through textContent.
+    (function () {
+      var LINE = /^[A-Za-z0-9]{1,5}$/;
+      var TIME = /^([01]\d|2[0-3]):[0-5]\d$/;
+
+      function parseTrip(hash) {
+        if (typeof hash !== "string") return null;
+        var raw = hash.charAt(0) === "#" ? hash.slice(1) : hash;
+        if (!raw) return null;
+        var params;
+        try { params = new URLSearchParams(raw); } catch (e) { return null; }
+
+        var t = params.get("t");
+        if (t === null || !TIME.test(t)) return null;
+
+        var l = params.get("l");
+        var s = params.get("s");
+        if (l === null && s === null) return { lines: [], stop: null, time: t };
+        if (l === null || s === null) return null;
+
+        var lines = l.split(",");
+        if (lines.length < 1 || lines.length > 6) return null;
+        for (var i = 0; i < lines.length; i++) {
+          if (lines[i] !== "metro" && !LINE.test(lines[i])) return null;
+        }
+
+        var stop = s.trim();
+        if (stop.length < 1 || stop.length > 60) return null;
+
+        return { lines: lines, stop: stop, time: t };
+      }
+
+      function render(doc, trip) {
+        var tripEl = doc.getElementById("trip");
+        var linesEl = doc.getElementById("lines");
+        var stopEl = doc.getElementById("stop");
+        var timeEl = doc.getElementById("time");
+        var intro = doc.getElementById("intro");
+
+        while (linesEl.firstChild) linesEl.removeChild(linesEl.firstChild);
+        stopEl.textContent = "";
+        timeEl.textContent = "";
+
+        if (!trip) {
+          intro.textContent = "Qualcuno ti ha fatto sapere che è in viaggio con arrivaTO.";
+          tripEl.hidden = true;
+          return;
+        }
+
+        intro.textContent = "Ti ha fatto sapere che è in viaggio.";
+
+        if (trip.lines.length === 0) {
+          linesEl.hidden = true;
+          stopEl.hidden = true;
+          timeEl.textContent = "A piedi, arrivo previsto verso le " + trip.time + ".";
+        } else {
+          linesEl.hidden = false;
+          stopEl.hidden = false;
+          trip.lines.forEach(function (label) {
+            var li = doc.createElement("li");
+            var badge = doc.createElement("span");
+            badge.className = "badge";
+            var shown = label === "metro" ? "Metro" : label;
+            badge.textContent = shown;
+            badge.setAttribute("aria-hidden", "true");
+            var sr = doc.createElement("span");
+            sr.className = "sr-only";
+            sr.textContent = label === "metro" ? "Metro" : "Linea " + label;
+            li.appendChild(badge);
+            li.appendChild(sr);
+            linesEl.appendChild(li);
+          });
+          stopEl.appendChild(doc.createTextNode("Scende a "));
+          var strong = doc.createElement("strong");
+          strong.textContent = trip.stop;
+          stopEl.appendChild(strong);
+          timeEl.textContent = "Arrivo previsto verso le " + trip.time + ".";
+        }
+        tripEl.hidden = false;
+      }
+
+      if (typeof module !== "undefined" && module.exports) {
+        module.exports = { parseTrip: parseTrip, render: render };
+      }
+      if (typeof document !== "undefined" && typeof location !== "undefined") {
+        var update = function () { render(document, parseTrip(location.hash)); };
+        update();
+        window.addEventListener("hashchange", update);
+      }
+    })();
+  </script>
+</body>
+</html>
