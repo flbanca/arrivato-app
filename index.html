@@ -197,10 +197,30 @@
     .split > * { min-width: 0; }
     .duo .phone { --w: min(230px, calc(50vw - 34px)); box-sizing: border-box; flex: none; }
     .duo .phone:last-child { margin-top: 48px; }
-    .ride { position: relative; margin: 0 auto; width: min(340px, 100%); }
-    .ride video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; border-radius: 28px; box-shadow: 0 30px 70px rgba(16, 32, 64, 0.28); background: #dbe6f6; }
-    .ride-toggle { position: absolute; right: 14px; bottom: 14px; min-height: 44px; padding: 0 16px; border: 0; border-radius: 22px; background: rgba(255, 255, 255, 0.9); color: #0944c0; font: inherit; font-weight: 800; font-size: 0.9rem; cursor: pointer; box-shadow: 0 6px 18px rgba(16, 32, 64, 0.18); }
-    .ride-toggle:focus-visible { outline: 3px solid #1a6cff; outline-offset: 2px; }
+    /* ---------- Segui il viaggio: the phone plays the real ride, the steps follow it ---------- */
+    .ride-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 88px); align-items: center; }
+    .ride-stage { position: relative; display: grid; place-items: center; padding: 24px 0 40px; }
+    .ride-stage::before { content: ""; position: absolute; inset: 6% 2%; border-radius: 50%; background: radial-gradient(closest-side, rgba(26, 108, 255, 0.22), transparent); filter: blur(10px); }
+    .ride-stage .phone { --w: min(320px, 78vw); position: relative; }
+    .ride-stage .screen { aspect-ratio: 540 / 1152; }
+    .ride-stage video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .ride-notif { position: absolute; left: 50%; top: 58px; width: min(330px, 86vw); transform: translate(-50%, -18px); opacity: 0; transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.2, 0.9, 0.2, 1); display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 22px; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-shadow: 0 18px 40px rgba(16, 32, 64, 0.22); z-index: 2; }
+    .ride-notif.on { opacity: 1; transform: translate(-50%, 0); }
+    .ride-notif img { border-radius: 9px; flex: none; }
+    .ride-notif b { display: block; font-size: 0.95rem; color: var(--ink, #0c1220); }
+    .ride-notif span { display: block; font-size: 0.86rem; color: #3a4050; font-weight: 600; }
+    .ride-notif small { margin-left: auto; align-self: flex-start; font-weight: 700; color: #5b5f6b; }
+    .ride-steps { list-style: none; margin: 26px 0 0; padding: 0; display: grid; gap: 6px; counter-reset: step; }
+    .ride-steps button { width: 100%; display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 4px 14px; align-items: start; text-align: left; padding: 14px 16px; border: 0; border-radius: 20px; background: transparent; font: inherit; color: inherit; cursor: pointer; transition: background 0.3s ease, box-shadow 0.3s ease; }
+    .ride-steps button::before { counter-increment: step; content: counter(step); grid-row: span 2; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; background: rgba(26, 108, 255, 0.1); color: #0944c0; transition: background 0.3s ease, color 0.3s ease; }
+    .ride-steps b { font-size: 1.08rem; font-weight: 800; letter-spacing: -0.01em; }
+    .ride-steps span { color: var(--muted); font-weight: 600; line-height: 1.45; }
+    .ride-steps .now button { background: rgba(255, 255, 255, 0.75); box-shadow: 0 10px 30px rgba(16, 32, 64, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.9); }
+    .ride-steps .now button::before { background: #1a6cff; color: #fff; }
+    .ride-steps .now.alert button::before { background: #ff8a00; color: #2a1800; }
+    .ride-steps button:focus-visible, .ride-toggle:focus-visible { outline: 3px solid #1a6cff; outline-offset: 2px; }
+    .ride-toggle { margin-top: 18px; min-height: 44px; padding: 0 18px; border: 0; border-radius: 22px; background: rgba(26, 108, 255, 0.1); color: #0944c0; font: inherit; font-weight: 800; cursor: pointer; }
+    @media (max-width: 900px) { .ride-grid { grid-template-columns: minmax(0, 1fr); } }
     .center { text-align: center; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .center .lead { margin: 0 auto; }
@@ -496,20 +516,35 @@
       </div>
     </section>
 
-    <!-- Segui il viaggio: the real ride on line 15, as a video -->
+    <!-- Segui il viaggio: the real ride on line 15; the steps follow the video -->
     <section aria-labelledby="ride-title">
-      <div class="wrap split flip">
-        <div class="rise">
-          <p class="kicker">Segui il viaggio</p>
-          <h2 class="h2" id="ride-title">Ti avvisa<br />quando scendere.</h2>
-          <p class="lead">Un viaggio vero sul 15, da Sabotino Ovest ad Accademia Albertina: i minuti a piedi fino alla fermata, quando passa il tram, le fermate che mancano e, quando è il momento, «Scendi alla prossima».</p>
-          <p class="lead" style="margin-top: 14px">Con il telefono bloccato lo trovi sulla schermata di blocco, e una notifica ti avvisa poco prima della tua fermata.</p>
+      <div class="wrap ride-grid">
+        <div class="ride-stage">
+          <div class="phone">
+            <div class="screen">
+              <video id="rideVideo" src="segui-il-viaggio.mp4" poster="segui-il-viaggio-poster.jpg" width="540" height="1152" muted loop playsinline preload="metadata" aria-describedby="rideCaption"></video>
+            </div>
+          </div>
+          <div class="ride-notif" id="rideNotif" aria-hidden="true">
+            <img src="icon.png" width="36" height="36" alt="" />
+            <div><b>Prossima fermata</b><span>Scendi ad Accademia Albertina</span></div>
+            <small>ora</small>
+          </div>
+          <p id="rideCaption" class="sr-only">Video di Segui il viaggio sulla linea 15, da Sabotino Ovest ad Accademia Albertina, diviso nei cinque passaggi elencati accanto.</p>
         </div>
-        <figure class="ride">
-          <video id="rideVideo" src="segui-il-viaggio.mp4" poster="segui-il-viaggio-poster.jpg" width="540" height="960" muted loop playsinline preload="metadata" aria-describedby="rideCaption"></video>
+        <div>
+          <p class="kicker">Segui il viaggio</p>
+          <h2 class="h2" id="ride-title">Ti accompagna<br />fino a destinazione.</h2>
+          <p class="lead">Un viaggio vero sul 15, da Sabotino Ovest ad Accademia Albertina. Tocca un passaggio per vederlo.</p>
+          <ol class="ride-steps" id="rideSteps">
+            <li data-from="0"><button type="button"><b>A piedi verso la fermata</b><span>I minuti che mancano e quando passa il mezzo. Se rischi di perderlo, te lo dice: «affrettati».</span></button></li>
+            <li data-from="7.4"><button type="button"><b>Il tram sta arrivando</b><span>In fermata vedi i minuti al passaggio, in tempo reale.</span></button></li>
+            <li data-from="10.2"><button type="button"><b>A bordo, fermata per fermata</b><span>Quante fermate mancano e qual è la prossima. Niente display sul tram? Non serve.</span></button></li>
+            <li data-from="16.6" class="alert"><button type="button"><b>Scendi alla prossima</b><span>Il pannello diventa arancione e il telefono vibra. Con il telefono bloccato arriva la notifica.</span></button></li>
+            <li data-from="19.8"><button type="button"><b>Fino a destinazione</b><span>Gli ultimi minuti a piedi, poi «Sei arrivato».</span></button></li>
+          </ol>
           <button type="button" class="ride-toggle" id="rideToggle">Metti in pausa</button>
-          <figcaption id="rideCaption" class="sr-only">Animazione di Segui il viaggio sulla linea 15: a piedi verso Sabotino Ovest («Il 15 passa tra 8 minuti»), a bordo con le fermate che mancano, «Scendi alla prossima» ad Accademia Albertina e l'arrivo alla Mole.</figcaption>
-        </figure>
+        </div>
       </div>
     </section>
 
@@ -872,15 +907,35 @@
     })();
   </script>
   <script>
-    // Segui il viaggio video: plays muted on loop only while visible, never with Reduce Motion,
-    // and the button pauses/resumes it (auto-playing content longer than 5 s must be pausable).
+    // Segui il viaggio: the video plays muted on loop only while visible (never with Reduce Motion),
+    // the step matching the video time is highlighted, a tap on a step jumps there, and the
+    // "scendi" notification drops in during that step. Auto-playing video longer than 5 s: pausable.
     (function () {
       var v = document.getElementById('rideVideo'), b = document.getElementById('rideToggle');
+      var n = document.getElementById('rideNotif'), steps = [].slice.call(document.querySelectorAll('#rideSteps li'));
       if (!v || !b) return;
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches, userPaused = reduce;
+      var starts = steps.map(function (li) { return parseFloat(li.getAttribute('data-from')); });
+      function sync() {
+        var t = v.currentTime, k = 0;
+        for (var i = 0; i < starts.length; i++) if (t >= starts[i]) k = i;
+        steps.forEach(function (li, i) {
+          li.classList.toggle('now', i === k);
+          var btn = li.querySelector('button');
+          if (i === k) btn.setAttribute('aria-current', 'step'); else btn.removeAttribute('aria-current');
+        });
+        n.classList.toggle('on', steps[k].classList.contains('alert'));
+      }
       function label() { b.textContent = v.paused ? 'Riproduci il video' : 'Metti in pausa'; }
+      steps.forEach(function (li, i) {
+        li.querySelector('button').addEventListener('click', function () {
+          v.currentTime = starts[i] + 0.4; sync();
+          if (!userPaused) v.play().catch(function () {});
+        });
+      });
       b.addEventListener('click', function () { if (v.paused) { userPaused = false; v.play().catch(function () {}); } else { userPaused = true; v.pause(); } });
-      v.addEventListener('play', label); v.addEventListener('pause', label); label();
+      v.addEventListener('timeupdate', sync); v.addEventListener('seeked', sync);
+      v.addEventListener('play', label); v.addEventListener('pause', label); label(); sync();
       if ('IntersectionObserver' in window) {
         new IntersectionObserver(function (e) {
           if (e[0].isIntersecting && !userPaused) v.play().catch(function () {}); else if (!e[0].isIntersecting) v.pause();
