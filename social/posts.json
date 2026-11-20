@@ -275,7 +275,7 @@
       "publish_at": "2026-11-23T18:15:00+01:00",
       "image": "img/06-vicino-v2.jpg",
       "caption": "Porta Nuova ha più fermate con lo stesso nome. Su quale marciapiede aspetti?\n\n«Vicino a me» trova le fermate entro un chilometro e ti dice dove va ogni linea, palina per palina. Così aspetti dal lato giusto.\n\nLa posizione resta sul telefono: non viene salvata né inviata.\n\n#torino #bustorino #tramtorino #mezzipubblici",
-      "alt_text": "Sfondo azzurro e lilla. Vicino a te, dal lato giusto. A Porta Nuova due fermate con lo stesso nome: la 39, dove il 9 va verso San Salvario, e la 40, dove il 9 va verso Barriera Lanzo. Accanto, un iPhone inclinato con la schermata «Vicino a me»: le fermate entro un chilometro, ognuna con la distanza a piedi e dove va ogni linea.",
+      "alt_text": "Sfondo azzurro e lilla. Vicino a te, dal lato giusto. A Porta Nuova due fermate con lo stesso nome: la 39, dove il 9 va verso San Salvario, e la 40, dove il 9 va verso Barriera Lanzo. Accanto, un iPhone visto di fronte, tagliato dal bordo, con la schermata «Vicino a me»: le fermate entro un chilometro, ognuna con la distanza a piedi e dove va ogni linea.",
       "location": null,
       "check_before": [],
       "publish": "automatica",
@@ -361,7 +361,7 @@
       "publish_at": "2026-11-27T18:15:00+01:00",
       "image": "img/08-avviso-v2.jpg",
       "caption": "Esci di casa quando serve, non prima.\n\nCon l'avviso 5′ prima arrivaTO ti manda una notifica quando il bus sta per arrivare alla tua fermata. Puoi attivarlo per la prossima corsa o ogni giorno in una fascia oraria, per esempio dalle 7:00 alle 7:30.\n\nTocchi la notifica e segui il bus dal vivo.\n\n#torino #bustorino #pendolari #mezzipubblici",
-      "alt_text": "Sfondo azzurro e lilla. Esci di casa al momento giusto. Sopra un iPhone inclinato scende la notifica di arrivaTO: tra 5 minuti a Porta Nuova, 9 per San Salvario, tocca per seguirlo dal vivo. Sullo schermo la fermata Porta Nuova con il riquadro «Avviso 5′ prima» impostato su Fascia oraria, ogni giorno dalle 7:00 alle 7:30.",
+      "alt_text": "Sfondo azzurro e lilla. Esci di casa al momento giusto. Sopra un iPhone visto di fronte scende la notifica di arrivaTO: tra 5 minuti a Porta Nuova, 9 per San Salvario, tocca per seguirlo dal vivo. Sullo schermo la fermata Porta Nuova con il riquadro «Avviso 5′ prima» impostato su Fascia oraria, ogni giorno dalle 7:00 alle 7:30.",
       "location": null,
       "check_before": [],
       "publish": "automatica",
@@ -431,7 +431,7 @@
       "publish_at": "2026-12-02T18:15:00+01:00",
       "image": "img/10-ricerca-v2.jpg",
       "caption": "Oltre 7.000 fermate GTT, già dentro l'app. Le trovi anche quando la rete non c'è.\n\nCerca per nome, per via, oppure scrivi il codice palina: è il numero sulla colonnina della fermata.\n\n#torino #bustorino #tramtorino #mezzipubblici",
-      "alt_text": "Sfondo azzurro e lilla. 7.000 fermate, anche senza rete. Due modi per trovarla: per nome, scrivendo «porta», o per codice, quello sulla palina, per esempio 611. Accanto, un iPhone inclinato con la schermata Cerca fermata e i risultati per «porta». Sotto: l’elenco delle fermate è nel telefono, la ricerca funziona anche senza campo.",
+      "alt_text": "Sfondo azzurro e lilla. 7.000 fermate, anche senza rete. Due modi per trovarla: per nome, scrivendo «porta», o per codice, quello sulla palina, per esempio 611. Accanto, un iPhone visto di fronte, tagliato dal bordo, con la schermata Cerca fermata e i risultati per «porta». Sotto: l’elenco delle fermate è nel telefono, la ricerca funziona anche senza campo.",
       "location": null,
       "check_before": [
         "ok al nuovo stile (Primo piano)"
@@ -571,7 +571,7 @@
       "publish_at": "2026-12-09T18:15:00+01:00",
       "image": "img/13-accessibile-v2.jpg",
       "caption": "Il prossimo mezzo accoglie la carrozzina? arrivaTO te lo dice per ogni corsa, prima che arrivi.\n\nE l'app stessa è pensata per tutti: VoiceOver legge frasi complete, il testo segue le dimensioni impostate sul telefono e le animazioni si fermano con «Riduci movimento».\n\n#torino #accessibilità #bustorino #mezzipubblici",
-      "alt_text": "Sfondo azzurro e lilla. Il mezzo è accessibile? Te lo dice. Un’etichetta verde: accessibile in carrozzina. Il 61 arriva a Porta Nuova tra 3 minuti. Accanto, un iPhone inclinato con la linea 61 dal vivo: il mezzo in viaggio verso Porta Nuova, la tua fermata evidenziata e la scritta «Mezzo accessibile in carrozzina».",
+      "alt_text": "Sfondo azzurro e lilla. Il mezzo è accessibile? Te lo dice. Un’etichetta verde: accessibile in carrozzina. Il 61 arriva a Porta Nuova tra 3 minuti. Accanto, un iPhone visto di fronte, tagliato dal bordo, con la linea 61 dal vivo: il mezzo in viaggio verso Porta Nuova, la tua fermata evidenziata e la scritta «Mezzo accessibile in carrozzina».",
       "location": null,
       "check_before": [
         "ok al nuovo stile (Mappa)"
@@ -586,7 +586,7 @@
       "publish_at": "2026-12-10T18:15:00+01:00",
       "image": "img/calcola-percorso.jpg",
       "caption": "Scrivi dove vai e arrivaTO calcola il percorso con bus, tram e metro GTT, partendo adesso.\n\nTi dice quanto cammini fino alla fermata, quale linea prendere, quando passa e a che ora arrivi. Poi tocchi «Segui il viaggio» e ti accompagna fino a destinazione.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #bustorino #tramtorino #mezzipubblici",
-      "alt_text": "Sfondo azzurro e lilla. Calcola il percorso: da qui a lì, con bus e tram. 12 minuti, arrivo alle 10:45, partenza alle 10:33. Sali sul 12, che passa tra 6 minuti. Accanto, un iPhone inclinato con la mappa del tragitto e il pannello: cammina 3 minuti fino a Vittorio Emanuele II, sali sul 12, e il pulsante Segui il viaggio.",
+      "alt_text": "Sfondo azzurro e lilla. Calcola il percorso: da qui a lì, con bus e tram. 12 minuti, arrivo alle 10:45, partenza alle 10:33. Sali sul 12, che passa tra 6 minuti. Accanto, un iPhone visto di fronte, tagliato dal bordo, con la mappa del tragitto e il pannello: cammina 3 minuti fino a Vittorio Emanuele II, sali sul 12, e il pulsante Segui il viaggio.",
       "location": null,
       "check_before": [
         "la nuova versione deve essere già sull’App Store (dopo il carosello di lancio)"
@@ -616,7 +616,7 @@
       "publish_at": "2026-12-12T11:00:00+01:00",
       "image": "img/segui-il-tram.jpg",
       "caption": "Il tram sta arrivando o è ancora lontano?\n\nTocca un passaggio in arrivaTO e vedi la linea fermata per fermata: dove si trova adesso il mezzo e quanto manca alla tua fermata. Se il dato è live lo vedi scritto; se la corsa è solo programmata, l’app ti dice che la posizione è stimata.\n\n#torino #tramtorino #bustorino #mezzipubblici",
-      "alt_text": "Sfondo azzurro e lilla. Dov’è il tram, adesso? Il 16 CD va verso Pellico, posizione stimata; alla tua fermata Giuria mancano 4 minuti. Accanto, un iPhone inclinato con la linea 16 Circolare Destra: le fermate già passate in grigio, il tram tra Della Rocca e Pellico, e Giuria evidenziata come la tua fermata.",
+      "alt_text": "Sfondo azzurro e lilla. Dov’è il tram, adesso? Il 16 CD va verso Pellico, posizione stimata; alla tua fermata Giuria mancano 4 minuti. Accanto, un iPhone visto di fronte, tagliato dal bordo, con la linea 16 Circolare Destra: le fermate già passate in grigio, il tram tra Della Rocca e Pellico, e Giuria evidenziata come la tua fermata.",
       "location": null,
       "check_before": [
         "ok al nuovo post"
@@ -682,7 +682,7 @@
       "publish_at": "2026-12-21T18:15:00+01:00",
       "image": "img/18-preferiti-v2.jpg",
       "caption": "Apri l'app e sai già quando passa.\n\nSalva le fermate che usi e scegli le linee da seguire: in Home trovi subito il prossimo mezzo, senza cercare niente.\n\n#torino #bustorino #pendolari #mezzipubblici",
-      "alt_text": "Sfondo azzurro e lilla. Le tue fermate, subito. Un fumetto chiede: «Ogni mattina la stessa fermata. Devo cercarla ogni volta?». Risposta: no, tocchi la stella e la ritrovi in Home con il prossimo passaggio. Accanto, un iPhone inclinato con la Home di arrivaTO: Giuria con il 16 CD tra 4 minuti e Porta Nuova con il 61 tra 3.",
+      "alt_text": "Sfondo azzurro e lilla. Le tue fermate, subito. Un fumetto chiede: «Ogni mattina la stessa fermata. Devo cercarla ogni volta?». Risposta: no, tocchi la stella e la ritrovi in Home con il prossimo passaggio. Accanto, un iPhone visto di fronte, tagliato dal bordo, con la Home di arrivaTO: Giuria con il 16 CD tra 4 minuti e Porta Nuova con il 61 tra 3.",
       "location": null,
       "check_before": [
         "ok al nuovo stile (Domanda)"
