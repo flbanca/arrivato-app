@@ -16,7 +16,7 @@
   <meta property="og:image" content="https://flbanca.github.io/arrivato-app/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="arrivaTO su iPhone: la fermata con il prossimo passaggio tra 1 minuto" />
+  <meta property="og:image:alt" content="arrivaTO: Torino, fermata per fermata. Percorso, arrivi in tempo reale e l’avviso quando scendere." />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="icon.png" type="image/png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -197,7 +197,12 @@
     .split > * { min-width: 0; }
     .duo .phone { --w: min(230px, calc(50vw - 34px)); box-sizing: border-box; flex: none; }
     .duo .phone:last-child { margin-top: 48px; }
+    .ride { position: relative; margin: 0 auto; width: min(340px, 100%); }
+    .ride video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; border-radius: 28px; box-shadow: 0 30px 70px rgba(16, 32, 64, 0.28); background: #dbe6f6; }
+    .ride-toggle { position: absolute; right: 14px; bottom: 14px; min-height: 44px; padding: 0 16px; border: 0; border-radius: 22px; background: rgba(255, 255, 255, 0.9); color: #0944c0; font: inherit; font-weight: 800; font-size: 0.9rem; cursor: pointer; box-shadow: 0 6px 18px rgba(16, 32, 64, 0.18); }
+    .ride-toggle:focus-visible { outline: 3px solid #1a6cff; outline-offset: 2px; }
     .center { text-align: center; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .center .lead { margin: 0 auto; }
 
     /* ---------- Scroll story: the vehicle moves as you scroll ---------- */
@@ -484,10 +489,27 @@
           <p class="lead">Scrivi un indirizzo, un luogo o una fermata: arrivaTO ti propone come arrivarci con bus, tram e metro GTT, con i passaggi in tempo reale.</p>
           <p class="lead" style="margin-top: 14px">Poi tocchi «Segui il viaggio»: ti guida a piedi fino alla fermata, ti dice quando passa il mezzo, conta le fermate che mancano e ti avvisa quando scendere. Anche con il telefono bloccato.</p>
         </div>
-        <div class="duo" role="img" aria-label="Due schermate di arrivaTO: i percorsi da La mia posizione a Porta Palazzo con il tram 4, e Segui il viaggio con il pannello arancione «Scendi alla prossima».">
+        <div class="duo" role="img" aria-label="Due schermate di arrivaTO: i percorsi da La mia posizione a Porta Palazzo con il tram 4, e il dettaglio del percorso con la mappa e i passaggi.">
           <div class="phone" aria-hidden="true"><div class="screen"><img src="shot13-percorso.jpg" width="780" height="1696" loading="lazy" alt="" /></div></div>
-          <div class="phone" aria-hidden="true"><div class="screen"><img src="shot13-scendi.jpg" width="780" height="1696" loading="lazy" alt="" /></div></div>
+          <div class="phone" aria-hidden="true"><div class="screen"><img src="shot13-dettaglio.jpg" width="780" height="1696" loading="lazy" alt="" /></div></div>
         </div>
+      </div>
+    </section>
+
+    <!-- Segui il viaggio: the real ride on line 15, as a video -->
+    <section aria-labelledby="ride-title">
+      <div class="wrap split flip">
+        <div class="rise">
+          <p class="kicker">Segui il viaggio</p>
+          <h2 class="h2" id="ride-title">Ti avvisa<br />quando scendere.</h2>
+          <p class="lead">Un viaggio vero sul 15, da Sabotino Ovest ad Accademia Albertina: i minuti a piedi fino alla fermata, quando passa il tram, le fermate che mancano e, quando è il momento, «Scendi alla prossima».</p>
+          <p class="lead" style="margin-top: 14px">Con il telefono bloccato lo trovi sulla schermata di blocco, e una notifica ti avvisa poco prima della tua fermata.</p>
+        </div>
+        <figure class="ride">
+          <video id="rideVideo" src="segui-il-viaggio.mp4" poster="segui-il-viaggio-poster.jpg" width="540" height="960" muted loop playsinline preload="metadata" aria-describedby="rideCaption"></video>
+          <button type="button" class="ride-toggle" id="rideToggle">Metti in pausa</button>
+          <figcaption id="rideCaption" class="sr-only">Animazione di Segui il viaggio sulla linea 15: a piedi verso Sabotino Ovest («Il 15 passa tra 8 minuti»), a bordo con le fermate che mancano, «Scendi alla prossima» ad Accademia Albertina e l'arrivo alla Mole.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -847,6 +869,23 @@
         window.addEventListener("resize", onScroll);
         onScroll();
       }
+    })();
+  </script>
+  <script>
+    // Segui il viaggio video: plays muted on loop only while visible, never with Reduce Motion,
+    // and the button pauses/resumes it (auto-playing content longer than 5 s must be pausable).
+    (function () {
+      var v = document.getElementById('rideVideo'), b = document.getElementById('rideToggle');
+      if (!v || !b) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches, userPaused = reduce;
+      function label() { b.textContent = v.paused ? 'Riproduci il video' : 'Metti in pausa'; }
+      b.addEventListener('click', function () { if (v.paused) { userPaused = false; v.play().catch(function () {}); } else { userPaused = true; v.pause(); } });
+      v.addEventListener('play', label); v.addEventListener('pause', label); label();
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (e) {
+          if (e[0].isIntersecting && !userPaused) v.play().catch(function () {}); else if (!e[0].isIntersecting) v.pause();
+        }, { threshold: 0.35 }).observe(v);
+      } else if (!userPaused) { v.play().catch(function () {}); }
     })();
   </script>
 </body>
