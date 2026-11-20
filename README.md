@@ -7,5 +7,6 @@ Sito statico di [arrivaTO](https://flbanca.github.io/arrivato-app/), app non uff
 - `supporto.html` – assistenza e FAQ
 - `accessibilita.html` – accessibilità
 - `privacy.html` – informativa privacy
+- `viaggio.html` – pagina del link «Fai sapere a qualcuno» (dati solo nel frammento dopo «#»)
 
 Pubblicato con GitHub Pages dal branch `main`.
