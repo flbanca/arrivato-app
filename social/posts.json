@@ -622,7 +622,8 @@
         "ok al nuovo post"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-12-14-concerti-inalpi",
