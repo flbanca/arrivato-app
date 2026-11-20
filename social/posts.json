@@ -211,8 +211,19 @@
         "data di uscita della nuova versione sull’App Store (spostare publish_at a quel giorno)"
       ],
       "publish": "automatica",
-      "status": "scheduled",
-      "approved": true
+      "status": "published",
+      "approved": true,
+      "result": {
+        "ig": {
+          "id": "18217168684316869",
+          "url": "https://www.instagram.com/p/Df-K8Kgl81d/"
+        },
+        "fb": {
+          "id": "1441718615691796_122100167145556033",
+          "url": "https://www.facebook.com/1441718615691796_122100167145556033"
+        }
+      },
+      "published_at": "2026-11-20T17:16:46.070Z"
     },
     {
       "id": "2026-11-21-atp",
