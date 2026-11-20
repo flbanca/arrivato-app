@@ -138,7 +138,14 @@
       "link_sticker": null,
       "publish": "automatica",
       "note": "Storia del giorno dello sciopero (fasce GTT verificate il 18/11)",
-      "status": "scheduled"
+      "status": "published",
+      "result": {
+        "ig": {
+          "id": "18204161329379375",
+          "url": "https://www.instagram.com/stories/arrivato.app/4034370595794467617"
+        }
+      },
+      "published_at": "2026-11-20T06:01:21.160Z"
     },
     {
       "id": "2026-11-20-weekend",
