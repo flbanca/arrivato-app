@@ -258,7 +258,14 @@
       "link_sticker": null,
       "publish": "automatica",
       "note": null,
-      "status": "scheduled"
+      "status": "published",
+      "result": {
+        "ig": {
+          "id": "18103286504541223",
+          "url": "https://www.instagram.com/stories/arrivato.app/4035268773003457048"
+        }
+      },
+      "published_at": "2026-11-21T11:45:55.678Z"
     },
     {
       "id": "2026-11-21-stelle",
