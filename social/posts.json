@@ -236,7 +236,18 @@
       "location": "Inalpi Arena",
       "check_before": [],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "published",
+      "result": {
+        "ig": {
+          "id": "17943897264389828",
+          "url": "https://www.instagram.com/p/DgAINhGGwIl/"
+        },
+        "fb": {
+          "id": "1441718615691796_122100705477556033",
+          "url": "https://www.facebook.com/1441718615691796_122100705477556033"
+        }
+      },
+      "published_at": "2026-11-21T11:31:18.778Z"
     },
     {
       "id": "2026-11-21-atp-storia",
