@@ -39,6 +39,7 @@
         "Arrivi in tempo reale di bus, tram e metro GTT",
         "Percorso: calcolo del viaggio con i mezzi pubblici",
         "Segui il viaggio: guida fermata per fermata e avviso quando scendere",
+        "Avvisa chi ti aspetta (in arrivo con la versione 1.4): un messaggio con linea, fermata e orario di arrivo, e uno quando sei a destinazione",
         "Fermate vicine",
         "Avvisi GTT su deviazioni e manifestazioni",
         "Preferiti e avviso prima dell'arrivo del mezzo"
@@ -535,6 +536,17 @@
     footer .footlinks a { font-weight: 800; color: var(--accent-deep); text-decoration: none; }
 
     /* ---------- Reveal ---------- */
+    /* ---------- Avvisa chi ti aspetta: the two messages as the person waiting sees them ---------- */
+    .care-chat { display: grid; gap: 18px; justify-items: end; max-width: 380px; margin: 0 auto; padding: 22px 18px; border-radius: 30px; background: var(--card); border: 1px solid var(--card-line); box-shadow: 0 18px 50px rgba(20, 40, 80, 0.12); }
+    .care-msg { display: grid; gap: 7px; justify-items: end; width: 100%; }
+    .care-bubble { background: var(--accent-deep); color: #fff; font-weight: 600; font-size: 0.98rem; line-height: 1.4; padding: 10px 14px; border-radius: 20px 20px 5px 20px; max-width: 30ch; }
+    .care-card { width: min(100%, 280px); background: #e4e9f2; border-radius: 18px; overflow: hidden; }
+    .care-card img { display: block; width: 100%; height: auto; }
+    .care-card span { display: block; padding: 9px 13px 11px; font-size: 0.86rem; font-weight: 800; color: var(--ink); }
+    .care-card small { display: block; font-size: 0.76rem; font-weight: 600; color: var(--faint); }
+    .care-time { font-size: 0.74rem; font-weight: 700; color: var(--faint); justify-self: center; }
+    .care-text .lead + .lead { margin-top: 14px; }
+
     .js .rise { opacity: 0; transform: translateY(26px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); transition-delay: var(--d, 0s); }
     .js .rise.in { opacity: 1; transform: none; }
 
@@ -595,7 +607,7 @@
       <div>
         <h1 class="big rise">Il prossimo<br />passa <span class="grad" style="white-space: nowrap">tra poco.</span></h1>
         <p class="lead rise" style="--d: 0.08s">Gli arrivi di bus, tram e metro a Torino, in tempo reale. Calcola il percorso, segui il viaggio fermata dopo fermata e scopri le fermate intorno a te. Gratis, senza pubblicità, senza account.</p>
-        <p class="rise" style="--d: 0.12s; margin: -6px 0 18px; font-weight: 700; color: var(--faint); font-size: 0.95rem">Novità della 1.3: Percorso e Segui il viaggio.</p>
+        <p class="rise" style="--d: 0.12s; margin: -6px 0 18px; font-weight: 700; color: var(--faint); font-size: 0.95rem">Novità della 1.3: Percorso e Segui il viaggio. In arrivo nella 1.4: Avvisa chi ti aspetta.</p>
         <div class="rise" style="--d: 0.16s">
           <div class="cta-row">
             <a class="cta" href="https://apps.apple.com/it/app/arrivato/id6833643923" target="_blank" rel="noopener noreferrer">Scarica sull’App Store</a>
@@ -695,6 +707,30 @@
             <li data-from="19.8"><button type="button"><b>Fino a destinazione</b><span>Gli ultimi minuti a piedi, poi «Sei arrivato».</span></button></li>
           </ol>
           <button type="button" class="ride-toggle" id="rideToggle">Metti in pausa</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Avvisa chi ti aspetta (1.4). When 1.4 is on the App Store: kicker "Nuovo nella 1.4", hero line, JSON-LD and llms.txt lose "in arrivo". -->
+    <section aria-labelledby="care-title">
+      <div class="wrap split flip">
+        <div class="rise care-text">
+          <p class="kicker">In arrivo nella 1.4</p>
+          <h2 class="h2" id="care-title">Scrivimi<br />quando arrivi.</h2>
+          <p class="lead">C’è sempre qualcuno che te lo dice, quando esci. E c’è sempre una sera in cui te ne dimentichi.</p>
+          <p class="lead">«Avvisa chi ti aspetta» nasce da lì. Mentre segui un viaggio, con un tocco mandi a chi vuoi la linea, la fermata dove scendi e l’orario di arrivo. Quando sei a destinazione, un altro tocco: «Tutto bene, sono a destinazione.» Se te ne scordi, te lo ricorda l’app.</p>
+          <p class="lead">Si condivide il viaggio, non la persona. Nessuna posizione in diretta, nessuno che ti segue sulla mappa: solo un messaggio che mandi tu, a chi decidi tu. È un modo di prendersi cura di chi ti aspetta.</p>
+        </div>
+        <div class="care-chat rise" style="--d: 0.08s" role="img" aria-label="Due messaggi in una chat. Il primo: Sono in viaggio con il 15, scendo a Vanchiglia, arrivo verso le 23:40. Ti scrivo quando sono a destinazione. Sotto, il riquadro «In viaggio con arrivaTO». Il secondo, più tardi: Tutto bene, sono a destinazione. Sotto, il riquadro «A destinazione».">
+          <div class="care-msg" aria-hidden="true">
+            <div class="care-bubble">Sono in viaggio con il 15. Scendo a Vanchiglia, arrivo verso le 23:40. Ti scrivo quando sono a destinazione.</div>
+            <div class="care-card"><img src="og-viaggio.jpg" width="1200" height="630" loading="lazy" alt="" /><span>In viaggio con arrivaTO<small>Linea, fermata e orario di arrivo</small></span></div>
+          </div>
+          <p class="care-time" aria-hidden="true">23:41</p>
+          <div class="care-msg" aria-hidden="true">
+            <div class="care-bubble">Tutto bene, sono a destinazione.</div>
+            <div class="care-card"><img src="og-arrivo.jpg" width="1200" height="630" loading="lazy" alt="" /><span>A destinazione<small>Il viaggio è finito bene</small></span></div>
+          </div>
         </div>
       </div>
     </section>
