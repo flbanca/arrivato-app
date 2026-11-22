@@ -1,0 +1,96 @@
+/* Pages opened from "Avvisa chi ti aspetta": viaggio.html (in viaggio) and arrivo.html (a destinazione). */
+:root {
+  --badge-bg: #0f4fd0;
+  --badge-ink: #ffffff;
+  --link: #0f4fd0;
+  --soft-bg: rgba(26, 108, 255, 0.08);
+  --soft-line: rgba(15, 79, 208, 0.16);
+  --ok: #0b7a53;
+  --ok-ink: #ffffff;
+  --rail: rgba(12, 18, 32, 0.16);
+  --dot-ring: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e9eef8;
+    --ink-soft: rgba(233, 238, 248, 0.8);
+    --ink-mute: rgba(233, 238, 248, 0.72);
+    --card: rgba(22, 30, 48, 0.82);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --rule: rgba(255, 255, 255, 0.12);
+    --bg-top: #0b1120;
+    --badge-bg: #2b6cf0;
+    --link: #9dbdff;
+    --soft-bg: rgba(91, 141, 255, 0.12);
+    --soft-line: rgba(157, 189, 255, 0.22);
+    --ok: #5fd3a6;
+    --ok-ink: #06241a;
+    --rail: rgba(255, 255, 255, 0.2);
+    --dot-ring: #161e30;
+  }
+  body {
+    background:
+      radial-gradient(900px 480px at 8% -5%, #16213a 0%, transparent 55%),
+      linear-gradient(180deg, #0b1120 0%, #101a30 100%);
+    background-color: var(--bg-top);
+  }
+  .card { box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35); }
+}
+a { color: var(--link); }
+.links a:hover, .links a[aria-current="page"] { color: var(--link); }
+footer a { color: var(--ink-mute); }
+footer .unofficial { font-weight: 700; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.trip-card { display: grid; gap: 18px; padding: 26px 22px; max-width: 520px; }
+.trip-card > * { margin: 0; }
+.kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--link);
+}
+.kicker svg { width: 18px; height: 18px; flex: none; }
+.kicker.ok { color: var(--ok); }
+
+h1.headline { display: grid; gap: 4px; font-size: 26px; line-height: 1.2; letter-spacing: -0.02em; }
+.headline .hero-label { font-family: "Manrope", "Segoe UI", sans-serif; font-size: 17px; font-weight: 600; letter-spacing: 0; color: var(--ink-soft); }
+.headline .hero-time { font-size: 60px; line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.headline .hero-sub { font-family: "Manrope", "Segoe UI", sans-serif; font-size: 18px; font-weight: 600; letter-spacing: 0; color: var(--ink-soft); }
+
+/* The journey as a line: now, the vehicles, the stop. */
+.route { list-style: none; padding: 0; display: grid; gap: 16px; position: relative; }
+.route[hidden] { display: none; }
+.route::before {
+  content: ""; position: absolute; left: 9px; top: 12px; bottom: 12px; width: 3px; border-radius: 2px;
+  background: linear-gradient(180deg, var(--badge-bg) 0 55%, var(--rail) 55%);
+}
+.route.single::before { display: none; }
+.route li { display: grid; grid-template-columns: 21px 1fr; gap: 14px; align-items: center; position: relative; font-size: 18px; }
+.route li[hidden] { display: none; }
+.route .dot { width: 21px; height: 21px; border-radius: 50%; background: var(--badge-bg); border: 4px solid var(--dot-ring); box-shadow: 0 0 0 1.5px var(--badge-bg); }
+.route .dot.pass { width: 11px; height: 11px; margin-left: 5px; border: 0; box-shadow: none; }
+.route .dot.end { background: var(--dot-ring); border-width: 3px; box-shadow: 0 0 0 2px var(--ink-mute); }
+.route .sub { display: block; font-size: 14px; color: var(--ink-mute); }
+.route strong { font-weight: 800; }
+.badges { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: var(--ink-mute); font-weight: 700; }
+.badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 48px; min-height: 40px; padding: 4px 12px; border-radius: 12px;
+  background: var(--badge-bg); color: var(--badge-ink);
+  font-family: "Sora", "Manrope", sans-serif; font-weight: 700; font-size: 20px; line-height: 1.1;
+}
+.promise { font-size: 16px; color: var(--ink-soft); border-top: 1px solid var(--rule); padding-top: 16px; }
+.promise[hidden] { display: none; }
+
+/* arrivo.html: everything centred under the check. */
+.trip-card.center { justify-items: center; text-align: center; }
+.trip-card.center .promise { width: 100%; }
+.check { width: 84px; height: 84px; border-radius: 50%; background: var(--ok); color: var(--ok-ink); display: grid; place-items: center; }
+.check svg { width: 44px; height: 44px; }
+
+.reassure {
+  background: var(--soft-bg); border: 1px solid var(--soft-line);
+  border-radius: 16px; padding: 14px 16px; font-size: 15px; color: var(--ink-soft); max-width: 520px;
+}
+.made { margin: 22px 0 0; font-size: 15px; color: var(--ink-mute); max-width: 520px; }
+.made a { font-weight: 700; }

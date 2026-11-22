@@ -14,71 +14,16 @@
   <meta property="og:url" content="https://flbanca.github.io/arrivato-app/viaggio.html">
   <meta property="og:title" content="In viaggio con arrivaTO">
   <meta property="og:description" content="Ti ha fatto sapere che è in viaggio: linea, fermata e orario di arrivo.">
-  <meta property="og:image" content="https://flbanca.github.io/arrivato-app/og.jpg">
+  <meta property="og:image" content="https://flbanca.github.io/arrivato-app/og-viaggio.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="arrivaTO: Torino, fermata per fermata. Percorso, arrivi in tempo reale e l’avviso quando scendere.">
+  <meta property="og:image:alt" content="In viaggio con arrivaTO: una linea con le fermate e un cuore.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="icon.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta name="apple-itunes-app" content="app-id=6833643923, app-argument=https://apps.apple.com/it/app/arrivato/id6833643923">
   <link rel="stylesheet" href="style.css">
-  <style>
-    :root {
-      --badge-bg: #0f4fd0;
-      --badge-ink: #ffffff;
-      --link: #0f4fd0;
-      --soft-bg: rgba(26, 108, 255, 0.08);
-      --soft-line: rgba(15, 79, 208, 0.16);
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --ink: #e9eef8;
-        --ink-soft: rgba(233, 238, 248, 0.8);
-        --ink-mute: rgba(233, 238, 248, 0.72);
-        --card: rgba(22, 30, 48, 0.82);
-        --card-border: rgba(255, 255, 255, 0.08);
-        --rule: rgba(255, 255, 255, 0.12);
-        --bg-top: #0b1120;
-        --badge-bg: #2b6cf0;
-        --link: #9dbdff;
-        --soft-bg: rgba(91, 141, 255, 0.12);
-        --soft-line: rgba(157, 189, 255, 0.22);
-      }
-      body {
-        background:
-          radial-gradient(900px 480px at 8% -5%, #16213a 0%, transparent 55%),
-          linear-gradient(180deg, #0b1120 0%, #101a30 100%);
-        background-color: var(--bg-top);
-      }
-      .card { box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35); }
-    }
-    a { color: var(--link); }
-    .links a:hover, .links a[aria-current="page"] { color: var(--link); }
-    footer a { color: var(--ink-mute); }
-
-    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-    .trip { margin: 20px 0 0; }
-    .trip[hidden] { display: none; }
-    .lines { list-style: none; padding: 0; margin: 0 0 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-    .lines li { display: flex; align-items: center; gap: 8px; }
-    .lines li + li::before { content: "›"; content: "›" / ""; color: var(--ink-mute); font-weight: 700; }
-    .badge {
-      display: inline-flex; align-items: center; justify-content: center;
-      min-width: 48px; min-height: 40px; padding: 4px 12px; border-radius: 12px;
-      background: var(--badge-bg); color: var(--badge-ink);
-      font-family: "Sora", "Manrope", sans-serif; font-weight: 700; font-size: 20px; line-height: 1.1;
-    }
-    .trip p { margin: 6px 0; font-size: 19px; }
-    .trip strong { font-weight: 800; }
-    .reassure {
-      background: var(--soft-bg); border: 1px solid var(--soft-line);
-      border-radius: 16px; padding: 14px 16px; font-size: 15px; color: var(--ink-soft);
-    }
-    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 24px; }
-    .button { color: #fff; }
-    footer .unofficial { font-weight: 700; }
-  </style>
+  <link rel="stylesheet" href="avvisa.css">
 </head>
 <body>
   <div class="wrap">
@@ -92,24 +37,34 @@
     </nav>
 
     <main>
-      <article class="card">
-        <h1>In viaggio con arrivaTO</h1>
-        <p class="lede" id="intro">Qualcuno ti ha fatto sapere che è in viaggio con arrivaTO.</p>
+      <article class="card trip-card">
+        <p class="kicker">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 4.3C6.4 1.9 2.5 3 2.5 6.1c0 2.9 3.700 5.200 5.500 6.900 1.800-1.700 5.500-4 5.500-6.900C13.500 3 9.600 1.900 8 4.300z"/></svg>
+          In viaggio
+        </p>
+        <h1 class="headline" id="hero">Qualcuno ti ha fatto sapere che è in viaggio con arrivaTO.</h1>
 
-        <section class="trip" id="trip" aria-labelledby="trip-title" hidden>
-          <h2 class="sr-only" id="trip-title">Dettagli del viaggio</h2>
-          <ol class="lines" id="lines" aria-label="Linee, in ordine"></ol>
-          <p id="stop"></p>
-          <p id="time"></p>
-        </section>
+        <ol class="route" id="route" aria-label="Il viaggio" hidden>
+          <li>
+            <span class="dot" aria-hidden="true"></span>
+            <div><span id="now">È in viaggio</span><span class="sub">Te l'ha fatto sapere con arrivaTO</span></div>
+          </li>
+          <li id="lines-row">
+            <span class="dot pass" aria-hidden="true"></span>
+            <div><div class="badges" id="lines" aria-hidden="true"></div><span class="sr-only" id="lines-text"></span></div>
+          </li>
+          <li id="stop-row">
+            <span class="dot end" aria-hidden="true"></span>
+            <div id="stop"></div>
+          </li>
+        </ol>
+
+        <p class="promise" id="promise" hidden>Quando è a destinazione ti scrive.</p>
       </article>
 
       <p class="reassure">Questo messaggio te l'ha mandato una persona dal suo telefono. arrivaTO non conosce la sua posizione e non conserva niente.</p>
 
-      <div class="actions">
-        <a class="button" href="https://apps.apple.com/it/app/arrivato/id6833643923" target="_blank" rel="noopener noreferrer">Scarica arrivaTO</a>
-        <a href="./">Scopri arrivaTO</a>
-      </div>
+      <p class="made">Torino, fermata per fermata. <a href="./">Scopri arrivaTO</a></p>
     </main>
 
     <footer>
@@ -154,53 +109,60 @@
         return { lines: lines, stop: stop, time: t };
       }
 
-      function render(doc, trip) {
-        var tripEl = doc.getElementById("trip");
-        var linesEl = doc.getElementById("lines");
-        var stopEl = doc.getElementById("stop");
-        var timeEl = doc.getElementById("time");
-        var intro = doc.getElementById("intro");
+      function el(doc, tag, className, text) {
+        var node = doc.createElement(tag);
+        if (className) node.className = className;
+        if (text) node.textContent = text;
+        return node;
+      }
 
+      function render(doc, trip) {
+        var hero = doc.getElementById("hero");
+        var route = doc.getElementById("route");
+        var linesRow = doc.getElementById("lines-row");
+        var linesEl = doc.getElementById("lines");
+        var linesText = doc.getElementById("lines-text");
+        var stopRow = doc.getElementById("stop-row");
+        var stopEl = doc.getElementById("stop");
+        var now = doc.getElementById("now");
+        var promise = doc.getElementById("promise");
+
+        while (hero.firstChild) hero.removeChild(hero.firstChild);
         while (linesEl.firstChild) linesEl.removeChild(linesEl.firstChild);
-        stopEl.textContent = "";
-        timeEl.textContent = "";
+        while (stopEl.firstChild) stopEl.removeChild(stopEl.firstChild);
+        linesText.textContent = "";
 
         if (!trip) {
-          intro.textContent = "Qualcuno ti ha fatto sapere che è in viaggio con arrivaTO.";
-          tripEl.hidden = true;
+          hero.textContent = "Qualcuno ti ha fatto sapere che è in viaggio con arrivaTO.";
+          route.hidden = true;
+          promise.hidden = true;
           return;
         }
 
-        intro.textContent = "Ti ha fatto sapere che è in viaggio.";
+        // The arrival time is the headline: it is what the person waiting wants to know.
+        hero.appendChild(el(doc, "span", "hero-label", "Arrivo previsto verso le"));
+        hero.appendChild(doc.createTextNode(" "));
+        hero.appendChild(el(doc, "span", "hero-time", trip.time));
 
-        if (trip.lines.length === 0) {
-          linesEl.hidden = true;
-          stopEl.hidden = true;
-          timeEl.textContent = "A piedi, arrivo previsto verso le " + trip.time + ".";
-        } else {
-          linesEl.hidden = false;
-          stopEl.hidden = false;
-          trip.lines.forEach(function (label) {
-            var li = doc.createElement("li");
-            var badge = doc.createElement("span");
-            badge.className = "badge";
-            var shown = label === "metro" ? "Metro" : label;
-            badge.textContent = shown;
-            badge.setAttribute("aria-hidden", "true");
-            var sr = doc.createElement("span");
-            sr.className = "sr-only";
-            sr.textContent = label === "metro" ? "Metro" : "Linea " + label;
-            li.appendChild(badge);
-            li.appendChild(sr);
-            linesEl.appendChild(li);
+        var walk = trip.lines.length === 0;
+        now.textContent = walk ? "È in viaggio a piedi" : "È in viaggio";
+        linesRow.hidden = walk;
+        stopRow.hidden = walk;
+        route.className = walk ? "route single" : "route";
+
+        if (!walk) {
+          var spoken = [];
+          trip.lines.forEach(function (label, i) {
+            if (i > 0) linesEl.appendChild(el(doc, "span", "", "›"));
+            linesEl.appendChild(el(doc, "span", "badge", label === "metro" ? "Metro" : label));
+            spoken.push(label === "metro" ? "metro" : "linea " + label);
           });
+          linesText.textContent = "Con " + spoken.join(", poi ");
           stopEl.appendChild(doc.createTextNode("Scende a "));
-          var strong = doc.createElement("strong");
-          strong.textContent = trip.stop;
-          stopEl.appendChild(strong);
-          timeEl.textContent = "Arrivo previsto verso le " + trip.time + ".";
+          stopEl.appendChild(el(doc, "strong", "", trip.stop));
         }
-        tripEl.hidden = false;
+        route.hidden = false;
+        promise.hidden = false;
       }
 
       if (typeof module !== "undefined" && module.exports) {
