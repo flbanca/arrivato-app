@@ -1,0 +1,44 @@
+# arrivaTO
+
+> arrivaTO è un'app gratuita e non ufficiale per i trasporti pubblici di Torino (GTT): arrivi di bus, tram e metro in tempo reale, calcolo del percorso e guida fermata per fermata. Senza pubblicità, senza account, senza tracciamento.
+
+arrivaTO is a free, unofficial app for public transport in Turin, Italy (GTT buses, trams and metro): live arrivals, route planning and step-by-step trip following. No ads, no account, no tracking. The app's interface is in Italian.
+
+## In breve
+
+- Che cos'è: un'app per sapere quando passa il bus, il tram o la metro a Torino e per farsi guidare durante il viaggio.
+- Per chi: chi usa i mezzi pubblici GTT a Torino e nei comuni serviti da GTT.
+- Prezzo: gratuita, senza pubblicità.
+- Piattaforme: iPhone (iOS 17 o successivo), sull'App Store. Android: in test su Google Play.
+- Chi la pubblica: Francesca La Banca, come progetto personale e indipendente.
+- Non è l'app ufficiale di GTT: non è affiliata né approvata da GTT S.p.A. o 5T S.r.l.
+
+## Cosa fa
+
+- Arrivi in tempo reale alla fermata, con l'indicazione «live» (dato dal mezzo) o «programmato» (orario previsto).
+- Percorso: scrivi dove vuoi andare e l'app propone come arrivarci con bus, tram e metro.
+- Segui il viaggio: guida a piedi fino alla fermata, conta le fermate che mancano e avvisa quando scendere, anche con il telefono bloccato.
+- Fermate vicine, calcolate sul telefono.
+- Preferiti e avviso qualche minuto prima dell'arrivo del mezzo.
+- Avvisi GTT su deviazioni e manifestazioni, per le linee seguite.
+
+## Cosa non fa
+
+- Non vende biglietti: per quelli si usano i canali ufficiali GTT.
+- Non richiede un account e non raccoglie dati personali.
+- Non usa la posizione in background: solo mentre l'app è aperta.
+
+## Da dove arrivano i dati
+
+- Fermate, linee e orari: open data GTFS di GTT S.p.A.
+- Passaggi in tempo reale e calcolo dei percorsi: Muoversi a Torino (5T S.r.l.).
+- I dati sono forniti così come sono, senza garanzia di completezza o puntualità.
+
+## Pagine
+
+- [Presentazione](https://flbanca.github.io/arrivato-app/): cosa fa l'app, con immagini e domande frequenti.
+- [Assistenza](https://flbanca.github.io/arrivato-app/supporto.html): domande frequenti, contatti, fonti dei dati.
+- [Privacy](https://flbanca.github.io/arrivato-app/privacy.html): quali dati usa l'app e quali no.
+- [Accessibilità](https://flbanca.github.io/arrivato-app/accessibilita.html): VoiceOver, testo grande, contrasto.
+- [Android](https://flbanca.github.io/arrivato-app/android.html): come partecipare al test su Google Play.
+- [App Store](https://apps.apple.com/it/app/arrivato/id6833643923): scarica l'app per iPhone.
