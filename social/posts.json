@@ -319,8 +319,19 @@
         "profilo: @museomontagna"
       ],
       "publish": "automatica",
-      "status": "scheduled",
-      "approved": true
+      "status": "published",
+      "approved": true,
+      "result": {
+        "ig": {
+          "id": "18149491564574852",
+          "url": "https://www.instagram.com/p/DgCb77KCfKh/"
+        },
+        "fb": {
+          "id": "1441718615691796_122101466457556033",
+          "url": "https://www.facebook.com/1441718615691796_122101466457556033"
+        }
+      },
+      "published_at": "2026-11-22T09:02:17.326Z"
     },
     {
       "id": "2026-12-05-reel-segui-il-viaggio",
