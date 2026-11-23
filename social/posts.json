@@ -345,8 +345,19 @@
         "data di uscita della nuova versione (il reel esce 1-2 giorni dopo il carosello)"
       ],
       "publish": "automatica",
-      "status": "scheduled",
-      "approved": true
+      "status": "published",
+      "approved": true,
+      "result": {
+        "ig": {
+          "id": "18080241287744491",
+          "url": "https://www.instagram.com/reel/DgFVRjPjcza/"
+        },
+        "fb": {
+          "id": "1165686889354285",
+          "url": "https://www.facebook.com/1165686889354285"
+        }
+      },
+      "published_at": "2026-11-23T12:02:03.240Z"
     },
     {
       "id": "2026-11-22-domanda",
