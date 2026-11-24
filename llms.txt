@@ -18,7 +18,7 @@ arrivaTO is a free, unofficial app for public transport in Turin, Italy (GTT bus
 - Arrivi in tempo reale alla fermata, con l'indicazione «live» (dato dal mezzo) o «programmato» (orario previsto).
 - Percorso: scrivi dove vuoi andare e l'app propone come arrivarci con bus, tram e metro.
 - Segui il viaggio: guida a piedi fino alla fermata, conta le fermate che mancano e avvisa quando scendere, anche con il telefono bloccato.
-- Avvisa chi ti aspetta (in arrivo con la versione 1.4): durante un viaggio mandi a chi vuoi un messaggio con linea, fermata e orario di arrivo, e un altro quando sei a destinazione. Si condivide il viaggio, non la posizione: il messaggio lo invia la persona, l'app non lo vede e non lo conserva.
+- Avvisa chi ti aspetta (su iPhone dalla versione 1.4): durante un viaggio mandi a chi vuoi un messaggio con linea, fermata e orario di arrivo, e un altro quando sei a destinazione. Si condivide il viaggio, non la posizione: il messaggio lo invia la persona, l'app non lo vede e non lo conserva.
 - Fermate vicine, calcolate sul telefono.
 - Preferiti e avviso qualche minuto prima dell'arrivo del mezzo.
 - Avvisi GTT su deviazioni e manifestazioni, per le linee seguite.
