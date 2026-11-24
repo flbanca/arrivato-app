@@ -906,6 +906,76 @@
       ],
       "publish": "automatica",
       "status": "scheduled"
+    },
+    {
+      "id": "2026-12-24-storia-feste-vigilia",
+      "type": "story",
+      "publish_at": "2026-12-24T16:00:00+01:00",
+      "image": "img/storia-feste-vigilia.jpg",
+      "alt_text": "Storia: Vigilia di Natale: stasera le corse possono finire prima.",
+      "link_sticker": null,
+      "check_before": [
+        "confermare con il comunicato GTT delle feste che il 24/12 il servizio serale finisce prima",
+        "ok alla storia"
+      ],
+      "publish": "automatica",
+      "status": "scheduled"
+    },
+    {
+      "id": "2026-12-25-storia-feste-natale",
+      "type": "story",
+      "publish_at": "2026-12-25T10:00:00+01:00",
+      "image": "img/storia-feste-natale.jpg",
+      "alt_text": "Storia: Natale: oggi orari festivi.",
+      "link_sticker": null,
+      "check_before": [
+        "confermare con il comunicato GTT che il 25/12 vale l’orario festivo",
+        "ok alla storia"
+      ],
+      "publish": "automatica",
+      "status": "scheduled"
+    },
+    {
+      "id": "2026-12-26-storia-feste-stefano",
+      "type": "story",
+      "publish_at": "2026-12-26T10:00:00+01:00",
+      "image": "img/storia-feste-stefano.jpg",
+      "alt_text": "Storia: Santo Stefano: anche oggi orari festivi.",
+      "link_sticker": null,
+      "check_before": [
+        "confermare con il comunicato GTT che il 26/12 vale l’orario festivo",
+        "ok alla storia"
+      ],
+      "publish": "automatica",
+      "status": "scheduled"
+    },
+    {
+      "id": "2026-12-31-storia-feste-capodanno",
+      "type": "story",
+      "publish_at": "2026-12-31T17:00:00+01:00",
+      "image": "img/storia-feste-capodanno.jpg",
+      "alt_text": "Storia: Capodanno: strade chiuse e linee deviate.",
+      "link_sticker": null,
+      "check_before": [
+        "confermare con il comunicato GTT le deviazioni di Capodanno",
+        "ok alla storia"
+      ],
+      "publish": "automatica",
+      "status": "scheduled"
+    },
+    {
+      "id": "2027-01-01-storia-feste-anno",
+      "type": "story",
+      "publish_at": "2027-01-01T11:00:00+01:00",
+      "image": "img/storia-feste-anno.jpg",
+      "alt_text": "Storia: 1 gennaio: orari festivi.",
+      "link_sticker": null,
+      "check_before": [
+        "confermare con il comunicato GTT l’orario del 1/1",
+        "ok alla storia"
+      ],
+      "publish": "automatica",
+      "status": "scheduled"
     }
   ],
   "_readme": "Coda di pubblicazione Instagram + Pagina Facebook. Il workflow .github/workflows/social-publish.yml pubblica i post con publish='automatica', status='scheduled' e publish_at passato. Se check_before non è vuoto serve approved=true. Le storie (-storia) partono solo dopo il loro post."
