@@ -1003,7 +1003,8 @@
         "ok alla storia"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     }
   ],
   "_readme": "Coda di pubblicazione Instagram + Pagina Facebook. Il workflow .github/workflows/social-publish.yml pubblica i post con publish='automatica', status='scheduled' e publish_at passato. Se check_before non è vuoto serve approved=true. Le storie (-storia) partono solo dopo il loro post."
