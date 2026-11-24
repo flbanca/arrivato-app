@@ -694,12 +694,13 @@
       "n": 14,
       "type": "feed",
       "publish_at": "2026-12-12T11:00:00+01:00",
-      "image": "img/14-babbi-natale.jpg",
-      "caption": "Domenica 13 dicembre, dalle 11 alle 14, torna il Raduno dei Babbi Natale per i bambini dell'ospedale Regina Margherita.\n\nCon la sfilata alcune strade della zona saranno chiuse. Prima di uscire, controlla in arrivaTO gli avvisi GTT sulle linee che usi.\n\n#torino #babbinatale #reginamargherita #nataleatorino",
-      "alt_text": "Grafica su sfondo scuro blu e viola con la data 13 dicembre, il titolo «Raduno dei Babbi Natale.», la scritta per i bambini del Regina Margherita, e una notifica di arrivaTO: strade chiuse per la sfilata, controlla in app gli avvisi GTT sulle linee della zona.",
+      "image": "img/babbi-natale-foto.jpg",
+      "caption": "Domenica 13 dicembre torna il Raduno dei Babbi Natale per i bambini dell’ospedale Regina Margherita: l’appuntamento è alle 11 in piazza Polonia, e quest’anno la sfilata delle moto si fa.\n\nCon la sfilata alcune strade della zona saranno chiuse. Prima di uscire, controlla in arrivaTO gli avvisi GTT sulle linee che usi.\n\nFoto: Tom Reynolds, CC BY 2.0, Wikimedia Commons.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #babbinatale #reginamargherita #nataleatorino",
+      "alt_text": "Foto di una moto addobbata con festoni dorati e un pupazzo di Babbo Natale sul cupolino, guidata da un motociclista vestito da Babbo Natale. Scritte: Piazza Polonia, Torino, domenica 13 dicembre. Raduno dei Babbi Natale. In moto per i bambini del Regina Margherita. Dalle 11 in piazza Polonia. Strade chiuse per la sfilata: guarda gli avvisi GTT.",
       "location": null,
       "check_before": [
-        "DA VERIFICARE prima di pubblicare: luogo del ritrovo e percorso della sfilata (le notizie sono cambiate più volte)."
+        "orari e strade chiuse per la sfilata (avviso Comune/GTT, di solito pochi giorni prima)",
+        "ok al post"
       ],
       "publish": "automatica",
       "approved": false,
