@@ -704,7 +704,7 @@
         "ok al post"
       ],
       "publish": "automatica",
-      "approved": false,
+      "approved": true,
       "status": "scheduled"
     },
     {
