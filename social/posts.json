@@ -634,7 +634,7 @@
       "id": "2026-12-09-accessibile",
       "n": 13,
       "type": "feed",
-      "publish_at": "2026-12-09T18:15:00+01:00",
+      "publish_at": "2027-01-05T18:15:00+01:00",
       "image": "img/13-accessibile-v2.jpg",
       "caption": "Il prossimo mezzo accoglie la carrozzina? arrivaTO te lo dice per ogni corsa, prima che arrivi.\n\nE l'app stessa è pensata per tutti: VoiceOver legge frasi complete, il testo segue le dimensioni impostate sul telefono e le animazioni si fermano con «Riduci movimento».\n\n#torino #accessibilità #bustorino #mezzipubblici",
       "alt_text": "Sfondo azzurro e lilla. Il mezzo è accessibile? Te lo dice. Un’etichetta verde: accessibile in carrozzina. Il 61 arriva a Porta Nuova tra 3 minuti. Accanto, un iPhone visto di fronte, tagliato dal bordo, con la linea 61 dal vivo: il mezzo in viaggio verso Porta Nuova, la tua fermata evidenziata e la scritta «Mezzo accessibile in carrozzina».",
@@ -644,7 +644,8 @@
       ],
       "publish": "automatica",
       "status": "scheduled",
-      "approved": true
+      "approved": true,
+      "note": "spostato a gennaio per «Avvisa chi ti aspetta» il 7/12"
     },
     {
       "id": "2026-12-10-calcola-percorso",
@@ -973,6 +974,20 @@
       "check_before": [
         "confermare con il comunicato GTT l’orario del 1/1",
         "ok alla storia"
+      ],
+      "publish": "automatica",
+      "status": "scheduled"
+    },
+    {
+      "id": "2026-12-07-avvisa-chi-ti-aspetta",
+      "type": "feed",
+      "publish_at": "2026-12-07T18:15:00+01:00",
+      "image": "img/avvisa-chi-ti-aspetta.jpg",
+      "caption": "Arrivato? Fallo sapere.\n\nNovità di arrivaTO: mentre segui il viaggio, tocchi «Avvisa chi ti aspetta» e mandi a chi vuoi un messaggio con la linea, la fermata dove scendi e l’orario di arrivo. Quando arrivi, con un tocco scrivi «Tutto bene, sono a destinazione». Se te ne dimentichi, un promemoria te lo ricorda.\n\nIl messaggio lo mandi tu: l’app non condivide la tua posizione e non conserva niente.\n\nAggiorna arrivaTO dall’App Store. App non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #bustorino #tramtorino #mezzipubblici",
+      "alt_text": "Grafica chiara con il titolo «Arrivato? Fallo sapere.» e una conversazione in chat: «Sono in viaggio con il 15. Scendo a Vittorio Veneto, arrivo verso le 23:40. Ti scrivo quando sono a destinazione.» Risposta: «Ok, ti aspetto.» Alle 23:41: «Tutto bene, sono a destinazione.» Risposta: «Meno male. Buonanotte!» Sotto: il messaggio lo mandi tu, niente posizione condivisa.",
+      "location": null,
+      "check_before": [
+        "ok al post"
       ],
       "publish": "automatica",
       "status": "scheduled"
