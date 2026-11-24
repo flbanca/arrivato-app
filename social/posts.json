@@ -451,8 +451,15 @@
       "link_sticker": null,
       "publish": "automatica",
       "note": null,
-      "status": "scheduled",
-      "alt_text": "Storia in stile sala buia: Succede a Torino, 24 novembre. Torino Film Festival, fino al 2 dicembre, al Cinema Massimo e al Cinema Romano. Sale, fermate, biglietti e cosa fare gratis nel nostro ultimo post."
+      "status": "published",
+      "alt_text": "Storia in stile sala buia: Succede a Torino, 24 novembre. Torino Film Festival, fino al 2 dicembre, al Cinema Massimo e al Cinema Romano. Sale, fermate, biglietti e cosa fare gratis nel nostro ultimo post.",
+      "result": {
+        "ig": {
+          "id": "18234587800333786",
+          "url": "https://www.instagram.com/stories/arrivato.app/4037616946313143824"
+        }
+      },
+      "published_at": "2026-11-24T17:31:17.832Z"
     },
     {
       "id": "2026-11-26-nuovo-in-citta",
