@@ -991,6 +991,19 @@
       ],
       "publish": "automatica",
       "status": "scheduled"
+    },
+    {
+      "id": "2026-12-03-storia-codice-palina",
+      "type": "story",
+      "publish_at": "2026-12-03T18:15:00+01:00",
+      "image": "img/storia-codice-palina.jpg",
+      "alt_text": "Storia: lo sapevi? Il numero sulla palina ti porta subito lì. Una palina con scritto Fermata 611, e la scheda Codice palina dell’app con 611 e il pulsante Apri: Giuria, fermata 611, il prossimo passaggio tra 4 minuti. Scrivilo in Cerca, tocca Apri e vedi quando passa.",
+      "link_sticker": null,
+      "check_before": [
+        "ok alla storia"
+      ],
+      "publish": "automatica",
+      "status": "scheduled"
     }
   ],
   "_readme": "Coda di pubblicazione Instagram + Pagina Facebook. Il workflow .github/workflows/social-publish.yml pubblica i post con publish='automatica', status='scheduled' e publish_at passato. Se check_before non è vuoto serve approved=true. Le storie (-storia) partono solo dopo il loro post."
