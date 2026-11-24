@@ -917,7 +917,8 @@
         "profilo Instagram del Caffè Fiorio da taggare (facoltativo)"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-12-20-scendi-qui-stratta",
@@ -932,7 +933,8 @@
         "profilo Instagram di Stratta da taggare (facoltativo)"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-12-24-storia-feste-vigilia",
