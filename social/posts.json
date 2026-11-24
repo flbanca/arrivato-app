@@ -597,11 +597,12 @@
       "n": 11,
       "type": "story",
       "publish_at": "2026-12-04T12:40:00+01:00",
-      "image": "img/storia-11-villaggio-natale.jpg",
+      "image": "img/storia-villaggio-natale-foto.jpg",
       "link_sticker": null,
       "publish": "automatica",
       "note": null,
-      "status": "scheduled"
+      "status": "scheduled",
+      "alt_text": "Storia con le luci di un mercatino di Natale sfocate: Piazza Solferino, Torino, fino al 6 gennaio. Sabato 5 dicembre apre il Villaggio di Natale. Casette in legno e pista di pattinaggio. Fermata Solferino, 1 minuto, linee 11, 14, 29, 59, 63 e 67."
     },
     {
       "id": "2026-12-04-weekend",
