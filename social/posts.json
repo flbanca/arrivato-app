@@ -990,7 +990,8 @@
         "ok al post"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-12-03-storia-codice-palina",
