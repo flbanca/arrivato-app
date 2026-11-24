@@ -414,7 +414,7 @@
         "ok al carosello (dati da oblo.it e Moveo, controllati il 24/11)"
       ],
       "publish": "automatica",
-      "status": "scheduled",
+      "status": "published",
       "images": [
         "img/tff-sala-01.jpg",
         "img/tff-sala-02.jpg",
@@ -429,7 +429,18 @@
         "Gratis: venerdì 27 novembre alle 18 Giulio Base racconta Marilyn Monroe e presenta Giungla d’asfalto al grattacielo Intesa Sanpaolo, con prenotazione, fermata Porta Susa. Lunedì 30 novembre alle 21:30 Uncut Gems al Cinema Romano, in ordine di arrivo.",
         "Col biglietto del festival: Museo del Cinema alla Mole 16 euro invece di 18, fino al 2 dicembre; Museo Egizio e Museo dell’Automobile 15 euro."
       ],
-      "approved": true
+      "approved": true,
+      "result": {
+        "ig": {
+          "id": "18129108293290471",
+          "url": "https://www.instagram.com/p/DgH2o3elq8Z/"
+        },
+        "fb": {
+          "id": "1441718615691796_122103205947556033",
+          "url": "https://www.facebook.com/1441718615691796_122103205947556033"
+        }
+      },
+      "published_at": "2026-11-24T11:31:44.582Z"
     },
     {
       "id": "2026-11-25-filmfestival-storia",
