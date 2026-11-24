@@ -581,12 +581,12 @@
       "n": 11,
       "type": "feed",
       "publish_at": "2026-12-04T12:30:00+01:00",
-      "image": "img/11-villaggio-natale.jpg",
-      "caption": "Da sabato 5 dicembre apre il Villaggio di Natale in piazza Solferino, con casette e pista di pattinaggio. Resta aperto fino al 6 gennaio.\n\nSe ci vai in tram o in bus, attiva in arrivaTO l'avviso 5′ prima sulla fermata del ritorno: esci dalla pista quando il mezzo sta arrivando, non prima.\n\n#torino #nataleatorino #mercatinidinatale #piazzasolferino",
-      "alt_text": "Grafica su sfondo scuro blu e viola con la data 5 dicembre, il titolo «Apre il Villaggio di Natale in piazza Solferino.», la scritta piazza Solferino fino al 6 gennaio, e una notifica di arrivaTO: ci vai in tram? Attiva l'avviso 5 minuti prima sulla tua fermata.",
+      "image": "img/villaggio-natale-foto.jpg",
+      "caption": "Da sabato 5 dicembre apre il Villaggio di Natale in piazza Solferino, con le casette in legno e la pista di pattinaggio. Resta aperto fino al 6 gennaio.\n\nLa fermata è Solferino, con 11, 14, 29, 59, 63 e 67. Se ci vai in tram o in bus, attiva in arrivaTO l’avviso 5′ prima sulla fermata del ritorno: esci dalla pista quando il mezzo sta arrivando, non prima.\n\nFoto (sfocata, di un altro mercatino): Derek Harper, CC BY-SA 2.0, Wikimedia Commons.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #nataleatorino #mercatinidinatale #piazzasolferino",
+      "alt_text": "Grafica con le luci di un mercatino di Natale sfocate sullo sfondo, un albero di luci e una casetta illuminata, e le scritte: Piazza Solferino, Torino, fino al 6 gennaio. Sabato 5 dicembre apre il Villaggio di Natale. Casette in legno e pista di pattinaggio. Ci vai in tram o in bus? Attiva l’avviso 5′ prima sulla fermata del ritorno. Fermata Solferino, 1 minuto, linee 11, 14, 29, 59, 63 e 67.",
       "location": "Piazza Solferino",
       "check_before": [
-        "DA VERIFICARE: data di apertura sul sito della Città di Torino."
+        "data di apertura 2026 sul sito della Città o di Turismo Torino (nel 2025 era il 5/12; Sky TG24 il 10/11 non la dava ancora)"
       ],
       "publish": "automatica",
       "approved": false,
