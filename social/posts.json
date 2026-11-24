@@ -447,11 +447,12 @@
       "n": 7,
       "type": "story",
       "publish_at": "2026-11-24T18:30:00+01:00",
-      "image": "img/storia-07-filmfestival.jpg",
+      "image": "img/storia-tff-sala.jpg",
       "link_sticker": null,
       "publish": "automatica",
       "note": null,
-      "status": "scheduled"
+      "status": "scheduled",
+      "alt_text": "Storia in stile sala buia: Succede a Torino, 24 novembre. Torino Film Festival, fino al 2 dicembre, al Cinema Massimo e al Cinema Romano. Sale, fermate, biglietti e cosa fare gratis nel nostro ultimo post."
     },
     {
       "id": "2026-11-26-nuovo-in-citta",
