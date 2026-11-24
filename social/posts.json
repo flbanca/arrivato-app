@@ -643,7 +643,8 @@
         "Domenica al museo confermata per il 6/12 a Torino"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-12-07-festivo",
