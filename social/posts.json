@@ -406,15 +406,29 @@
     {
       "id": "2026-11-25-filmfestival",
       "n": 7,
-      "type": "feed",
+      "type": "carousel",
       "publish_at": "2026-11-24T18:15:00+01:00",
-      "image": "img/07-filmfestival.jpg",
-      "caption": "Il Torino Film Festival è iniziato: fino al 2 dicembre, 120 film tra il Teatro Regio e le sale della città.\n\nTra una proiezione e l'altra, cerca in arrivaTO la fermata più vicina alla sala e guarda quando passa il prossimo. Così non perdi l'inizio del film successivo.\n\n#torino #torinofilmfestival #eventitorino #mezzipubblici",
-      "alt_text": "Grafica su sfondo scuro blu e viola con la data 24 novembre, il titolo «Torino Film Festival, fino al 2 dicembre.», la scritta Teatro Regio e sale in tutta la città, e una notifica di arrivaTO: tra un film e l'altro, cerca la fermata più vicina alla sala.",
+      "caption": "Il Torino Film Festival è iniziato: fino al 2 dicembre, al Cinema Massimo e al Cinema Romano.\n\nNel carosello: dove sono le sale e le fermate per arrivarci, quanto costano i biglietti, due appuntamenti gratis e gli sconti nei musei con il biglietto del festival.\n\nTra una proiezione e l’altra, cerca in arrivaTO la fermata più vicina alla sala e guarda quando passa il prossimo.\n\nProgramma e biglietti su torinofilmfest.org.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #torinofilmfestival #eventitorino #cinema #mezzipubblici",
       "location": null,
-      "check_before": [],
+      "check_before": [
+        "ok al carosello (dati da oblo.it e Moveo, controllati il 24/11)"
+      ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "images": [
+        "img/tff-01.jpg",
+        "img/tff-02.jpg",
+        "img/tff-03.jpg",
+        "img/tff-04.jpg",
+        "img/tff-05.jpg"
+      ],
+      "alt_texts": [
+        "Copertina: Succede a Torino, 24 novembre. Torino Film Festival, fino al 2 dicembre, al Cinema Massimo e al Cinema Romano. Scorri per sapere cosa puoi fare.",
+        "Dove sono le sale: Cinema Massimo, via Verdi 18, fermata Verdi a 2 minuti con 6, 18, 68 e STAR 1. Cinema Romano, piazza Castello 9, fermata Castello a 1 minuto con 13, 15, 55 e 56. La serata d’apertura è al Teatro Regio.",
+        "Biglietti: intero 8 euro, online fino a mezz’ora prima; ridotto 6 euro per under 26, over 65 e convenzioni, solo alla cassa; carnet da 5 film 30 euro, da 10 film 60 euro; Rush Line per i posti rimasti liberi.",
+        "Gratis: venerdì 27 novembre alle 18 Giulio Base racconta Marilyn Monroe e presenta Giungla d’asfalto al grattacielo Intesa Sanpaolo, con prenotazione, fermata Porta Susa. Lunedì 30 novembre alle 21:30 Uncut Gems al Cinema Romano, in ordine di arrivo.",
+        "Col biglietto del festival: Museo del Cinema alla Mole 16 euro invece di 18, fino al 2 dicembre; Museo Egizio e Museo dell’Automobile 15 euro."
+      ]
     },
     {
       "id": "2026-11-25-filmfestival-storia",
