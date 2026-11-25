@@ -1057,8 +1057,15 @@
         "ok alla storia"
       ],
       "publish": "automatica",
-      "status": "scheduled",
-      "approved": true
+      "status": "published",
+      "approved": true,
+      "result": {
+        "ig": {
+          "id": "18100839221423219",
+          "url": "https://www.instagram.com/stories/arrivato.app/4038281298615584837"
+        }
+      },
+      "published_at": "2026-11-25T15:31:14.875Z"
     },
     {
       "id": "2026-11-25-corteo-nudm",
