@@ -1045,6 +1045,19 @@
       "publish": "automatica",
       "status": "scheduled",
       "approved": true
+    },
+    {
+      "id": "2026-11-25-storia-corteo",
+      "type": "story",
+      "publish_at": "2026-11-25T16:30:00+01:00",
+      "image": "img/storia-corteo-25-novembre.jpg",
+      "alt_text": "Storia: oggi a Torino, 25 novembre. Dalle 18, corteo in centro: bus e tram possono cambiare strada. Nella Giornata contro la violenza sulle donne, la città scende in piazza. Prima di uscire guarda le tue linee: deviazioni e ritardi li trovi in arrivaTO.",
+      "link_sticker": null,
+      "check_before": [
+        "ok alla storia (avviso GTT delle 7:05: corteo dalle 18, possibili deviazioni)"
+      ],
+      "publish": "automatica",
+      "status": "scheduled"
     }
   ],
   "_readme": "Coda di pubblicazione Instagram + Pagina Facebook. Il workflow .github/workflows/social-publish.yml pubblica i post con publish='automatica', status='scheduled' e publish_at passato. Se check_before non è vuoto serve approved=true. Le storie (-storia) partono solo dopo il loro post."
