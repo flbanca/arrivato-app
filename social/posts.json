@@ -391,7 +391,7 @@
     {
       "id": "2026-11-24-scendi-qui",
       "type": "feed",
-      "publish_at": "2026-11-26T18:15:00+01:00",
+      "publish_at": "2026-11-27T12:30:00+01:00",
       "image": "img/scendi-qui-bicerin.jpg",
       "caption": "Scendi qui: fermata Giulio, linee 52, 67 e Star 2.\n\nA un minuto a piedi c’è Al Bicerin @bicerin.1763.torino, il caffè del 1763 davanti al santuario della Consolata. È qui che è nato il bicerin: caffè, cioccolato e crema di latte, a strati nel bicchierino.\n\nChiuso il mercoledì. Prima di uscire cerca la fermata Giulio in arrivaTO e guarda quando passa il prossimo.\n\nScendi qui torna ogni martedì: un posto, la sua fermata.\n\nFoto: Geobia, CC BY-SA 4.0.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #bicerin #caffetorino #quadrilatero #bustorino",
       "alt_text": "Foto della facciata di Al Bicerin in piazza della Consolata: l’insegna Al Bicerin sopra la porta e la vetrina Caffè Confetteria con la tenda bianca, scurita in basso con una luce blu e lilla. Testo: Caffè Al Bicerin, dove è nato il bicerin. Caffè, cioccolato e crema di latte, dal 1763, chiuso il mercoledì. Firma arrivaTO: fermata Giulio a un minuto, linee 52, 67 e Star 2.",
@@ -853,7 +853,7 @@
     {
       "id": "2026-11-25-reel-vicino",
       "type": "reel",
-      "publish_at": "2026-11-25T18:15:00+01:00",
+      "publish_at": "2026-11-26T18:15:00+01:00",
       "video": "video/come-si-usa-vicino.mp4",
       "cover": "img/reel-cover-vicino.jpg",
       "caption": "Come si usa arrivaTO · Vicino a me.\n\nPorta Nuova ha più fermate con lo stesso nome. Apri «Vicino»: trovi le fermate entro un chilometro e dove va ogni linea. Il 9 alla fermata 39 va verso San Salvario, alla fermata 40 verso Barriera Lanzo: così aspetti dal lato giusto.\n\nLa posizione resta sul telefono: non viene salvata né inviata.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #bustorino #tramtorino #mezzipubblici",
@@ -1057,7 +1057,8 @@
         "ok alla storia"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     },
     {
       "id": "2026-11-25-corteo-nudm",
@@ -1071,7 +1072,8 @@
         "ok al post"
       ],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true
     }
   ],
   "_readme": "Coda di pubblicazione Instagram + Pagina Facebook. Il workflow .github/workflows/social-publish.yml pubblica i post con publish='automatica', status='scheduled' e publish_at passato. Se check_before non è vuoto serve approved=true. Le storie (-storia) partono solo dopo il loro post."
