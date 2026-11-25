@@ -1072,8 +1072,19 @@
         "ok al post"
       ],
       "publish": "automatica",
-      "status": "scheduled",
-      "approved": true
+      "status": "published",
+      "approved": true,
+      "result": {
+        "ig": {
+          "id": "18475066885141811",
+          "url": "https://www.instagram.com/p/DgKbaigj8Cg/"
+        },
+        "fb": {
+          "id": "1441718615691796_122104155429556033",
+          "url": "https://www.facebook.com/1441718615691796_122104155429556033"
+        }
+      },
+      "published_at": "2026-11-25T11:31:32.742Z"
     }
   ],
   "_readme": "Coda di pubblicazione Instagram + Pagina Facebook. Il workflow .github/workflows/social-publish.yml pubblica i post con publish='automatica', status='scheduled' e publish_at passato. Se check_before non è vuoto serve approved=true. Le storie (-storia) partono solo dopo il loro post."
