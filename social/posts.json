@@ -860,8 +860,19 @@
       "location": null,
       "check_before": [],
       "publish": "automatica",
-      "status": "scheduled",
-      "approved": true
+      "status": "published",
+      "approved": true,
+      "result": {
+        "ig": {
+          "id": "18655295635002172",
+          "url": "https://www.instagram.com/reel/DgNnuAQo72m/"
+        },
+        "fb": {
+          "id": "1681449740242355",
+          "url": "https://www.facebook.com/1681449740242355"
+        }
+      },
+      "published_at": "2026-11-26T17:17:10.668Z"
     },
     {
       "id": "2026-11-30-reel-avviso",
