@@ -37,15 +37,15 @@ arrivaTO is a free, unofficial app for public transport in Turin, Italy (GTT bus
 
 ## Pagine
 
-- [Presentazione](https://flbanca.github.io/arrivato-app/): cosa fa l'app, con immagini e domande frequenti.
-- [Assistenza](https://flbanca.github.io/arrivato-app/supporto.html): domande frequenti, contatti, fonti dei dati.
-- [Privacy](https://flbanca.github.io/arrivato-app/privacy.html): quali dati usa l'app e quali no.
-- [Accessibilità](https://flbanca.github.io/arrivato-app/accessibilita.html): VoiceOver, testo grande, contrasto.
-- [Android](https://flbanca.github.io/arrivato-app/android.html): come partecipare al test su Google Play.
-- [Come arrivare con i mezzi](https://flbanca.github.io/arrivato-app/come-arrivare/): guide con linee, fermate e tempi verso i luoghi più cercati di Torino.
-- [Allianz Stadium](https://flbanca.github.io/arrivato-app/come-arrivare/allianz-stadium.html): bus 72 da Porta Susa, percorsi da Porta Nuova e dal centro, ritorno la sera.
-- [Inalpi Arena](https://flbanca.github.io/arrivato-app/come-arrivare/inalpi-arena.html): tram 10 fino a Filadelfia, ritorno dopo i concerti, fermate vicine.
-- [Villaggio di Natale](https://flbanca.github.io/arrivato-app/come-arrivare/villaggio-di-natale.html): fermate di piazza Solferino, a piedi da Porta Nuova e Porta Susa.
-- [Museo Egizio](https://flbanca.github.io/arrivato-app/come-arrivare/museo-egizio.html): a piedi da Porta Nuova, bus STAR 1 e STAR 2, fermate vicine.
-- [Aeroporto di Caselle](https://flbanca.github.io/arrivato-app/come-arrivare/aeroporto-caselle.html): treno SFM A e bus per il centro, tempi e corse serali.
+- [Presentazione](https://arrivato.flbanca.it/): cosa fa l'app, con immagini e domande frequenti.
+- [Assistenza](https://arrivato.flbanca.it/supporto.html): domande frequenti, contatti, fonti dei dati.
+- [Privacy](https://arrivato.flbanca.it/privacy.html): quali dati usa l'app e quali no.
+- [Accessibilità](https://arrivato.flbanca.it/accessibilita.html): VoiceOver, testo grande, contrasto.
+- [Android](https://arrivato.flbanca.it/android.html): come partecipare al test su Google Play.
+- [Come arrivare con i mezzi](https://arrivato.flbanca.it/come-arrivare/): guide con linee, fermate e tempi verso i luoghi più cercati di Torino.
+- [Allianz Stadium](https://arrivato.flbanca.it/come-arrivare/allianz-stadium.html): bus 72 da Porta Susa, percorsi da Porta Nuova e dal centro, ritorno la sera.
+- [Inalpi Arena](https://arrivato.flbanca.it/come-arrivare/inalpi-arena.html): tram 10 fino a Filadelfia, ritorno dopo i concerti, fermate vicine.
+- [Villaggio di Natale](https://arrivato.flbanca.it/come-arrivare/villaggio-di-natale.html): fermate di piazza Solferino, a piedi da Porta Nuova e Porta Susa.
+- [Museo Egizio](https://arrivato.flbanca.it/come-arrivare/museo-egizio.html): a piedi da Porta Nuova, bus STAR 1 e STAR 2, fermate vicine.
+- [Aeroporto di Caselle](https://arrivato.flbanca.it/come-arrivare/aeroporto-caselle.html): treno SFM A e bus per il centro, tempi e corse serali.
 - [App Store](https://apps.apple.com/it/app/arrivato/id6833643923): scarica l'app per iPhone.
