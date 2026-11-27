@@ -400,8 +400,19 @@
         "profilo Instagram di Al Bicerin (sostituire {{…}})"
       ],
       "publish": "automatica",
-      "status": "scheduled",
-      "approved": true
+      "status": "published",
+      "approved": true,
+      "result": {
+        "ig": {
+          "id": "18121734068079549",
+          "url": "https://www.instagram.com/p/DgPlAKpDUKI/"
+        },
+        "fb": {
+          "id": "1441718615691796_122105976549556033",
+          "url": "https://www.facebook.com/1441718615691796_122105976549556033"
+        }
+      },
+      "published_at": "2026-11-27T11:31:38.631Z"
     },
     {
       "id": "2026-11-25-filmfestival",
