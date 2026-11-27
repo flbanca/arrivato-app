@@ -42,4 +42,8 @@ arrivaTO is a free, unofficial app for public transport in Turin, Italy (GTT bus
 - [Privacy](https://flbanca.github.io/arrivato-app/privacy.html): quali dati usa l'app e quali no.
 - [Accessibilità](https://flbanca.github.io/arrivato-app/accessibilita.html): VoiceOver, testo grande, contrasto.
 - [Android](https://flbanca.github.io/arrivato-app/android.html): come partecipare al test su Google Play.
+- [Come arrivare con i mezzi](https://flbanca.github.io/arrivato-app/come-arrivare/): guide con linee, fermate e tempi verso i luoghi più cercati di Torino.
+- [Allianz Stadium](https://flbanca.github.io/arrivato-app/come-arrivare/allianz-stadium.html): bus 72 da Porta Susa, percorsi da Porta Nuova e dal centro, ritorno la sera.
+- [Museo Egizio](https://flbanca.github.io/arrivato-app/come-arrivare/museo-egizio.html): a piedi da Porta Nuova, bus STAR 1 e STAR 2, fermate vicine.
+- [Aeroporto di Caselle](https://flbanca.github.io/arrivato-app/come-arrivare/aeroporto-caselle.html): treno SFM A e bus per il centro, tempi e corse serali.
 - [App Store](https://apps.apple.com/it/app/arrivato/id6833643923): scarica l'app per iPhone.
