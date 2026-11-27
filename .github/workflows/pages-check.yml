@@ -1,11 +1,12 @@
 name: Pages
 
-# Checks the public pages (home, privacy, support, accessibility, Android testers).
+# Checks the public pages (home, privacy, support, accessibility, Android testers, «Come arrivare» guides).
 # The social queue (social/**, social-publish.yml) is a separate process and is not checked here.
 on:
   pull_request:
     paths:
       - "*.html"
+      - "come-arrivare/**"
       - "style.css"
       - ".htmlvalidate.json"
       - ".github/workflows/pages-check.yml"
@@ -13,6 +14,7 @@ on:
     branches: [main]
     paths:
       - "*.html"
+      - "come-arrivare/**"
       - "style.css"
       - ".htmlvalidate.json"
       - ".github/workflows/pages-check.yml"
@@ -33,16 +35,16 @@ jobs:
           node-version: "22"
 
       - name: HTML is valid (accessibility rules included)
-        run: npx -y html-validate@9.4.0 index.html privacy.html supporto.html accessibilita.html android.html
+        run: npx -y html-validate@9.4.0 index.html privacy.html supporto.html accessibilita.html android.html come-arrivare/*.html
 
       - name: Internal links and anchors resolve
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --offline --include-fragments --no-progress index.html privacy.html supporto.html accessibilita.html android.html
+          args: --offline --include-fragments --no-progress index.html privacy.html supporto.html accessibilita.html android.html come-arrivare/*.html
           fail: true
 
       - name: External links (report only)
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress --max-retries 2 --timeout 20 --exclude-mail index.html privacy.html supporto.html accessibilita.html android.html
+          args: --no-progress --max-retries 2 --timeout 20 --exclude-mail index.html privacy.html supporto.html accessibilita.html android.html come-arrivare/*.html
           fail: false
