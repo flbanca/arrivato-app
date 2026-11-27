@@ -32,7 +32,7 @@ jobs:
       META_SYSTEM_TOKEN: ${{ secrets.META_SYSTEM_TOKEN }}
       META_PAGE_ID: "1441718615691796"
       META_IG_USER_ID: "17841453280752624"
-      IMAGE_BASE: https://flbanca.github.io/arrivato-app/social/
+      IMAGE_BASE: https://arrivato.flbanca.it/social/
     steps:
       # Sempre l'ultima versione della coda: un avvio in attesa non deve leggere uno stato vecchio
       # (altrimenti ripubblicherebbe un post appena uscito).

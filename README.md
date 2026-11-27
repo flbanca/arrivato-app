@@ -1,6 +1,6 @@
 # arrivaTO – sito
 
-Sito statico di [arrivaTO](https://flbanca.github.io/arrivato-app/), app non ufficiale per gli arrivi di bus e tram a Torino (iOS sull’App Store; Android in test su Google Play).
+Sito statico di [arrivaTO](https://arrivato.flbanca.it/), app non ufficiale per gli arrivi di bus e tram a Torino (iOS sull’App Store; Android in test su Google Play).
 
 - `index.html` – presentazione
 - `android.html` – come entrare nel test su Google Play (niente APK da scaricare)
