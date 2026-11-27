@@ -41,3 +41,7 @@ ul.places a { font-weight: 700; }
 .button.secondary { background: transparent; color: var(--accent-deep); border: 1.5px solid var(--accent-deep); }
 
 footer .unofficial { font-weight: 600; }
+
+figure.social { margin: 16px 0 0; }
+figure.social img { display: block; width: 100%; max-width: 360px; height: auto; border-radius: 16px; }
+figure.social figcaption { font-size: 14px; color: var(--ink-mute); margin-top: 8px; }
