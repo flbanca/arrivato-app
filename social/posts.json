@@ -503,8 +503,19 @@
       ],
       "approved": true,
       "publish": "automatica",
-      "status": "scheduled",
-      "note": "Profili confermati dall'utente il 18/11"
+      "status": "published",
+      "note": "Profili confermati dall'utente il 18/11",
+      "result": {
+        "ig": {
+          "id": "18111174586966123",
+          "url": "https://www.instagram.com/p/DgQMgqnjYMF/"
+        },
+        "fb": {
+          "id": "1441718615691796_122106231615556033",
+          "url": "https://www.facebook.com/1441718615691796_122106231615556033"
+        }
+      },
+      "published_at": "2026-11-27T17:16:54.851Z"
     },
     {
       "id": "2026-11-27-avviso",
