@@ -26,7 +26,7 @@ const dry = flag("dry");
 const only = opt("only");
 const now = opt("now") ? new Date(opt("now")) : new Date();
 const { META_SYSTEM_TOKEN: TOKEN, META_PAGE_ID: PAGE, META_IG_USER_ID: IG } = process.env;
-const IMAGE_BASE = (process.env.IMAGE_BASE || "https://flbanca.github.io/arrivato-app/social/").replace(/\/?$/, "/");
+const IMAGE_BASE = (process.env.IMAGE_BASE || "https://arrivato.flbanca.it/social/").replace(/\/?$/, "/");
 
 async function graph(method, path, params = {}, token = TOKEN) {
   const body = new URLSearchParams({ ...params, access_token: token });
