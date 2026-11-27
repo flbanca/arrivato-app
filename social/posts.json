@@ -536,14 +536,14 @@
       "type": "feed",
       "publish_at": "2026-11-28T11:00:00+01:00",
       "image": "img/maratona-29-novembre.jpg",
-      "caption": "Domani, domenica 29 novembre, a Torino si corre la maratona. Partenza e arrivo in piazza Castello: al mattino il centro è chiuso e diverse linee di bus e tram sono deviate.\n\nPrima di uscire apri arrivaTO: gli avvisi GTT sono in Home e sulla fermata, e i passaggi Live ti dicono se il mezzo sta arrivando davvero.\n\nLe strade riaprono man mano che passano gli ultimi corridori.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #maratonaditorino #torinocitymarathon #bustorino #mezzipubblici",
-      "alt_text": "Grafica su sfondo scuro blu e viola: avviso, domenica 29 novembre. Si corre la maratona, il centro chiude al mattino. Partenza e arrivo in piazza Castello. Sotto, una notifica di arrivaTO: prima di uscire, linee deviate, controlla gli avvisi GTT in arrivaTO.",
+      "caption": "Domani, domenica 29 novembre, a Torino si corre la maratona. Si parte alle 8:30 da piazza Vittorio Veneto e si arriva in piazza Castello. Dalle 7 il centro è chiuso al traffico e decine di linee di bus e tram sono deviate o sospese, soprattutto al mattino e nel primo pomeriggio.\n\nPrima di uscire apri arrivaTO: gli avvisi GTT sono in Home e sulla fermata, e i passaggi Live ti dicono se il mezzo sta arrivando davvero.\n\nLe strade riaprono man mano che passano gli ultimi corridori.\n\nApp non ufficiale, gratis e senza pubblicità. Link in bio.\n\n#torino #maratonaditorino #torinocitymarathon #bustorino #mezzipubblici",
+      "alt_text": "Grafica su sfondo scuro blu e viola: avviso, domenica 29 novembre. Si corre la maratona, il centro chiude al mattino. Da piazza Vittorio a piazza Castello. Sotto, una notifica di arrivaTO: prima di uscire, linee deviate, controlla gli avvisi GTT in arrivaTO.",
       "location": null,
-      "check_before": [
-        "avviso ufficiale GTT/Comune con orari e linee deviate (di solito esce 2-3 giorni prima)"
-      ],
+      "check_before": [],
       "publish": "automatica",
-      "status": "scheduled"
+      "status": "scheduled",
+      "approved": true,
+      "note": "Controllato il 27/11: partenza piazza Vittorio Veneto 8:30, arrivo piazza Castello, chiusure dalle 7 (Città di Torino via Il Torinese 27/11; elenco linee GTT su gtt.to.it). Immagine corretta: prima diceva partenza e arrivo in piazza Castello."
     },
     {
       "id": "2026-11-29-panettoni",
