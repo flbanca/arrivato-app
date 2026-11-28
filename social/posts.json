@@ -541,9 +541,20 @@
       "location": null,
       "check_before": [],
       "publish": "automatica",
-      "status": "scheduled",
+      "status": "published",
       "approved": true,
-      "note": "Controllato il 27/11: partenza piazza Vittorio Veneto 8:30, arrivo piazza Castello, chiusure dalle 7 (Città di Torino via Il Torinese 27/11; elenco linee GTT su gtt.to.it). Immagine corretta: prima diceva partenza e arrivo in piazza Castello."
+      "note": "Controllato il 27/11: partenza piazza Vittorio Veneto 8:30, arrivo piazza Castello, chiusure dalle 7 (Città di Torino via Il Torinese 27/11; elenco linee GTT su gtt.to.it). Immagine corretta: prima diceva partenza e arrivo in piazza Castello.",
+      "result": {
+        "ig": {
+          "id": "18155960263501854",
+          "url": "https://www.instagram.com/p/DgR_frEJatS/"
+        },
+        "fb": {
+          "id": "1441718615691796_122106778701556033",
+          "url": "https://www.facebook.com/1441718615691796_122106778701556033"
+        }
+      },
+      "published_at": "2026-11-28T10:01:26.061Z"
     },
     {
       "id": "2026-11-29-panettoni",
